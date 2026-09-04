@@ -192,7 +192,7 @@ body.mode-clock #bookPanel .ph .u{display:none}
 .cta-alt{margin-top:16px;font-size:13.5px;color:var(--mute)}
 .cta-alt a{color:var(--gold)}
 /* hero split: copy left, flywheel right */
-.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(300px,440px);gap:48px;align-items:center}
+.hero-grid{display:block}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr;gap:28px}.fw-wrap{max-width:400px}}
 
 .fw-wrap{position:relative;cursor:pointer;background:none;border:0;padding:0;width:100%;
@@ -344,63 +344,6 @@ body.mode-clock #bookBody{display:none}
   </p>
   <h1>Compliance is the <em>sales instrument</em>, not the cost line.</h1>
   <p class="thesis">Four EU instruments land between this month and 2028, and together they change what a manufacturer is allowed to sell into Europe. None of them can be satisfied by a certificate at the border. Each one asks for <b>data that had to be originated at the device and cannot be reconstructed afterwards</b>. That is a problem for every manufacturer without silicon inside the product, and an advantage for the first ones that have it.</p>
-  </div>
-
-  <div>
-  <button class="fw-wrap" id="flywheel" aria-label="Open the compliance countdown clock">
-    <svg viewBox="0 0 420 420" role="img" aria-label="Compliance flywheel: attested data at the hub feeding six EU compliance outcomes.">
-      <defs>
-        <marker id="fwhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M0 0 L10 5 L0 10 z" fill="#FFAA00"/>
-        </marker>
-        <radialGradient id="fwg" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#FFAA00" stop-opacity=".30"/>
-          <stop offset="100%" stop-color="#FFAA00" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-
-      <circle class="fw-hub-glow" cx="210" cy="210" r="96" fill="url(#fwg)"/>
-
-      <g class="fw-arc">
-        <path d="M210 14 A196 196 0 1 1 76 62" fill="none" stroke="#FFAA00" stroke-width="7"
-              stroke-linecap="round" opacity=".92" marker-end="url(#fwhead)"/>
-      </g>
-
-      <g class="fw-ring">
-        <line x1="210.0" y1="148.0" x2="210.0" y2="82.0" stroke="#0E485A" stroke-width="2"/>
-        <line x1="263.7" y1="179.0" x2="320.9" y2="146.0" stroke="#0E485A" stroke-width="2"/>
-        <line x1="263.7" y1="241.0" x2="320.9" y2="274.0" stroke="#0E485A" stroke-width="2"/>
-        <line x1="210.0" y1="272.0" x2="210.0" y2="338.0" stroke="#0E485A" stroke-width="2"/>
-        <line x1="156.3" y1="241.0" x2="99.1" y2="274.0" stroke="#0E485A" stroke-width="2"/>
-        <line x1="156.3" y1="179.0" x2="99.1" y2="146.0" stroke="#0E485A" stroke-width="2"/>
-        <circle class="fw-dot" cx="210.0" cy="82.0" r="6.5" fill="#D7FD00" style="animation-delay:0.0s"/>
-        <circle class="fw-dot" cx="320.9" cy="146.0" r="6.5" fill="#D7FD00" style="animation-delay:0.6s"/>
-        <circle class="fw-dot" cx="320.9" cy="274.0" r="6.5" fill="#D7FD00" style="animation-delay:1.2s"/>
-        <circle class="fw-dot" cx="210.0" cy="338.0" r="6.5" fill="#D7FD00" style="animation-delay:1.8s"/>
-        <circle class="fw-dot" cx="99.1" cy="274.0" r="6.5" fill="#D7FD00" style="animation-delay:2.4s"/>
-        <circle class="fw-dot" cx="99.1" cy="146.0" r="6.5" fill="#D7FD00" style="animation-delay:3.0s"/>
-      </g>
-
-      <clipPath id="fwchip"><circle cx="210" cy="210" r="60"/></clipPath>
-      <circle cx="210" cy="210" r="66" fill="#012230"/>
-      <image href="unity-chip.jpg" x="150" y="150" width="120" height="120"
-             clip-path="url(#fwchip)" preserveAspectRatio="xMidYMid slice"/>
-      <circle cx="210" cy="210" r="60" fill="none" stroke="#D7FD00" stroke-width="2.5"/>
-      <circle cx="210" cy="210" r="66" fill="none" stroke="#FFAA00" stroke-width="1" opacity=".45"/>
-      <text x="210" y="290" text-anchor="middle" font-family="Inter, sans-serif" font-size="12.5" font-weight="800" fill="#FCF8EA" letter-spacing="2.2">UNITY</text>
-      <text x="210" y="303" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#FFAA00" letter-spacing="1.5">ENERGY DIGITISED</text>
-
-      <g class="fw-labels">
-        <text x="210.0" y="45.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">CRA Art. 14</text>
-        <text x="355.5" y="129.5" text-anchor="start" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">Battery Passport</text>
-        <text x="355.5" y="297.5" text-anchor="start" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">SSI traceability</text>
-        <text x="210.0" y="392.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">Product carbon</text>
-        <text x="64.5" y="297.5" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">NIS2 supply chain</text>
-        <text x="64.5" y="129.5" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">Guarantee of origin</text>
-      </g>
-    </svg>
-    <div class="fw-hint mono">Click the flywheel for the countdown</div>
-  </button>
   </div>
 
   </div></div></section>
