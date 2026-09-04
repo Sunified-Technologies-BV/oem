@@ -248,9 +248,9 @@ body.mode-clock #bookBody{display:none}
 .ck-foot{margin-top:22px;padding-top:16px;border-top:1px solid var(--line);font-size:12.5px;
   color:var(--grey);text-align:center;line-height:1.6}
 /* LED dot matrix countdown */
-.led-case{background:#00161F;border:1px solid var(--raised);border-radius:8px;padding:16px 14px 12px;
+.led-case{background:#00161F;border:1px solid var(--raised);border-radius:8px;padding:12px 12px 9px;max-width:300px;margin:0 auto;
   box-shadow:inset 0 2px 18px rgba(0,0,0,.55)}
-.led-bezel{background:#000A0E;border-radius:5px;padding:12px 10px;
+.led-bezel{background:#000A0E;border-radius:5px;padding:9px 8px;
   box-shadow:inset 0 0 0 1px rgba(255,170,0,.10), inset 0 0 26px rgba(255,170,0,.05)}
 #ledMatrix{display:block;width:100%;height:auto}
 .led-legend{display:flex;gap:18px;justify-content:center;margin-top:11px;font-size:9.5px;
@@ -323,7 +323,7 @@ body.mode-clock #bookBody{display:none}
   <div id="clockBody">
     <div class="led-case">
       <div class="led-bezel">
-        <svg id="ledMatrix" viewBox="0 0 340 150" role="img" aria-label="LED dot matrix countdown to the next EU compliance gate"></svg>
+        <svg id="ledMatrix" viewBox="0 0 250 108" role="img" aria-label="LED dot matrix countdown to the next EU compliance gate"></svg>
       </div>
       <div class="led-legend mono"><span><i class="sw sw-g"></i>Days</span><span><i class="sw sw-a"></i>Hours, minutes, seconds</span></div>
     </div>
@@ -877,15 +877,15 @@ body.mode-clock #bookBody{display:none}
 
     var svg = document.getElementById('ledMatrix');
     if (svg) {
-      var p1 = 9.2, r1 = 3.5;   // days row, larger
-      var p2 = 6.2, r2 = 2.35;  // time row
-      var x1 = (340 - rowWidth(dTxt, p1)) / 2;
-      var x2 = (340 - rowWidth(tTxt, p2)) / 2;
+      var p1 = 6.8, r1 = 2.6;   // days row
+      var p2 = 4.6, r2 = 1.75;  // time row
+      var x1 = (250 - rowWidth(dTxt, p1)) / 2;
+      var x2 = (250 - rowWidth(tTxt, p2)) / 2;
       svg.innerHTML =
-        renderRow(dTxt, x1, 14, p1, r1, '#D7FD00') +
-        '<text x="170" y="94" text-anchor="middle" font-family="JetBrains Mono, monospace" ' +
-        'font-size="8" fill="#6E8F94" letter-spacing="2.4">DAYS REMAINING</text>' +
-        renderRow(tTxt, x2, 106, p2, r2, '#FFAA00');
+        renderRow(dTxt, x1, 11, p1, r1, '#D7FD00') +
+        '<text x="125" y="69" text-anchor="middle" font-family="JetBrains Mono, monospace" ' +
+        'font-size="6.5" fill="#6E8F94" letter-spacing="1.9">DAYS REMAINING</text>' +
+        renderRow(tTxt, x2, 78, p2, r2, '#FFAA00');
     }
 
     var dEl = document.getElementById('ckDays');
