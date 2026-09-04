@@ -24,7 +24,7 @@
   --bg:#012230;--bg2:#003E52;--card:#003E52;--raised:#0E485A;
   --teal:#FFAA00;--teald:#0E485A;
   --gold:#FFAA00;--cream:#FCF8EA;--mute:#94AEB6;--line:rgba(252,248,234,.13);
-  --green:#7EC16F;--grey:#6E8F94;--flag:#FF7A59;--parchment:#E8E9DE;
+  --green:#D7FD00;--grey:#6E8F94;--flag:#FF7A59;--parchment:#E8E9DE;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -119,8 +119,10 @@ h1 em{font-style:normal;color:var(--teal)}
 .cta{border-top:1px solid var(--line);padding:52px 0;text-align:left}
 .cta h2{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;max-width:22ch}
 .cta p{color:var(--mute);max-width:60ch;margin-bottom:22px;font-size:15.5px}
-.btn{display:inline-block;background:var(--gold);color:#00232E;font-weight:700;font-size:15px;padding:13px 26px;border-radius:3px;border:0;letter-spacing:.01em}
-.btn:hover{background:var(--green)}
+.btn{display:inline-block;background:var(--gold);color:#00232E;font-weight:700;font-size:15px;
+  padding:11px 24px;border-radius:4px;border:2px solid var(--green);letter-spacing:.01em;
+  transition:background .18s ease,box-shadow .18s ease}
+.btn:hover{background:#FFC24D;box-shadow:0 0 0 4px rgba(215,253,0,.22)}
 footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;color:var(--grey);line-height:1.7}
 /* lane iconography */
 .ic{width:17px;height:17px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
@@ -153,9 +155,9 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
 .hd-right{display:flex;align-items:center;gap:18px}
 .cta-call{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#00232E;
   font-family:"Inter",sans-serif;font-weight:700;font-size:13.5px;letter-spacing:.01em;
-  padding:9px 17px;border-radius:3px;border:0;cursor:pointer;white-space:nowrap;
-  transition:background .18s ease}
-.cta-call:hover{background:#FFC24D}
+  padding:7px 15px;border-radius:4px;border:2px solid var(--green);cursor:pointer;white-space:nowrap;
+  transition:background .18s ease,box-shadow .18s ease}
+.cta-call:hover{background:#FFC24D;box-shadow:0 0 0 3px rgba(215,253,0,.22)}
 .cta-call .ic{width:15px;height:15px;color:currentColor;stroke-width:1.7}
 .cta-call[aria-expanded="true"]{background:var(--raised);color:var(--cream);
   box-shadow:inset 0 0 0 1px var(--gold)}
