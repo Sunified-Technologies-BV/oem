@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="zh-Hans"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sunified — Compliance is the sales instrument</title>
+<title>Sunified — 合规是销售工具，不是成本项</title>
 <meta name="description" content="Four EU instruments land between September 2026 and 2028. None can be satisfied by a certificate at the border. Each asks for data originated at the device. What that means for solar, BESS and gateway manufacturers selling into Europe.">
 <link rel="canonical" href="https://oem.sunified.ai/">
 <meta property="og:title" content="Compliance is the sales instrument, not the cost line">
-<meta property="og:description" content="NIS2, the Cyber Resilience Act, the EU Battery Passport and product-level carbon. What each one requires, when, and why it needs silicon in the product.">
+<meta property="og:description" content="NIS2, the Cyber Resilience Act, the 欧盟电池护照 and product-level carbon. What each one requires, when, and why it needs silicon in the product.">
 <meta property="og:url" content="https://oem.sunified.ai/">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex, nofollow">
@@ -17,9 +17,9 @@
   plausible.init()
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="alternate" hreflang="zh-Hans" href="https://oem.sunified.ai/cn/">
 <link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="alternate" hreflang="zh-Hans" href="https://oem.sunified.ai/cn/">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   /* sampled from Sunified Pre-Series A, June 2026, and Product 2P, July 2026 */
@@ -30,7 +30,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--cream);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--cream);font-family:"Inter","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;text-spacing-trim:trim-start;overflow-x:hidden}
 .mono{font-family:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(25,211,197,.32)}
@@ -307,12 +307,12 @@ body.mode-clock #bookBody{display:none}
 
 <header><div class="wrap hd">
   <a href="/" class="wm">SUNIFIED</a>
-  <span class="hd-right"><span class="langsw"><a href="/" aria-current="true">EN</a><a href="/cn/">中文</a></span>
-    <span class="tag mono">OEM Briefing · September 2026</span>
+  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a></span>
+    <span class="tag mono">OEM 简报 · 2026 年 9 月</span>
     <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel"
       data-cal="https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
-      data-cal-title="Book a 10-minute call"
-      data-cal-note="Mobile, WhatsApp, Google Hangout or Zoom. Enough to work out whether there is a fit.">
+      data-cal-title="预约 10 分钟通话"
+      data-cal-note="手机、WhatsApp、Google Hangout 或 Zoom。足够判断双方是否契合。">
       <svg class="ic"><use href="#i-call"></use></svg>10-minute Call
     </button>
   </span>
@@ -321,69 +321,69 @@ body.mode-clock #bookBody{display:none}
 <aside id="bookPanel" aria-hidden="true" aria-label="Book a 10 minute call">
   <div class="ph">
     <div>
-      <h2>Book a 10-minute call</h2>
-      <p>Mobile, WhatsApp, Google Hangout or Zoom. Pick whichever suits your time zone.</p>
+      <h2>预约 10 分钟通话</h2>
+      <p>手机、WhatsApp、Google Hangout 或 Zoom。选择最适合您时区的方式。</p>
       <span class="u mono">Calendly.com/lgv</span>
     </div>
-    <button id="bookClose" aria-label="Close booking panel">&times;</button>
+    <button id="bookClose" aria-label="关闭预约面板">&times;</button>
   </div>
-  <div id="bookBody"><div class="loading">Ready when you are.</div></div>
+  <div id="bookBody"><div class="loading">随时可以开始。</div></div>
   <div id="clockBody">
     <div class="led-case">
       <div class="led-bezel">
         <svg id="ledMatrix" viewBox="0 0 250 108" role="img" aria-label="LED dot matrix countdown to the next EU compliance gate"></svg>
       </div>
-      <div class="led-legend mono"><span><i class="sw sw-g"></i>Days</span><span><i class="sw sw-a"></i>Hours, minutes, seconds</span></div>
+      <div class="led-legend mono"><span><i class="sw sw-g"></i>天</span><span><i class="sw sw-a"></i>时 分 秒</span></div>
     </div>
     <div class="ck-name" id="ckName">Next gate</div>
     <div class="ck-note" id="ckNote"></div>
     <div class="ck-pick" id="ckPick"></div>
-    <div class="ck-foot">Counting down to the moment the gate becomes a condition of sale, not a guideline.</div>
+    <div class="ck-foot">倒计时至该节点成为销售条件、而非指导建议的那一刻。</div>
   </div>
 
 </aside>
 
 <section class="hero"><div class="wrap"><div class="hero-grid"><div>
   <p class="eyebrow mono keys">
-    <span class="k"><span class="tile"><svg class="ic"><use href="#i-solar"></use></svg></span>Solar</span>
-    <span class="k"><span class="tile"><svg class="ic ic-batt"><use href="#i-batt"></use></svg></span>Battery</span>
-    <span class="k"><span class="tile"><svg class="ic"><use href="#i-gate"></use></svg></span>Gateways</span>
-    <span class="k"><span class="tile"><svg class="ic"><use href="#i-eu"></use></svg></span>Pathway &gt; EU Compliance</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-solar"></use></svg></span>光伏</span>
+    <span class="k"><span class="tile"><svg class="ic ic-batt"><use href="#i-batt"></use></svg></span>电池</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-gate"></use></svg></span>网关</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-eu"></use></svg></span>路径 > 欧盟合规</span>
   </p>
-  <h1>Compliance is the <em>sales instrument</em>, not the cost line.</h1>
-  <p class="thesis">Four EU instruments land between this month and 2028, and together they change what a manufacturer is allowed to sell into Europe. None of them can be satisfied by a certificate at the border. Each one asks for <b>data that had to be originated at the device and cannot be reconstructed afterwards</b>. That is a problem for every manufacturer without silicon inside the product, and an advantage for the first ones that have it.</p>
+  <h1>合规是销售工具，不是成本项。</h1>
+  <p class="thesis">从本月起到 2028 年，四项欧盟法规将陆续生效，它们共同改变了制造商能够向欧洲销售什么。没有一项可以靠一纸边境证书来满足。每一项都要求数据必须在设备端原生生成，事后无法补造。对于产品内部没有芯片的制造商，这是一个问题；对于率先装上芯片的制造商，这是一项优势。</p>
   </div>
 
   </div></div></section>
 
 <section class="clock"><div class="wrap">
-  <p class="klabel mono">The clock, in order of arrival <span id="cdlive" class="cdlive mono"></span></p>
+  <p class="klabel mono">时间表，按到期先后 <span id="cdlive" class="cdlive mono"></span></p>
   <div class="kline"></div>
   <div class="stops">
     <div class="stop soon">
-      <div class="d mono">11 SEP 2026</div>
-      <div class="t">CRA Article 14 reporting</div>
-      <div class="n">Manufacturers must report actively exploited vulnerabilities and severe incidents to ENISA. Live in days, not years.</div>
+      <div class="d mono">2026 年 9月 11 日</div>
+      <div class="t">CRA 第 14 条报告义务</div>
+      <div class="n">制造商须向 ENISA 报告已被实际利用的漏洞和严重事件。倒计时以天计，不是以年计。</div>
     </div>
     <div class="stop">
-      <div class="d mono">18 FEB 2027</div>
-      <div class="t">EU Battery Passport</div>
-      <div class="n">Mandatory for EV, LMT and industrial batteries above 2 kWh. No passport, no placing on the market.</div>
+      <div class="d mono">2027 年 2月 18 日</div>
+      <div class="t">欧盟电池护照</div>
+      <div class="n">适用于 2 kWh 以上的电动汽车、轻型交通工具及工业电池。没有护照，就不能投放市场。</div>
     </div>
     <div class="stop">
-      <div class="d mono">18 AUG 2027</div>
-      <div class="t">Battery due diligence</div>
-      <div class="n">Supply chain due diligence obligations, deferred from 2025 by Reg. (EU) 2025/1561.</div>
+      <div class="d mono">2027 年 8月 18 日</div>
+      <div class="t">电池尽职调查</div>
+      <div class="n">供应链尽职调查义务，依据法规 (EU) 2025/1561 自 2025 年推迟至此。</div>
     </div>
     <div class="stop">
-      <div class="d mono">11 DEC 2027</div>
-      <div class="t">CRA full obligations</div>
-      <div class="n">Essential cybersecurity requirements and conformity assessment for all products with digital elements.</div>
+      <div class="d mono">2027 年 12月 11 日</div>
+      <div class="t">CRA 全面义务</div>
+      <div class="n">所有含数字元素产品的基本网络安全要求与合格评定。</div>
     </div>
     <div class="stop">
-      <div class="d mono">1 JAN 2028</div>
-      <div class="t">CBAM downstream</div>
-      <div class="n">Proposed extension to about 180 steel and aluminium intensive goods. Mounting systems and frames, not modules.</div>
+      <div class="d mono">2028 年 1月 1 日</div>
+      <div class="t">CBAM 下游扩围</div>
+      <div class="n">拟扩展至约 180 类钢铝密集型商品。涉及支架系统与边框，不含组件本身。</div>
     </div>
   </div>
 </div></section>
@@ -391,195 +391,195 @@ body.mode-clock #bookBody{display:none}
 <div class="wrap"><div class="shell">
 
   <aside class="rail">
-    <p class="rlabel mono">Filter by lane</p>
+    <p class="rlabel mono">按产品线筛选</p>
     <div class="filters" id="filters">
-      <button data-lane="all" aria-pressed="true">All</button>
-      <button data-lane="solar" aria-pressed="false"><svg class="ic"><use href="#i-solar"></use></svg>Solar</button>
-      <button data-lane="bess" aria-pressed="false"><svg class="ic ic-batt"><use href="#i-batt"></use></svg>BESS</button>
-      <button data-lane="gateway" aria-pressed="false"><svg class="ic"><use href="#i-gate"></use></svg>Gateway</button>
+      <button data-lane="all" aria-pressed="true">全部</button>
+      <button data-lane="solar" aria-pressed="false"><svg class="ic"><use href="#i-solar"></use></svg>光伏</button>
+      <button data-lane="bess" aria-pressed="false"><svg class="ic ic-batt"><use href="#i-batt"></use></svg>储能</button>
+      <button data-lane="gateway" aria-pressed="false"><svg class="ic"><use href="#i-gate"></use></svg>网关</button>
     </div>
-    <p class="rlabel mono">Contents</p>
+    <p class="rlabel mono">目录</p>
     <ul class="toc" id="toc"></ul>
   </aside>
 
   <main>
 
     <section class="sec" id="sec-a">
-      <div class="sechead"><span class="ltr mono">A</span><h2>The regulatory argument</h2></div>
-      <p class="secnote">Eight sections, each self-contained. Read one, read all eight, none depends on another. Every claim carries its instrument so you can verify it without asking us.</p>
+      <div class="sechead"><span class="ltr mono">A</span><h2>监管层面的论据</h2></div>
+      <p class="secnote">八个章节，各自独立成篇。读一节，或读完八节，彼此不存在依赖关系。每项主张都标注了对应法规，您无需询问我们即可自行核实。</p>
 
       <article class="block" id="EU-01" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-01</span><h3 class="btitle">NIS2, or why your customer's customer is asking</h3></div>
-        <p class="usewhen">Read this if a European integrator has suddenly sent you a security questionnaire.</p>
+        <div class="bhead"><span class="bid mono">EU-01</span><h3 class="btitle">NIS2：为什么您客户的客户开始追问</h3></div>
+        <p class="usewhen">如果某家欧洲集成商突然给您发来一份安全问卷，请读这一节。</p>
         <div class="bbody">
-          <p>The NIS2 Directive treats electricity as an essential sector. Utilities, DSOs and large integrators inside the EU are legally obliged to manage cybersecurity risk <b>across their supply chain</b>, which they discharge by pushing requirements down their contracts to component suppliers. Most manufacturers outside Europe meet NIS2 not as a filing obligation of their own, but as a procurement wall: the questionnaire that arrives before the purchase order, and the clause that follows it.</p>
-          <p>Incident reporting runs on a tight clock, with an early warning due within 24 hours of a significant incident. A supplier who cannot support that timeline is a supplier the integrator has to explain to its regulator.</p>
-          <p class="cite">Directive (EU) 2022/2555 · <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></p>
+          <p>NIS2 指令将电力列为关键部门。欧盟境内的公用事业公司、配电系统运营商（DSO）和大型集成商负有法定义务，必须管理其供应链中的网络安全风险；他们履行这项义务的方式，就是通过合同把要求层层压给零部件供应商。对大多数欧洲以外的制造商而言，NIS2 并不是自己需要申报的义务，而是一道采购门槛：先于采购订单抵达的那份问卷，以及随之而来的合同条款。</p>
+          <p>事件报告的时限很紧，重大事件须在 24 小时内发出早期预警。无法配合这一时限的供应商，会让集成商在监管机构面前难以交代。</p>
+          <p class="cite">指令 (EU) 2022/2555 · eur-lex.europa.eu/eli/dir/2022/2555/oj <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS · Gateway</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">Solar · BESS · Gateway</span></div>
       </article>
 
       <article class="block" id="EU-02" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-02</span><h3 class="btitle">Cyber Resilience Act, the one that binds the manufacturer directly</h3></div>
-        <p class="usewhen">Read this if you ship any connected product: inverter, gateway, BMS, monitoring board.</p>
+        <div class="bhead"><span class="bid mono">EU-02</span><h3 class="btitle">《网络韧性法案》（CRA）：直接约束制造商的那一部</h3></div>
+        <p class="usewhen">如果您出货任何联网产品：逆变器、网关、BMS、监控板卡，请读这一节。</p>
         <div class="bbody">
-          <p>NIS2 lands on the operator. The CRA lands on <b>you</b>. Any product with digital elements placed on the EU market carries obligations on the manufacturer: secure by default configuration, vulnerability handling for the support period, a software bill of materials, and CE marking backed by conformity assessment.</p>
-          <p>Two dates matter. <span class="flag">11 September 2026</span>, when Article 14 reporting begins: actively exploited vulnerabilities and severe incidents must be notified to ENISA and the relevant CSIRT, with an early warning inside 24 hours. <span class="flag">11 December 2027</span>, when the full essential requirements and conformity assessment apply.</p>
-          <p>Reporting runs through ENISA's <b>Single Reporting Platform</b>, live the same day. And read Article 69(3) before you assume this is a problem for future products only: the reporting obligation extends to <b>every in-scope product already on the EU market</b>. Hardware you shipped years ago is inside the 24 hour window the moment an exploitation is found.</p>
-          <p>The practical consequence for a hardware maker is that a coordinated vulnerability disclosure policy and a named security contact stop being good practice and become an entry condition.</p>
-          <p class="cite">Regulation (EU) 2024/2847 · <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></p>
+          <p>NIS2 落在运营方身上，CRA 直接落在您身上。任何投放欧盟市场、含数字元素的产品，都会给制造商带来义务：默认安全配置、支持期内的漏洞处理、软件物料清单（SBOM），以及以合格评定为依据的 CE 标志。</p>
+          <p>两个日期至关重要。2026 年 9 月 11 日，第 14 条报告义务开始生效：已被实际利用的漏洞和严重事件须通报 ENISA 及相关 CSIRT，并在 24 小时内发出早期预警。2027 年 12 月 11 日，全面的基本要求与合格评定开始适用。</p>
+          <p>报告通过 ENISA 的单一报告平台（SRP）提交，该平台同日上线。另外，在您认定这只是未来产品的问题之前，请先读第 69(3) 条：报告义务延伸至已经在欧盟市场上的每一件在范围内的产品。您多年前出货的硬件，一旦被发现遭到利用，就立即处于 24 小时时限之内。</p>
+          <p>对硬件厂商的实际后果是：协同漏洞披露政策和一位具名的安全联系人，不再只是良好实践，而成为准入条件。</p>
+          <p class="cite">法规 (EU) 2024/2847 · eur-lex.europa.eu/eli/reg/2024/2847/oj <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
 
       <article class="block" id="EU-03" data-lane="all solar gateway">
-        <div class="bhead"><span class="bid mono">EU-03</span><h3 class="btitle">Network Code on Cybersecurity, where inverter fleets get caught</h3></div>
-        <p class="usewhen">Read this if your devices are aggregated: DER portfolios, VPPs, fleet managed inverters.</p>
+        <div class="bhead"><span class="bid mono">EU-03</span><h3 class="btitle">网络安全网络规则：逆变器机群被纳入的地方</h3></div>
+        <p class="usewhen">如果您的设备是被聚合管理的：分布式能源组合、虚拟电厂、机群统一管理的逆变器，请读这一节。</p>
         <div class="bbody">
-          <p>Beyond the horizontal rules there is a sector specific network code for the cybersecurity of cross border electricity flows. It matters to hardware makers because it is the instrument that reaches <b>aggregated fleets</b>, thousands of small devices under one control channel, rather than only large plant. If your gateway or inverter can be commanded remotely at scale, it sits inside a risk perimeter someone is now formally required to assess.</p>
-          <p>Read the timing carefully. The 4 hour incident clock in Art. 38(3) is real, but it binds only high and critical impact entities, and binding identification of those entities is not due until <b>13 June 2028</b>. Anyone demanding a 4 hour supplier clock from you today is running ahead of the instrument.</p>
-          <p class="cite">Commission Delegated Regulation (EU) 2024/1366 · <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
+          <p>在横向法规之外，还有一部针对跨境电力流网络安全的行业专属网络规则。它对硬件厂商之所以重要，是因为它是能够触及聚合机群的那件工具，也就是在同一控制通道下的数千台小型设备，而不只是大型电站。如果您的网关或逆变器可以被大规模远程下令，它就处在某个主体现在被正式要求评估的风险边界之内。</p>
+          <p>请仔细看时间安排。第 38(3) 条中 4 小时的事件时限确实存在，但它只约束高影响和关键影响主体，而这些主体的具约束力认定要到 2028 年 6 月 13 日才到期。今天就要求您承担 4 小时供应商时限的任何一方，都跑在了法规前面。</p>
+          <p class="cite">委员会授权法规 (EU) 2024/1366 · eur-lex.europa.eu/eli/reg_del/2024/1366/oj <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · Gateway</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">Solar · Gateway</span></div>
       </article>
 
       <article class="block" id="EU-04" data-lane="all solar gateway">
-        <div class="bhead"><span class="bid mono">EU-04</span><h3 class="btitle">The industry's own position</h3></div>
-        <p class="usewhen">The best single document to read if this looks like a European bureaucrat's idea.</p>
+        <div class="bhead"><span class="bid mono">EU-04</span><h3 class="btitle">行业自身的立场</h3></div>
+        <p class="usewhen">如果您觉得这像是欧洲官僚的一厢情愿，这是最值得一读的一份文件。</p>
         <div class="bbody">
-          <p>This is not regulators pushing against industry. In July 2024 SolarPower Europe published its own position calling for a harmonised cybersecurity baseline for solar PV: stronger governance under NIS2, product security through the CRA, <b>a dedicated standard for distributed energy resources</b>, operational PV data held within the EU or equivalent security jurisdictions, and an EU level monitoring layer for manufacturer coordinated devices such as inverters.</p>
-          <p>Read it as a forecast. Where the trade body asks for a baseline, a baseline arrives.</p>
-          <p class="cite"><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">Position paper</a> · <a href="https://api.solarpowereurope.org/uploads/Solar_Power_Europe_2024_A_harmonised_cybersecurity_baseline_for_solar_PV_cbfbbd0f1b.pdf">PDF, 11 July 2024</a></p>
+          <p>这不是监管机构在与产业角力。2024 年 7 月，SolarPower Europe 发布了自己的立场文件，呼吁为光伏建立统一的网络安全基线：在 NIS2 下强化治理、通过 CRA 保障产品安全、为分布式能源资源制定专门标准、光伏运行数据保存在欧盟境内或安全等效的司法辖区，以及针对逆变器等由制造商协调管理的设备建立欧盟层面的监测机制。</p>
+          <p>把它当作一份预告来读。行业协会开口要基线的地方，基线就会到来。</p>
+          <p class="cite">立场文件 · PDF，2024 年 7 月 11 日 <a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">Position paper</a> <a href="https://api.solarpowereurope.org/uploads/Solar_Power_Europe_2024_A_harmonised_cybersecurity_baseline_for_solar_PV_cbfbbd0f1b.pdf">PDF, 11 July 2024</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · Gateway</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">Solar · Gateway</span></div>
       </article>
 
       <article class="block" id="EU-05" data-lane="all bess">
-        <div class="bhead"><span class="bid mono">EU-05</span><h3 class="btitle">Battery Passport, the hard gate at 18 February 2027</h3></div>
-        <p class="usewhen">Read this first if you assemble battery or BESS packs.</p>
+        <div class="bhead"><span class="bid mono">EU-05</span><h3 class="btitle">电池护照：2027 年 2 月 18 日的硬性门槛</h3></div>
+        <p class="usewhen">如果您组装电池包或储能系统（BESS），请优先读这一节。</p>
         <div class="bbody">
-          <p>From <span class="flag">18 February 2027</span>, every EV, LMT and industrial battery above 2 kWh placed on the EU market must carry a digital battery passport, reachable by a QR code on the battery itself. The passport holds a unique identifier, model and technical characteristics, carbon footprint specific to the manufacturing site and batch, and performance and durability data, with tiered access for the public, regulators and end of life processors.</p>
-          <p>A carbon footprint declaration obligation already sits alongside it, and due diligence obligations follow on <span class="flag">18 August 2027</span>, deferred from 2025 by Regulation (EU) 2025/1561.</p>
-          <p>The commercial point is not the passport. It is that <b>batch level carbon and lifecycle data has to exist before the pack leaves the line</b>. Reconstructing it from ERP records afterwards is what auditors are built to find.</p>
-          <p class="cite">Regulation (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
+          <p>自 2027 年 2 月 18 日起，每一块投放欧盟市场、容量超过 2 kWh 的电动汽车电池、轻型交通工具电池和工业电池，都必须携带数字电池护照，并可通过电池本体上的二维码访问。护照包含唯一标识符、型号与技术参数、对应具体生产基地和批次的碳足迹，以及性能与耐久性数据，并对公众、监管机构和报废处理方设置分级访问权限。</p>
+          <p>与之并行的碳足迹申报义务已经生效，尽职调查义务则于 2027 年 8 月 18 日跟进，该义务依据法规 (EU) 2025/1561 从 2025 年推迟而来。</p>
+          <p>商业上的关键点不在护照本身，而在于批次级的碳数据和全生命周期数据必须在电池包下线之前就已存在。事后从 ERP 记录里补造，正是审计师受训要查出来的东西。</p>
+          <p class="cite">法规 (EU) 2023/1542 · eur-lex.europa.eu/eli/reg/2023/1542/oj <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">BESS</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">储能</span></div>
       </article>
 
       <article class="block" id="EU-06" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-06</span><h3 class="btitle">ESPR, the passport model spreading beyond batteries</h3></div>
-        <p class="usewhen">Read this if you make modules and think batteries are somebody else's problem.</p>
+        <div class="bhead"><span class="bid mono">EU-06</span><h3 class="btitle">ESPR：护照模式正在向电池以外扩散</h3></div>
+        <p class="usewhen">如果您生产组件，并认为电池是别人的问题，请读这一节。</p>
         <div class="bbody">
-          <p>The Ecodesign for Sustainable Products Regulation is the framework that generalises the battery passport into a Digital Product Passport for other product groups, set by delegated acts over the coming years. It is the instrument to watch for photovoltaics: it carries product level carbon, durability, repairability and recycled content requirements, and it amends the Battery Regulation directly.</p>
-          <p>Nothing binds solar modules under ESPR today. The exposure is that the mechanism now exists and has been proven on batteries first.</p>
-          <p class="cite">Regulation (EU) 2024/1781 · <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">eur-lex.europa.eu/eli/reg/2024/1781/oj</a></p>
+          <p>《可持续产品生态设计法规》（ESPR）是把电池护照推广为其他产品类别数字产品护照（DPP）的框架，具体范围将在未来几年通过授权法案逐步确定。它是光伏行业最需要盯住的那件工具：它涵盖产品级碳足迹、耐久性、可维修性和再生材料含量要求，并直接修订了电池法规。</p>
+          <p>目前 ESPR 尚未对光伏组件施加任何约束。风险在于，这套机制现在已经存在，并且已先在电池上跑通。</p>
+          <p class="cite">法规 (EU) 2024/1781 · eur-lex.europa.eu/eli/reg/2024/1781/oj <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">eur-lex.europa.eu/eli/reg/2024/1781/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
 
       <article class="block" id="EU-07" data-lane="all solar">
-        <div class="bhead"><span class="bid mono">EU-07</span><h3 class="btitle">Solar Stewardship Initiative, the audit regime buyers already use</h3></div>
-        <p class="usewhen">Read this if you sell modules into European utility scale tenders.</p>
+        <div class="bhead"><span class="bid mono">EU-07</span><h3 class="btitle">光伏管理倡议（SSI）：买家已经在用的审核体系</h3></div>
+        <p class="usewhen">如果您向欧洲公用事业级招标供应组件，请读这一节。</p>
         <div class="bbody">
-          <p>Ahead of any binding regulation, European developers, buyers and financiers have converged on the Solar Stewardship Initiative's ESG and <b>Supply Chain Traceability</b> Standards as the evidence they will accept. Traceability here means documented chain of custody from polysilicon through wafer, cell and module, the thing most supply chains cannot demonstrate because the record was never bound to the physical unit.</p>
-          <p>This one is voluntary, and it is the one already appearing in tender conditions. It is where a manufacturer can differentiate this year rather than in 2028.</p>
-          <p class="cite"><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">solarstewardshipinitiative.org, Supply Chain Traceability Standard</a></p>
+          <p>在任何强制性法规落地之前，欧洲的开发商、买家和融资方已经不约而同地把光伏管理倡议（SSI）的 ESG 标准与供应链可追溯性标准，作为他们愿意接受的证据。这里的可追溯性，指的是从多晶硅经硅片、电池片到组件的完整书面监管链，而这恰恰是大多数供应链无法证明的，因为那份记录从来没有与实物单元绑定过。</p>
+          <p>这一项是自愿性的，也正是已经出现在招标条件里的那一项。制造商可以在今年就借它做出差异化，而不必等到 2028 年。</p>
+          <p class="cite"><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">solarstewardshipinitiative.org，供应链可追溯性标准</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏</span></div>
       </article>
 
       <article class="block" id="EU-08" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-08</span><h3 class="btitle">CBAM, stated precisely</h3></div>
-        <p class="usewhen">Read this before anyone tells you the carbon border tax applies to your panels.</p>
+        <div class="bhead"><span class="bid mono">EU-08</span><h3 class="btitle">CBAM：把话说准确</h3></div>
+        <p class="usewhen">在有人告诉您碳边境税适用于您的组件之前，请读这一节。</p>
         <div class="bbody">
-          <p>CBAM entered its definitive phase on <span class="flag">1 January 2026</span>. Its scope is cement, iron and steel, aluminium, fertilisers, electricity and hydrogen. <b>Solar modules and batteries are not in scope.</b></p>
-          <p>Your live exposure today is the <b>aluminium frame</b> (CN 7604, 7606, 7610) and the <b>steel mounting structure</b> (CN 7308, 7318). Those are CBAM goods now. The module itself, CN 8541 43 00, is not.</p>
-          <p>From 1 January 2028 the scope is set to widen, and three lists have been tabled: the Commission's of December 2025 (about 180 CN codes), the Council's general approach of 12 June 2026, and the European Parliament environment committee's of 6 July 2026 (277 further codes). Between them they reach <b>photovoltaic generators</b> (CN 8501 71 00, 8501 72 00, 8501 80 00), <b>inverters above 7.5 kVA</b> (CN 8504 40 86) and heat pumps. <b>None of the three lists contains CN 8541.</b> None of them is law yet, and the final list will be settled in a Parliament and Council negotiation not expected to conclude before the end of 2026.</p>
-          <p>So the risk to watch is a <b>classification</b> risk rather than a policy one. A product built and declared as a photovoltaic generator lands inside the committee's list; the same silicon sold as a module does not. If you integrate, get a Binding Tariff Information ruling rather than assuming.</p>
-          <p class="cite"><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">taxation-customs.ec.europa.eu, CBAM</a></p>
+          <p>CBAM 已于 2026 年 1 月 1 日进入正式实施阶段。其覆盖范围为水泥、钢铁、铝、化肥、电力和氢。光伏组件和电池不在范围内。</p>
+          <p>您今天真正的敞口是铝边框（CN 7604、7606、7610）和钢制支架结构（CN 7308、7318）。这些现在就是 CBAM 商品。组件本身，CN 8541 43 00，不是。</p>
+          <p>自 2028 年 1 月 1 日起，覆盖范围预计扩大，目前已有三份清单被提上桌面：欧盟委员会 2025 年 12 月的清单（约 180 个 CN 编码）、理事会 2026 年 6 月 12 日的一般方针，以及欧洲议会环境委员会 2026 年 7 月 6 日的清单（新增 277 个编码）。三者合计触及光伏发电机组（CN 8501 71 00、8501 72 00、8501 80 00）、7.5 kVA 以上的逆变器（CN 8504 40 86）和热泵。三份清单中都不包含 CN 8541。三者均尚未成为法律，最终清单将在议会与理事会的谈判中确定，预计不会早于 2026 年底达成。</p>
+          <p>因此，真正需要盯住的是归类风险，而不是政策风险。一件按光伏发电机组制造并申报的产品会落入委员会那份清单；同样的硅片作为组件销售则不会。如果您做集成，请去申请一份具约束力的关税信息（BTI）裁定，不要凭假设行事。</p>
+          <p class="cite"><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">taxation-customs.ec.europa.eu，CBAM</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
 
       <div class="srcbar">
-        <h3>The primary sources, in one place</h3>
+        <h3>一手法规原文，集中在此</h3>
         <ul>
-          <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">NIS2, Directive (EU) 2022/2555</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">Cyber Resilience Act, Reg. (EU) 2024/2847</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">Network Code on Cybersecurity, Reg. (EU) 2024/1366</a></li>
-          <li><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">SolarPower Europe, cyber baseline for solar PV</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">Battery Regulation, Reg. (EU) 2023/1542</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">ESPR, Reg. (EU) 2024/1781</a></li>
-          <li><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">Solar Stewardship Initiative, traceability</a></li>
-          <li><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">CBAM, European Commission</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">NIS2，指令 (EU) 2022/2555</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">《网络韧性法案》，法规 (EU) 2024/2847</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">网络安全网络规则，法规 (EU) 2024/1366</a></li>
+          <li><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">SolarPower Europe，光伏网络安全基线</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">电池法规，法规 (EU) 2023/1542</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">ESPR，法规 (EU) 2024/1781</a></li>
+          <li><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">光伏管理倡议，可追溯性</a></li>
+          <li><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">CBAM，欧盟委员会</a></li>
         </ul>
       </div>
     </section>
 
     <section class="sec" id="sec-b">
-      <div class="sechead"><span class="ltr mono">B</span><h2>How we work with manufacturers</h2></div>
-      <p class="secnote">Two sections: what the commercial arrangement is, and a paragraph you can forward to a colleague without rewriting it.</p>
+      <div class="sechead"><span class="ltr mono">B</span><h2>我们与制造商的合作方式</h2></div>
+      <p class="secnote">两个章节：商业安排是什么，以及一段您可以直接转发给同事、无需改写的文字。</p>
 
       <article class="block" id="GTM-02" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">GTM-02</span><h3 class="btitle">The engagement model, in one paragraph</h3></div>
-        <p class="usewhen">What it costs, and where the money actually comes from.</p>
+        <div class="bhead"><span class="bid mono">GTM-02</span><h3 class="btitle">合作模式，一段话讲完</h3></div>
+        <p class="usewhen">成本是多少，钱究竟从哪里来。</p>
         <div class="bbody">
-          <p>Our model is deliberately simple. The UNITY chip goes into the manufacturer's bill of materials at cost recovery. We do not make margin on silicon. Revenue is shared on the data and API subscription that the verified stream generates over the asset's life, paid by the parties who need the data: insurers, financiers, asset owners and traders. Sunified brings the European demand side, the manufacturer brings manufacture. The manufacturer gains a compliance and financing position that cannot be bought as a service, because the data has to be originated in the factory.</p>
+          <p>我们的模式刻意做得简单。UNITY 芯片以成本回收价进入制造商的物料清单，我们不在硅片上赚取毛利。收入来自这条经过验证的数据流在资产全生命周期中产生的数据与 API 订阅，由真正需要这些数据的各方支付：保险公司、融资方、资产所有者和交易商，收入由双方分享。Sunified 带来欧洲的需求侧，制造商负责制造。制造商由此获得一个无法作为服务采购的合规与融资身位，因为这些数据必须在工厂里原生产生。</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
 
       <article class="block" id="GTM-03" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">GTM-03</span><h3 class="btitle">Forward this to a colleague</h3></div>
-        <p class="usewhen">Written so that passing it on costs you nothing.</p>
+        <div class="bhead"><span class="bid mono">GTM-03</span><h3 class="btitle">把这段转发给同事</h3></div>
+        <p class="usewhen">这段文字写好了，转发出去不需要您花任何力气。</p>
         <div class="bbody">
-          <p>Sunified is an Amsterdam company that puts a secure chip inside solar panels and battery packs so that generation, identity and carbon data are captured cryptographically at the device rather than reconstructed from spreadsheets later. They are looking for manufacturers who want a position in Europe as the Battery Passport, the Cyber Resilience Act and product level carbon rules come into force between 2026 and 2028. The chip goes into the manufacturer's BOM at cost recovery; Sunified brings the European buyers, insurers and financiers who need the verified data. Founder is Leon Gerard Vandenberg, who lived and worked in Shenzhen and is on European time. Worth twenty minutes.</p>
+          <p>Sunified 是一家阿姆斯特丹公司，在光伏组件和电池包内部植入一枚安全芯片，使发电量、身份和碳数据在设备端以密码学方式采集，而不是事后从表格里拼凑出来。他们正在寻找希望在欧洲取得身位的制造商，因为电池护照、《网络韧性法案》和产品级碳规则将在 2026 至 2028 年间陆续生效。芯片以成本回收价进入制造商的 BOM；Sunified 带来需要这些已验证数据的欧洲买家、保险公司和融资方。创始人 Leon Gerard Vandenberg 曾在深圳生活和工作，目前在欧洲时区。值得花二十分钟。</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
     </section>
 
     <section class="sec" id="sec-c">
-      <div class="sechead"><span class="ltr mono">C</span><h2>What UNITY actually is</h2></div>
-      <p class="secnote">From the sentence that describes it, to the detail a hardware engineer asks for third.</p>
+      <div class="sechead"><span class="ltr mono">C</span><h2>UNITY 究竟是什么</h2></div>
+      <p class="secnote">从一句话的产品描述，到硬件工程师第三个会问的技术细节。</p>
 
       <article class="block" id="UNI-01" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">UNI-01</span><h3 class="btitle">The short description</h3></div>
-        <p class="usewhen">Start here.</p>
+        <div class="bhead"><span class="bid mono">UNI-01</span><h3 class="btitle">一句话产品描述</h3></div>
+        <p class="usewhen">从这里开始。</p>
         <div class="bbody">
-          <p>Sunified's UNITY sensor sits inside the panel, the battery pack or the gateway and captures cryptographic proof of energy generation and device identity at source. Every electron creating a byte of data. It produces genesis data: hi-fidelity, panel level, secure, trusted and verified, from the factory floor through deployment to recycling. One verified data source, several compounding revenue streams built on top of it.</p>
+          <p>Sunified 的 UNITY 传感器位于组件、电池包或网关内部，在源头采集发电量和设备身份的密码学证明。每一个电子都生成一个字节的数据。它产生的是创世数据：高保真、组件级、安全、可信、已验证，覆盖从工厂产线到部署运行再到回收的全过程。一个经过验证的数据源，之上叠加多条相互放大的收入流。</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
 
       <article class="block" id="UNI-02" data-lane="all bess gateway">
-        <div class="bhead"><span class="bid mono">UNI-02</span><h3 class="btitle">Silicon and security posture</h3></div>
-        <p class="usewhen">For the hardware or security engineer.</p>
+        <div class="bhead"><span class="bid mono">UNI-02</span><h3 class="btitle">芯片与安全架构</h3></div>
+        <p class="usewhen">面向硬件工程师或安全工程师。</p>
         <div class="bbody">
-          <p>UNITY is built on a Silicon Labs EFR32MG24B with Secure Vault High, providing a hardware root of trust, secure key storage and secure boot. That is the foundation a CRA conformity claim rests on, and the assurance a NIS2 obligated integrator needs to see in a supplier. The secure element holds <b>SESIP Level 3</b>. IEC 62443 alignment runs through our integration partner.</p>
-          <p>Deployed as an option board today, with a path to main board integration. Sunified is the firmware author and, under the CRA, a manufacturer in its own right, which means the reporting and vulnerability handling obligations sit with us for our part of the stack rather than with the OEM.</p>
+          <p>UNITY 基于 Silicon Labs EFR32MG24B 构建，搭载 Secure Vault High，提供硬件信任根、安全密钥存储和安全启动。这是 CRA 合格声明所依托的基础，也是负有 NIS2 义务的集成商需要在供应商身上看到的保证。安全元件持有 SESIP 3 级。IEC 62443 的对齐工作通过我们的集成合作伙伴推进。</p>
+          <p>目前以选配板卡形式部署，并已规划向主板集成的路径。Sunified 是固件的作者，在 CRA 之下本身即为制造商，这意味着我们这一层的报告与漏洞处理义务由我们承担，而不落在 OEM 身上。</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">BESS · Gateway</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">BESS · Gateway</span></div>
       </article>
 
       <article class="block" id="UNI-03" data-lane="all solar">
-        <div class="bhead"><span class="bid mono">UNI-03</span><h3 class="btitle">Data path, panel to buyer</h3></div>
-        <p class="usewhen">How the data leaves the array.</p>
+        <div class="bhead"><span class="bid mono">UNI-03</span><h3 class="btitle">数据路径：从组件到买方</h3></div>
+        <p class="usewhen">数据如何离开阵列。</p>
         <div class="bbody">
-          <p>The chip measures temperature, voltage and current at the panel. A Bluetooth mesh propagates readings across the array to gateways, which publish a signed stream to the Sunified API. Because each reading is signed at the device, the record is tamper evident along its whole path. That is the difference between telemetry and evidence.</p>
-          <p>What sits on top: predictive maintenance and yield, insurance and financing at asset level, and the chain of custody record behind traceability and carbon claims. Panel level truth rather than inverter level aggregate is the point. Aggregate data cannot tell you which panel, and every downstream claim needs to know which panel.</p>
+          <p>芯片在组件端测量温度、电压和电流。蓝牙 Mesh 网络在阵列内传递读数至网关，网关再将已签名的数据流发布至 Sunified API。由于每一条读数都在设备端签名，这份记录在整条路径上都具备防篡改可验证性。这就是遥测数据与证据之间的区别。</p>
+          <p>在此之上可以叠加：预测性维护与发电量优化、资产级的保险与融资，以及支撑可追溯性和碳主张的监管链记录。关键在于组件级的真实数据，而不是逆变器级的汇总值。汇总数据无法告诉您是哪一块组件，而下游的每一项主张都需要知道是哪一块组件。</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏</span></div>
       </article>
 
       <article class="block" id="UNI-04" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">UNI-04</span><h3 class="btitle">The property rights argument</h3></div>
-        <p class="usewhen">For carbon credit, insurance and legal audiences. The differentiated argument, not the technical one.</p>
+        <div class="bhead"><span class="bid mono">UNI-04</span><h3 class="btitle">产权论据</h3></div>
+        <p class="usewhen">面向碳信用、保险和法律受众。这是差异化的论据，不是技术论据。</p>
         <div class="bbody">
-          <p>A century of chain of custody discipline is why oil is financed, insured and traded with confidence. The solar electron has none of it. Sunified's purpose is to make solar a trusted asset class for OEMs, producers, owners, financiers and insurers of decentralised solar and battery assets.</p>
-          <p>The consequence is legal, not only technical. Where generation and custody are attested at the device, a stolen or double counted carbon credit becomes <b>property theft rather than breach of contract</b>: prosecutable, insurable, and recoverable. A carbon credit is only as defensible as the metering behind it.</p>
+          <p>一个世纪的监管链纪律，是石油能够被有信心地融资、承保和交易的原因。光伏电子完全没有这套纪律。Sunified 的目标，是让光伏成为一个可信的资产类别，服务于分布式光伏与电池资产的 OEM、发电方、资产所有者、融资方和保险公司。</p>
+          <p>由此产生的后果是法律层面的，不只是技术层面的。当发电与保管在设备端被证明之后，被盗用或重复计算的碳信用就构成财产盗窃，而不再只是违约：可以起诉、可以承保、可以追回。一份碳信用的可辩护程度，取决于其背后的计量。</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
     </section>
 
@@ -587,20 +587,20 @@ body.mode-clock #bookBody{display:none}
 </div></div>
 
 <section class="cta"><div class="wrap">
-  <h2>Ten minutes to see if it fits. Thirty to go deep.</h2>
-  <p>We are looking for manufacturers in three lanes: solar module manufacture, battery and BESS pack assembly, and industrial or home energy gateways. If a board revision is opening in the next twelve months, that is the conversation worth having.</p>
-  <p>The short call is a fit check on mobile, WhatsApp or Hangout. The Zoom is the technical walk-through: silicon, data path, integration and where your BOM window sits.</p>
+  <h2>十分钟判断是否合适，三十分钟深入细节。</h2>
+  <p>我们正在三条产品线上寻找制造商：光伏组件制造、电池与储能系统（BESS）电池包组装、工业或家庭能源网关。如果您在未来十二个月内有板卡改版的窗口，那就是值得谈的时机。</p>
+  <p>十分钟的短通话用于判断是否契合，可以用手机、WhatsApp 或 Hangout。Zoom 通话则是技术走查：芯片、数据路径、集成方式，以及您的 BOM 窗口在什么位置。</p>
   <button class="btn" data-cal="https://calendly.com/lgv/30-zoom-call?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
-    data-cal-title="Book a 30-minute Zoom"
-    data-cal-note="Video and screen sharing, in LG&rsquo;s private room. For the technical walk-through: silicon, data path, integration and the board revision window.">
-    <svg class="ic btn-ic"><use href="#i-video"></use></svg>30-minute Zoom call with LGV</button>
-  <p class="cta-alt">Prefer to write first? <a href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">LG@sunified.com</a> &middot; both calls book through Calendly.com/lgv</p>
+    data-cal-title="预约 30 分钟 Zoom"
+    data-cal-note="视频与屏幕共享，在 LG 的专属会议室。用于技术走查：芯片、数据路径、集成方式，以及板卡改版窗口。">
+    <svg class="ic btn-ic"><use href="#i-video"></use></svg>与 LGV 进行 30 分钟 Zoom 通话</button>
+  <p class="cta-alt">更习惯先用邮件沟通？LG@sunified.com · 两种通话均通过 Calendly.com/lgv 预约 <a href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">LG@sunified.com</a></p>
 </div></section>
 
 <footer><div class="wrap">
-  Sunified Group B.V. · Joan Muyskenweg 22, 1096 CJ Amsterdam, Netherlands · KvK 82922713<br>
+  Sunified Group B.V. · Joan Muyskenweg 22, 1096 CJ Amsterdam, Netherlands · 荷兰商会注册号 KvK 82922713<br>
   <a href="https://sunified.com">sunified.com</a> · <a href="mailto:LG@sunified.com">LG@sunified.com</a> · +31 6 2844 6906<br>
-  Regulatory positions verified 3 September 2026 against the cited primary sources. Re-check before reuse after a Commission delegated act or an omnibus amendment. Nothing here is legal advice.
+  监管立场已于 2026 年 9 月 3 日对照所引一手法规核实。在欧盟委员会出台授权法案或综合修正案之后，重新使用前请再次核对。本页内容不构成法律意见。
 </div></footer>
 
 <script>
@@ -648,9 +648,9 @@ body.mode-clock #bookBody{display:none}
   // live countdown to the next gate, plus days-away under each stop
   var CD = [
     ['2026-09-11T00:00:00Z','CRA Art. 14 reporting'],
-    ['2027-02-18T00:00:00Z','EU Battery Passport'],
-    ['2027-08-18T00:00:00Z','Battery due diligence'],
-    ['2027-12-11T00:00:00Z','CRA full obligations'],
+    ['2027-02-18T00:00:00Z','欧盟电池护照'],
+    ['2027-08-18T00:00:00Z','电池尽职调查'],
+    ['2027-12-11T00:00:00Z','CRA 全面义务'],
     ['2028-01-01T00:00:00Z','CBAM downstream']
   ];
   var stops = document.querySelectorAll('.stop');
@@ -738,10 +738,10 @@ body.mode-clock #bookBody{display:none}
 
   // analogue countdown clock, opened from the flywheel
   var CK = [
-    ['2026-09-11T00:00:00Z','CRA Article 14 reporting','Actively exploited vulnerabilities and severe incidents go to ENISA. Early warning inside 24 hours, detail at 72.'],
-    ['2027-02-18T00:00:00Z','EU Battery Passport','Mandatory for EV, LMT and industrial batteries above 2 kWh. No passport, no placing on the market.'],
-    ['2027-08-18T00:00:00Z','Battery due diligence','Supply chain due diligence, deferred from 2025 by Regulation (EU) 2025/1561.'],
-    ['2027-12-11T00:00:00Z','CRA full obligations','Essential requirements and conformity assessment for all products with digital elements.'],
+    ['2026-09-11T00:00:00Z','CRA 第 14 条报告义务','Actively exploited vulnerabilities and severe incidents go to ENISA. Early warning inside 24 hours, detail at 72.'],
+    ['2027-02-18T00:00:00Z','欧盟电池护照','适用于 2 kWh 以上的电动汽车、轻型交通工具及工业电池。没有护照，就不能投放市场。'],
+    ['2027-08-18T00:00:00Z','电池尽职调查','Supply chain due diligence, deferred from 2025 by Regulation (EU) 2025/1561.'],
+    ['2027-12-11T00:00:00Z','CRA 全面义务','Essential requirements and conformity assessment for all products with digital elements.'],
     ['2028-01-01T00:00:00Z','CBAM downstream','Scope widens. What lands in the final list is still being negotiated.']
   ];
   var CK_FROM = new Date('2026-01-01T00:00:00Z').getTime();
@@ -835,7 +835,7 @@ body.mode-clock #bookBody{display:none}
       svg.innerHTML =
         renderRow(dTxt, x1, 11, p1, r1, '#D7FD00') +
         '<text x="125" y="69" text-anchor="middle" font-family="JetBrains Mono, monospace" ' +
-        'font-size="6.5" fill="#6E8F94" letter-spacing="1.9">DAYS REMAINING</text>' +
+        'font-size="6.5" fill="#6E8F94" letter-spacing="1.9">剩余天数</text>' +
         renderRow(tTxt, x2, 78, p2, r2, '#FFAA00');
     }
 
@@ -854,8 +854,8 @@ body.mode-clock #bookBody{display:none}
                          document.body.classList.contains('mode-clock');
       if (alreadyClock) { closePanel(); return; }
       document.body.classList.add('mode-clock');
-      if (titleEl) { titleEl.textContent = 'Countdown to the next gate'; }
-      if (noteEl) { noteEl.textContent = 'Every one of these is a market access condition, not a guideline. Pick a date to run the clock against it.'; }
+      if (titleEl) { titleEl.textContent = '距离下一个节点'; }
+      if (noteEl) { noteEl.textContent = '以下每一项都是市场准入条件，不是指导建议。选择一个日期开始计时。'; }
       document.body.classList.add('split');
       panel.setAttribute('aria-hidden','false');
       drawClock();
