@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunified — Compliance is the sales instrument</title>
+<meta name="description" content="Four EU instruments land between September 2026 and 2028. None can be satisfied by a certificate at the border. Each asks for data originated at the device. What that means for solar, BESS and gateway manufacturers selling into Europe.">
+<link rel="canonical" href="https://oem.sunified.ai/">
+<meta property="og:title" content="Compliance is the sales instrument, not the cost line">
+<meta property="og:description" content="NIS2, the Cyber Resilience Act, the EU Battery Passport and product-level carbon. What each one requires, when, and why it needs silicon in the product.">
+<meta property="og:url" content="https://oem.sunified.ai/">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex, nofollow">
+<!-- Privacy-friendly analytics by Plausible -->
+<script async src="https://plausible.io/js/pa-wS96lrdQdvT2DBOVibEQ5.js"></script>
+<script>
+  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+  plausible.init()
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#001E28;--bg2:#003E52;--card:#0A4254;--teal:#19D3C5;--teald:#0e3a4d;
+  --gold:#FFAA00;--cream:#FCF8EA;--mute:#8FA8B0;--line:rgba(252,248,234,.10);
+  --green:#D7FD00;--grey:#5C7A84;--flag:#FF7A59;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--cream);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.mono{font-family:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(25,211,197,.32)}
+a:hover{border-bottom-color:var(--teal)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(0,30,40,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd{display:flex;align-items:center;justify-content:space-between;height:60px;gap:18px}
+.wm{font-weight:800;letter-spacing:5px;color:var(--gold);font-size:19px;border:0}
+.hd .tag{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute)}
+
+/* hero */
+.hero{padding:66px 0 44px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--bg) 0%,#002532 100%)}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+h1{font-size:clamp(30px,5vw,52px);line-height:1.05;letter-spacing:-.025em;font-weight:800;max-width:18ch;text-wrap:balance;margin-bottom:22px}
+h1 em{font-style:normal;color:var(--teal)}
+.thesis{max-width:64ch;font-size:17px;line-height:1.62;color:var(--cream);opacity:.88}
+.thesis b{color:var(--gold);font-weight:600}
+
+/* clock */
+.clock{padding:46px 0 10px}
+.klabel{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin-bottom:16px}
+.kline{border-top:2px solid var(--teald)}
+.stops{display:grid;grid-template-columns:repeat(auto-fit,minmax(178px,1fr))}
+.stop{border-left:2px solid var(--teald);margin-top:-2px;padding:16px 18px 22px 15px}
+.stop:first-child{border-left-color:var(--gold)}
+.stop.soon{border-left-color:var(--flag)}
+.stop .d{font-size:12.5px;font-weight:600;letter-spacing:.03em;color:var(--gold)}
+.stop.soon .d{color:var(--flag)}
+.stop .t{font-weight:700;font-size:15px;margin:6px 0 4px;line-height:1.25}
+.stop .n{font-size:13px;color:var(--mute);line-height:1.5}
+
+/* shell */
+.shell{display:grid;grid-template-columns:222px 1fr;gap:46px;align-items:start;padding:30px 0 90px}
+@media (max-width:920px){.shell{grid-template-columns:1fr;gap:26px}}
+.rail{position:sticky;top:82px}
+@media (max-width:920px){.rail{position:static}}
+.rlabel{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mute);margin:0 0 10px}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:26px}
+.filters button{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;background:transparent;color:var(--mute);border:1px solid var(--teald);padding:6px 11px;cursor:pointer;border-radius:3px}
+.filters button:hover{color:var(--teal);border-color:var(--teal)}
+.filters button[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:#00232E;font-weight:600}
+.toc{list-style:none;font-size:13px}
+.toc li{margin-bottom:2px}
+.toc a{display:flex;gap:9px;color:var(--mute);border:0;padding:3px 0;line-height:1.35}
+.toc a:hover{color:var(--teal)}
+.toc .id{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--grey);flex:0 0 46px;padding-top:1px}
+.toc .grp{font-family:"JetBrains Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);margin:20px 0 8px;padding-top:14px;border-top:1px solid var(--line)}
+.toc .grp:first-child{margin-top:0;padding-top:0;border-top:0}
+
+/* sections */
+.sec{margin-bottom:54px;scroll-margin-top:78px}
+.sechead{display:flex;align-items:baseline;gap:13px;border-bottom:2px solid var(--teal);padding-bottom:9px;flex-wrap:wrap}
+.sechead .ltr{font-family:"JetBrains Mono",monospace;font-weight:600;font-size:12px;color:var(--gold);letter-spacing:.12em}
+.sechead h2{font-size:22px;font-weight:700;letter-spacing:-.015em;flex:1 1 auto}
+.secnote{font-size:14px;color:var(--mute);margin:13px 0 24px;max-width:70ch}
+
+/* block */
+.block{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--teald);padding:21px 23px 18px;margin-bottom:14px;border-radius:3px;scroll-margin-top:78px}
+.bhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:5px}
+.bid{font-family:"JetBrains Mono",monospace;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.07em;flex:0 0 auto}
+.btitle{font-size:17.5px;font-weight:700;letter-spacing:-.012em;flex:1 1 220px;line-height:1.28}
+.usewhen{font-size:12.5px;color:var(--grey);margin-bottom:13px}
+.bbody{font-size:14.5px;line-height:1.66;max-width:74ch;color:var(--cream);opacity:.94}
+.bbody p{margin-bottom:11px}
+.bbody p:last-child{margin-bottom:0}
+.bbody ul{margin-bottom:11px;padding-left:20px}
+.bbody li{margin-bottom:6px}
+.bbody b{color:var(--gold);font-weight:600}
+.cite{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--mute)}
+.flag{font-family:"JetBrains Mono",monospace;font-weight:600;color:var(--flag)}
+.bfoot{display:flex;align-items:center;gap:11px;margin-top:15px;padding-top:12px;border-top:1px solid var(--line);flex-wrap:wrap}
+.copy{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.05em;background:transparent;border:1px solid var(--teald);color:var(--mute);padding:6px 12px;cursor:pointer;border-radius:3px}
+.copy:hover{border-color:var(--teal);color:var(--teal)}
+.copy.done{background:var(--green);border-color:var(--green);color:#00232E;font-weight:600}
+.lanes{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--grey);letter-spacing:.09em;text-transform:uppercase}
+
+/* link block */
+.srcbar{border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--teald);padding:19px 22px;border-radius:3px;margin-bottom:14px}
+.srcbar h3{font-size:14.5px;font-weight:700;margin-bottom:11px}
+.srcbar ul{padding-left:19px;columns:2;column-gap:34px;font-size:13.5px}
+@media (max-width:780px){.srcbar ul{columns:1}}
+.srcbar li{margin-bottom:7px;break-inside:avoid;color:var(--mute)}
+
+/* cta + footer */
+.cta{border-top:1px solid var(--line);padding:52px 0;text-align:left}
+.cta h2{font-size:26px;font-weight:800;letter-spacing:-.02em;margin-bottom:12px;max-width:22ch}
+.cta p{color:var(--mute);max-width:60ch;margin-bottom:22px;font-size:15.5px}
+.btn{display:inline-block;background:var(--gold);color:#00232E;font-weight:700;font-size:15px;padding:13px 26px;border-radius:3px;border:0;letter-spacing:.01em}
+.btn:hover{background:var(--green)}
+footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;color:var(--grey);line-height:1.7}
+.hidden{display:none!important}
+</style>
+</head>
+<body>
+
+<header><div class="wrap hd">
+  <a href="/" class="wm">SUNIFIED</a>
+  <span class="tag mono">OEM Briefing · September 2026</span>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <p class="eyebrow mono">Solar · Battery · Gateways · Market access to Europe</p>
+  <h1>Compliance is the <em>sales instrument</em>, not the cost line.</h1>
+  <p class="thesis">Four EU instruments land between this month and 2028, and together they change what a manufacturer is allowed to sell into Europe. None of them can be satisfied by a certificate at the border. Each one asks for <b>data that had to be originated at the device and cannot be reconstructed afterwards</b>. That is a problem for every manufacturer without silicon inside the product, and an advantage for the first ones that have it.</p>
+</div></section>
+
+<section class="clock"><div class="wrap">
+  <p class="klabel mono">The clock, in order of arrival</p>
+  <div class="kline"></div>
+  <div class="stops">
+    <div class="stop soon">
+      <div class="d mono">11 SEP 2026</div>
+      <div class="t">CRA Article 14 reporting</div>
+      <div class="n">Manufacturers must report actively exploited vulnerabilities and severe incidents to ENISA. Live in days, not years.</div>
+    </div>
+    <div class="stop">
+      <div class="d mono">18 FEB 2027</div>
+      <div class="t">EU Battery Passport</div>
+      <div class="n">Mandatory for EV, LMT and industrial batteries above 2 kWh. No passport, no placing on the market.</div>
+    </div>
+    <div class="stop">
+      <div class="d mono">18 AUG 2027</div>
+      <div class="t">Battery due diligence</div>
+      <div class="n">Supply chain due diligence obligations, deferred from 2025 by Reg. (EU) 2025/1561.</div>
+    </div>
+    <div class="stop">
+      <div class="d mono">11 DEC 2027</div>
+      <div class="t">CRA full obligations</div>
+      <div class="n">Essential cybersecurity requirements and conformity assessment for all products with digital elements.</div>
+    </div>
+    <div class="stop">
+      <div class="d mono">1 JAN 2028</div>
+      <div class="t">CBAM downstream</div>
+      <div class="n">Proposed extension to about 180 steel and aluminium intensive goods. Mounting systems and frames, not modules.</div>
+    </div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="shell">
+
+  <aside class="rail">
+    <p class="rlabel mono">Filter by lane</p>
+    <div class="filters" id="filters">
+      <button data-lane="all" aria-pressed="true">All</button>
+      <button data-lane="solar" aria-pressed="false">Solar</button>
+      <button data-lane="bess" aria-pressed="false">BESS</button>
+      <button data-lane="gateway" aria-pressed="false">Gateway</button>
+    </div>
+    <p class="rlabel mono">Contents</p>
+    <ul class="toc" id="toc"></ul>
+  </aside>
+
+  <main>
+
+    <section class="sec" id="sec-a">
+      <div class="sechead"><span class="ltr mono">A</span><h2>The regulatory argument</h2></div>
+      <p class="secnote">Eight sections, each self-contained. Read one, read all eight, none depends on another. Every claim carries its instrument so you can verify it without asking us.</p>
+
+      <article class="block" id="EU-01" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">EU-01</span><h3 class="btitle">NIS2, or why your customer's customer is asking</h3></div>
+        <p class="usewhen">Read this if a European integrator has suddenly sent you a security questionnaire.</p>
+        <div class="bbody">
+          <p>The NIS2 Directive treats electricity as an essential sector. Utilities, DSOs and large integrators inside the EU are legally obliged to manage cybersecurity risk <b>across their supply chain</b>, which they discharge by pushing requirements down their contracts to component suppliers. Most manufacturers outside Europe meet NIS2 not as a filing obligation of their own, but as a procurement wall: the questionnaire that arrives before the purchase order, and the clause that follows it.</p>
+          <p>Incident reporting runs on a tight clock, with an early warning due within 24 hours of a significant incident. A supplier who cannot support that timeline is a supplier the integrator has to explain to its regulator.</p>
+          <p class="cite">Directive (EU) 2022/2555 · <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS · Gateway</span></div>
+      </article>
+
+      <article class="block" id="EU-02" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">EU-02</span><h3 class="btitle">Cyber Resilience Act, the one that binds the manufacturer directly</h3></div>
+        <p class="usewhen">Read this if you ship any connected product: inverter, gateway, BMS, monitoring board.</p>
+        <div class="bbody">
+          <p>NIS2 lands on the operator. The CRA lands on <b>you</b>. Any product with digital elements placed on the EU market carries obligations on the manufacturer: secure by default configuration, vulnerability handling for the support period, a software bill of materials, and CE marking backed by conformity assessment.</p>
+          <p>Two dates matter. <span class="flag">11 September 2026</span>, when Article 14 reporting begins: actively exploited vulnerabilities and severe incidents must be notified to ENISA and the relevant CSIRT, with an early warning inside 24 hours. <span class="flag">11 December 2027</span>, when the full essential requirements and conformity assessment apply.</p>
+          <p>The practical consequence for a hardware maker is that a coordinated vulnerability disclosure policy and a named security contact stop being good practice and become an entry condition.</p>
+          <p class="cite">Regulation (EU) 2024/2847 · <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+      </article>
+
+      <article class="block" id="EU-03" data-lane="all solar gateway">
+        <div class="bhead"><span class="bid mono">EU-03</span><h3 class="btitle">Network Code on Cybersecurity, where inverter fleets get caught</h3></div>
+        <p class="usewhen">Read this if your devices are aggregated: DER portfolios, VPPs, fleet managed inverters.</p>
+        <div class="bbody">
+          <p>Beyond the horizontal rules there is a sector specific network code for the cybersecurity of cross border electricity flows. It matters to hardware makers because it is the instrument that reaches <b>aggregated fleets</b>, thousands of small devices under one control channel, rather than only large plant. If your gateway or inverter can be commanded remotely at scale, it sits inside a risk perimeter someone is now formally required to assess.</p>
+          <p class="cite">Commission Delegated Regulation (EU) 2024/1366 · <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · Gateway</span></div>
+      </article>
+
+      <article class="block" id="EU-04" data-lane="all solar gateway">
+        <div class="bhead"><span class="bid mono">EU-04</span><h3 class="btitle">The industry's own position</h3></div>
+        <p class="usewhen">The best single document to read if this looks like a European bureaucrat's idea.</p>
+        <div class="bbody">
+          <p>This is not regulators pushing against industry. In July 2024 SolarPower Europe published its own position calling for a harmonised cybersecurity baseline for solar PV: stronger governance under NIS2, product security through the CRA, <b>a dedicated standard for distributed energy resources</b>, operational PV data held within the EU or equivalent security jurisdictions, and an EU level monitoring layer for manufacturer coordinated devices such as inverters.</p>
+          <p>Read it as a forecast. Where the trade body asks for a baseline, a baseline arrives.</p>
+          <p class="cite"><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">Position paper</a> · <a href="https://api.solarpowereurope.org/uploads/Solar_Power_Europe_2024_A_harmonised_cybersecurity_baseline_for_solar_PV_cbfbbd0f1b.pdf">PDF, 11 July 2024</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · Gateway</span></div>
+      </article>
+
+      <article class="block" id="EU-05" data-lane="all bess">
+        <div class="bhead"><span class="bid mono">EU-05</span><h3 class="btitle">Battery Passport, the hard gate at 18 February 2027</h3></div>
+        <p class="usewhen">Read this first if you assemble battery or BESS packs.</p>
+        <div class="bbody">
+          <p>From <span class="flag">18 February 2027</span>, every EV, LMT and industrial battery above 2 kWh placed on the EU market must carry a digital battery passport, reachable by a QR code on the battery itself. The passport holds a unique identifier, model and technical characteristics, carbon footprint specific to the manufacturing site and batch, and performance and durability data, with tiered access for the public, regulators and end of life processors.</p>
+          <p>A carbon footprint declaration obligation already sits alongside it, and due diligence obligations follow on <span class="flag">18 August 2027</span>, deferred from 2025 by Regulation (EU) 2025/1561.</p>
+          <p>The commercial point is not the passport. It is that <b>batch level carbon and lifecycle data has to exist before the pack leaves the line</b>. Reconstructing it from ERP records afterwards is what auditors are built to find.</p>
+          <p class="cite">Regulation (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">BESS</span></div>
+      </article>
+
+      <article class="block" id="EU-06" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">EU-06</span><h3 class="btitle">ESPR, the passport model spreading beyond batteries</h3></div>
+        <p class="usewhen">Read this if you make modules and think batteries are somebody else's problem.</p>
+        <div class="bbody">
+          <p>The Ecodesign for Sustainable Products Regulation is the framework that generalises the battery passport into a Digital Product Passport for other product groups, set by delegated acts over the coming years. It is the instrument to watch for photovoltaics: it carries product level carbon, durability, repairability and recycled content requirements, and it amends the Battery Regulation directly.</p>
+          <p>Nothing binds solar modules under ESPR today. The exposure is that the mechanism now exists and has been proven on batteries first.</p>
+          <p class="cite">Regulation (EU) 2024/1781 · <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">eur-lex.europa.eu/eli/reg/2024/1781/oj</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+      </article>
+
+      <article class="block" id="EU-07" data-lane="all solar">
+        <div class="bhead"><span class="bid mono">EU-07</span><h3 class="btitle">Solar Stewardship Initiative, the audit regime buyers already use</h3></div>
+        <p class="usewhen">Read this if you sell modules into European utility scale tenders.</p>
+        <div class="bbody">
+          <p>Ahead of any binding regulation, European developers, buyers and financiers have converged on the Solar Stewardship Initiative's ESG and <b>Supply Chain Traceability</b> Standards as the evidence they will accept. Traceability here means documented chain of custody from polysilicon through wafer, cell and module, the thing most supply chains cannot demonstrate because the record was never bound to the physical unit.</p>
+          <p>This one is voluntary, and it is the one already appearing in tender conditions. It is where a manufacturer can differentiate this year rather than in 2028.</p>
+          <p class="cite"><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">solarstewardshipinitiative.org, Supply Chain Traceability Standard</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar</span></div>
+      </article>
+
+      <article class="block" id="EU-08" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">EU-08</span><h3 class="btitle">CBAM, stated precisely</h3></div>
+        <p class="usewhen">Read this before anyone tells you the carbon border tax applies to your panels.</p>
+        <div class="bbody">
+          <p>CBAM entered its definitive phase on <span class="flag">1 January 2026</span>. Its scope is cement, iron and steel, aluminium, fertilisers, electricity and hydrogen. <b>Solar modules and batteries are not in scope.</b></p>
+          <p>The Commission's December 2025 proposal would extend CBAM from 2028 to roughly 180 downstream goods averaging around 79% steel or aluminium content: fabricated metals, machinery, vehicle components, appliances. For a solar manufacturer the realistic exposure there is <b>mounting systems, frames and trackers</b>, not the module.</p>
+          <p>So the honest framing is this. CBAM is not your gate today. It establishes the principle that embodied carbon determines market access, and ESPR is the instrument likely to apply that principle to your product.</p>
+          <p class="cite"><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">taxation-customs.ec.europa.eu, CBAM</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+      </article>
+
+      <div class="srcbar">
+        <h3>The primary sources, in one place</h3>
+        <ul>
+          <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">NIS2, Directive (EU) 2022/2555</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">Cyber Resilience Act, Reg. (EU) 2024/2847</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">Network Code on Cybersecurity, Reg. (EU) 2024/1366</a></li>
+          <li><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">SolarPower Europe, cyber baseline for solar PV</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">Battery Regulation, Reg. (EU) 2023/1542</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">ESPR, Reg. (EU) 2024/1781</a></li>
+          <li><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">Solar Stewardship Initiative, traceability</a></li>
+          <li><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">CBAM, European Commission</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="sec" id="sec-b">
+      <div class="sechead"><span class="ltr mono">B</span><h2>How we work with manufacturers</h2></div>
+      <p class="secnote">Two sections: what the commercial arrangement is, and a paragraph you can forward to a colleague without rewriting it.</p>
+
+      <article class="block" id="GTM-02" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">GTM-02</span><h3 class="btitle">The engagement model, in one paragraph</h3></div>
+        <p class="usewhen">What it costs, and where the money actually comes from.</p>
+        <div class="bbody">
+          <p>Our model is deliberately simple. The UNITY chip goes into the manufacturer's bill of materials at cost recovery. We do not make margin on silicon. Revenue is shared on the data and API subscription that the verified stream generates over the asset's life, paid by the parties who need the data: insurers, financiers, asset owners and traders. Sunified brings the European demand side, the manufacturer brings manufacture. The manufacturer gains a compliance and financing position that cannot be bought as a service, because the data has to be originated in the factory.</p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+      </article>
+
+      <article class="block" id="GTM-03" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">GTM-03</span><h3 class="btitle">Forward this to a colleague</h3></div>
+        <p class="usewhen">Written so that passing it on costs you nothing.</p>
+        <div class="bbody">
+          <p>Sunified is an Amsterdam company that puts a secure chip inside solar panels and battery packs so that generation, identity and carbon data are captured cryptographically at the device rather than reconstructed from spreadsheets later. They are looking for manufacturers who want a position in Europe as the Battery Passport, the Cyber Resilience Act and product level carbon rules come into force between 2026 and 2028. The chip goes into the manufacturer's BOM at cost recovery; Sunified brings the European buyers, insurers and financiers who need the verified data. Founder is Leon Gerard Vandenberg, who lived and worked in Shenzhen and is on European time. Worth twenty minutes.</p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+      </article>
+    </section>
+
+    <section class="sec" id="sec-c">
+      <div class="sechead"><span class="ltr mono">C</span><h2>What UNITY actually is</h2></div>
+      <p class="secnote">From the sentence that describes it, to the detail a hardware engineer asks for third.</p>
+
+      <article class="block" id="UNI-01" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">UNI-01</span><h3 class="btitle">The short description</h3></div>
+        <p class="usewhen">Start here.</p>
+        <div class="bbody">
+          <p>Sunified's UNITY sensor sits inside the panel, the battery pack or the gateway and captures cryptographic proof of energy generation and device identity at source. Every electron creating a byte of data. It produces genesis data: hi-fidelity, panel level, secure, trusted and verified, from the factory floor through deployment to recycling. One verified data source, several compounding revenue streams built on top of it.</p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+      </article>
+
+      <article class="block" id="UNI-02" data-lane="all bess gateway">
+        <div class="bhead"><span class="bid mono">UNI-02</span><h3 class="btitle">Silicon and security posture</h3></div>
+        <p class="usewhen">For the hardware or security engineer.</p>
+        <div class="bbody">
+          <p>UNITY is built on a Silicon Labs EFR32MG24B with Secure Vault High, providing a hardware root of trust, secure key storage and secure boot. That is the foundation a CRA conformity claim rests on, and the assurance a NIS2 obligated integrator needs to see in a supplier. The secure element holds <b>SESIP Level 3</b>. IEC 62443 alignment runs through our integration partner.</p>
+          <p>Deployed as an option board today, with a path to main board integration. Sunified is the firmware author and, under the CRA, a manufacturer in its own right, which means the reporting and vulnerability handling obligations sit with us for our part of the stack rather than with the OEM.</p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">BESS · Gateway</span></div>
+      </article>
+
+      <article class="block" id="UNI-03" data-lane="all solar">
+        <div class="bhead"><span class="bid mono">UNI-03</span><h3 class="btitle">Data path, panel to buyer</h3></div>
+        <p class="usewhen">How the data leaves the array.</p>
+        <div class="bbody">
+          <p>The chip measures temperature, voltage and current at the panel. A Bluetooth mesh propagates readings across the array to gateways, which publish a signed stream to the Sunified API. Because each reading is signed at the device, the record is tamper evident along its whole path. That is the difference between telemetry and evidence.</p>
+          <p>What sits on top: predictive maintenance and yield, insurance and financing at asset level, and the chain of custody record behind traceability and carbon claims. Panel level truth rather than inverter level aggregate is the point. Aggregate data cannot tell you which panel, and every downstream claim needs to know which panel.</p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar</span></div>
+      </article>
+
+      <article class="block" id="UNI-04" data-lane="all solar bess gateway">
+        <div class="bhead"><span class="bid mono">UNI-04</span><h3 class="btitle">The property rights argument</h3></div>
+        <p class="usewhen">For carbon credit, insurance and legal audiences. The differentiated argument, not the technical one.</p>
+        <div class="bbody">
+          <p>A century of chain of custody discipline is why oil is financed, insured and traded with confidence. The solar electron has none of it. Sunified's purpose is to make solar a trusted asset class for OEMs, producers, owners, financiers and insurers of decentralised solar and battery assets.</p>
+          <p>The consequence is legal, not only technical. Where generation and custody are attested at the device, a stolen or double counted carbon credit becomes <b>property theft rather than breach of contract</b>: prosecutable, insurable, and recoverable. A carbon credit is only as defensible as the metering behind it.</p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+      </article>
+    </section>
+
+  </main>
+</div></div>
+
+<section class="cta"><div class="wrap">
+  <h2>Twenty minutes, on your clock.</h2>
+  <p>We are looking for manufacturers in three lanes: solar module manufacture, battery and BESS pack assembly, and industrial or home energy gateways. If a board revision is opening in the next twelve months, that is the conversation worth having.</p>
+  <a class="btn" href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">Email LG@sunified.com</a>
+</div></section>
+
+<footer><div class="wrap">
+  Sunified Group B.V. · Joan Muyskenweg 22, 1096 CJ Amsterdam, Netherlands · KvK 82922713<br>
+  <a href="https://sunified.com">sunified.com</a> · <a href="mailto:LG@sunified.com">LG@sunified.com</a> · +31 6 2844 6906<br>
+  Regulatory positions verified 3 September 2026 against the cited primary sources. Re-check before reuse after a Commission delegated act or an omnibus amendment. Nothing here is legal advice.
+</div></footer>
+
+<script>
+(function(){
+  var toc = document.getElementById('toc');
+  var groups = [
+    {sel:'#sec-a', label:'A · Regulation'},
+    {sel:'#sec-b', label:'B · Engagement'},
+    {sel:'#sec-c', label:'C · Product'}
+  ];
+  groups.forEach(function(g){
+    var head = document.createElement('li');
+    head.className = 'grp';
+    head.textContent = g.label;
+    toc.appendChild(head);
+    document.querySelectorAll(g.sel + ' .block').forEach(function(b){
+      var li = document.createElement('li');
+      li.setAttribute('data-lane', b.getAttribute('data-lane'));
+      var a = document.createElement('a');
+      a.href = '#' + b.id;
+      var id = document.createElement('span');
+      id.className = 'id mono';
+      id.textContent = b.id;
+      var t = document.createElement('span');
+      t.textContent = b.querySelector('.btitle').textContent;
+      a.appendChild(id); a.appendChild(t);
+      li.appendChild(a);
+      toc.appendChild(li);
+    });
+  });
+
+  var buttons = document.querySelectorAll('#filters button');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var lane = btn.getAttribute('data-lane');
+      buttons.forEach(function(b){ b.setAttribute('aria-pressed', String(b === btn)); });
+      document.querySelectorAll('.block, .toc li[data-lane]').forEach(function(el){
+        var lanes = (el.getAttribute('data-lane') || '').split(/\s+/);
+        el.classList.toggle('hidden', lane !== 'all' && lanes.indexOf(lane) === -1);
+      });
+      if (window.plausible) { window.plausible('Lane filter', {props:{lane:lane}}); }
+    });
+  });
+
+  document.querySelectorAll('.copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var block = btn.closest('.block');
+      var title = block.querySelector('.btitle').textContent.trim();
+      var parts = [];
+      block.querySelectorAll('.bbody p, .bbody li').forEach(function(n){
+        var txt = n.textContent.replace(/\s+/g,' ').trim();
+        if (txt) parts.push(n.tagName === 'LI' ? '• ' + txt : txt);
+      });
+      var text = title + '\n\n' + parts.join('\n\n') + '\n\nSource: https://oem.sunified.ai/#' + block.id;
+      var done = function(){
+        btn.textContent = 'Copied';
+        btn.classList.add('done');
+        if (window.plausible) { window.plausible('Copy block', {props:{block:block.id}}); }
+        setTimeout(function(){ btn.textContent = 'Copy text'; btn.classList.remove('done'); }, 1600);
+      };
+      try {
+        navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
+      } catch (e) { fallback(text, done); }
+    });
+  });
+
+  function fallback(text, done){
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+})();
+</script>
+</body></html>
