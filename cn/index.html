@@ -19,7 +19,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="alternate" hreflang="zh-Hans" href="https://oem.sunified.ai/cn/">
 <link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
-<link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -314,8 +313,7 @@ body.mode-clock #bookBody{display:none}
 
 <header><div class="wrap hd">
   <a href="/" class="wm">SUNIFIED</a>
-  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a></span><span class="langsw"><a href="/" aria-current="true">EN</a><a href="/cn/">中文</a></span>
-    <span class="tag mono">OEM 简报 · 2026 年 9 月</span>
+  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a></span><span class="tag mono">OEM 简报 · 2026 年 9 月</span>
     <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel"
       data-cal="https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
       data-cal-title="预约 10 分钟通话"
@@ -613,9 +611,9 @@ body.mode-clock #bookBody{display:none}
 (function(){
   var toc = document.getElementById('toc');
   var groups = [
-    {sel:'#sec-a', label:'A · Regulation'},
-    {sel:'#sec-b', label:'B · Engagement'},
-    {sel:'#sec-c', label:'C · Product'}
+    {sel:'#sec-a', label:'A · 法规'},
+    {sel:'#sec-b', label:'B · 合作'},
+    {sel:'#sec-c', label:'C · 产品'}
   ];
   groups.forEach(function(g){
     var head = document.createElement('li');
