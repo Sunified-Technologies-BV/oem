@@ -17,8 +17,9 @@
   plausible.init()
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="alternate" hreflang="zh-Hans" href="https://oem.sunified.ai/cn/">
 <link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
+<link rel="alternate" hreflang="zh-Hans" href="https://oem.sunified.ai/cn/">
+<link rel="alternate" hreflang="ko" href="https://oem.sunified.ai/kr/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -30,7 +31,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--cream);font-family:"Inter","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;text-spacing-trim:trim-start;overflow-x:hidden}
+body{background:var(--bg);color:var(--cream);font-family:"Inter","Noto Sans SC","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .mono{font-family:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(25,211,197,.32)}
@@ -267,12 +268,6 @@ body.mode-clock #bookBody{display:none}
 .langsw a[aria-current="true"]{background:var(--gold);color:#00232E;font-weight:600}
 .langsw a:hover:not([aria-current="true"]){color:var(--cream);background:var(--raised)}
 @media (max-width:560px){.hd-right .tag{display:none}}
-.langsw{display:inline-flex;border:1px solid var(--teald);border-radius:3px;overflow:hidden;
-  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em}
-.langsw a{padding:5px 10px;color:var(--mute);border:0;text-decoration:none}
-.langsw a[aria-current="true"]{background:var(--gold);color:#00232E;font-weight:600}
-.langsw a:hover:not([aria-current="true"]){color:var(--cream);background:var(--raised)}
-@media (max-width:560px){.hd-right .tag{display:none}}
 .hidden{display:none!important}
 </style>
 </head>
@@ -313,7 +308,8 @@ body.mode-clock #bookBody{display:none}
 
 <header><div class="wrap hd">
   <a href="/" class="wm">SUNIFIED</a>
-  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a></span><span class="tag mono">OEM 简报 · 2026 年 9 月</span>
+  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a><a href="/kr/">한국어</a></span>
+    <span class="tag mono">OEM 简报 · 2026 年 9 月</span>
     <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel"
       data-cal="https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
       data-cal-title="预约 10 分钟通话"
@@ -365,27 +361,27 @@ body.mode-clock #bookBody{display:none}
   <div class="kline"></div>
   <div class="stops">
     <div class="stop soon">
-      <div class="d mono">2026 年 9月 11 日</div>
+      <div class="d mono">11 SEP 2026</div>
       <div class="t">CRA 第 14 条报告义务</div>
       <div class="n">制造商须向 ENISA 报告已被实际利用的漏洞和严重事件。倒计时以天计，不是以年计。</div>
     </div>
     <div class="stop">
-      <div class="d mono">2027 年 2月 18 日</div>
+      <div class="d mono">18 FEB 2027</div>
       <div class="t">欧盟电池护照</div>
       <div class="n">适用于 2 kWh 以上的电动汽车、轻型交通工具及工业电池。没有护照，就不能投放市场。</div>
     </div>
     <div class="stop">
-      <div class="d mono">2027 年 8月 18 日</div>
+      <div class="d mono">18 AUG 2027</div>
       <div class="t">电池尽职调查</div>
       <div class="n">供应链尽职调查义务，依据法规 (EU) 2025/1561 自 2025 年推迟至此。</div>
     </div>
     <div class="stop">
-      <div class="d mono">2027 年 12月 11 日</div>
+      <div class="d mono">11 DEC 2027</div>
       <div class="t">CRA 全面义务</div>
       <div class="n">所有含数字元素产品的基本网络安全要求与合格评定。</div>
     </div>
     <div class="stop">
-      <div class="d mono">2028 年 1月 1 日</div>
+      <div class="d mono">1 JAN 2028</div>
       <div class="t">CBAM 下游扩围</div>
       <div class="n">拟扩展至约 180 类钢铝密集型商品。涉及支架系统与边框，不含组件本身。</div>
     </div>
@@ -742,11 +738,11 @@ body.mode-clock #bookBody{display:none}
 
   // analogue countdown clock, opened from the flywheel
   var CK = [
-    ['2026-09-11T00:00:00Z','CRA 第 14 条报告义务','已被实际利用的漏洞和严重事件须通报 ENISA。24 小时内发出早期预警，72 小时内提交详情。'],
+    ['2026-09-11T00:00:00Z','CRA 第 14 条报告义务','Actively exploited vulnerabilities and severe incidents go to ENISA. Early warning inside 24 hours, detail at 72.'],
     ['2027-02-18T00:00:00Z','欧盟电池护照','适用于 2 kWh 以上的电动汽车、轻型交通工具及工业电池。没有护照，就不能投放市场。'],
-    ['2027-08-18T00:00:00Z','电池尽职调查','供应链尽职调查，依据法规 (EU) 2025/1561 自 2025 年推迟至此。'],
-    ['2027-12-11T00:00:00Z','CRA 全面义务','所有含数字元素产品的基本要求与合格评定。'],
-    ['2028-01-01T00:00:00Z','CBAM 下游扩围','覆盖范围扩大。最终清单内容仍在谈判中。']
+    ['2027-08-18T00:00:00Z','电池尽职调查','Supply chain due diligence, deferred from 2025 by Regulation (EU) 2025/1561.'],
+    ['2027-12-11T00:00:00Z','CRA 全面义务','Essential requirements and conformity assessment for all products with digital elements.'],
+    ['2028-01-01T00:00:00Z','CBAM 下游扩围','Scope widens. What lands in the final list is still being negotiated.']
   ];
   var CK_FROM = new Date('2026-01-01T00:00:00Z').getTime();
   var ckIdx = 0;

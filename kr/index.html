@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="ko"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sunified — Compliance is the sales instrument</title>
+<title>Sunified — 규제 준수는 비용이 아니라 영업 도구입니다</title>
 <meta name="description" content="Four EU instruments land between September 2026 and 2028. None can be satisfied by a certificate at the border. Each asks for data originated at the device. What that means for solar, BESS and gateway manufacturers selling into Europe.">
 <link rel="canonical" href="https://oem.sunified.ai/">
 <meta property="og:title" content="Compliance is the sales instrument, not the cost line">
-<meta property="og:description" content="NIS2, the Cyber Resilience Act, the EU Battery Passport and product-level carbon. What each one requires, when, and why it needs silicon in the product.">
+<meta property="og:description" content="NIS2, the Cyber Resilience Act, the EU 배터리 여권 and product-level carbon. What each one requires, when, and why it needs silicon in the product.">
 <meta property="og:url" content="https://oem.sunified.ai/">
 <meta property="og:type" content="website">
 <meta name="robots" content="noindex, nofollow">
@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
 <link rel="alternate" hreflang="zh-Hans" href="https://oem.sunified.ai/cn/">
 <link rel="alternate" hreflang="ko" href="https://oem.sunified.ai/kr/">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   /* sampled from Sunified Pre-Series A, June 2026, and Product 2P, July 2026 */
@@ -31,7 +31,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--cream);font-family:"Inter","Helvetica Neue",Arial,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--bg);color:var(--cream);font-family:"Inter","Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;line-height:1.72;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 .mono{font-family:"JetBrains Mono","SFMono-Regular",Menlo,Consolas,monospace}
 .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
 a{color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(25,211,197,.32)}
@@ -308,83 +308,82 @@ body.mode-clock #bookBody{display:none}
 
 <header><div class="wrap hd">
   <a href="/" class="wm">SUNIFIED</a>
-  <span class="hd-right"><span class="langsw"><a href="/" aria-current="true">EN</a><a href="/cn/">中文</a><a href="/kr/">한국어</a></span>
-    <span class="tag mono">OEM Briefing · September 2026</span>
+  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/">中文</a><a href="/kr/" aria-current="true">한국어</a></span>
+    <span class="tag mono">OEM 브리핑 · 2026년 9월</span>
     <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel"
       data-cal="https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
-      data-cal-title="Book a 10-minute call"
-      data-cal-note="Mobile, WhatsApp, Google Hangout or Zoom. Enough to work out whether there is a fit.">
-      <svg class="ic"><use href="#i-call"></use></svg>10-minute Call
-    </button>
+      data-cal-title="10분 통화 예약"
+      data-cal-note="휴대폰, WhatsApp, Google Hangout 또는 Zoom. 적합 여부를 판단하기에 충분합니다.">
+      <svg class="ic"><use href="#i-call"></use></svg>10분 통화</button>
   </span>
 </div></header>
 
 <aside id="bookPanel" aria-hidden="true" aria-label="Book a 10 minute call">
   <div class="ph">
     <div>
-      <h2>Book a 10-minute call</h2>
-      <p>Mobile, WhatsApp, Google Hangout or Zoom. Pick whichever suits your time zone.</p>
+      <h2>10분 통화 예약</h2>
+      <p>휴대폰, WhatsApp, Google Hangout 또는 Zoom. 시간대에 맞는 방식을 선택하십시오.</p>
       <span class="u mono">Calendly.com/lgv</span>
     </div>
-    <button id="bookClose" aria-label="Close booking panel">&times;</button>
+    <button id="bookClose" aria-label="예약 패널 닫기">&times;</button>
   </div>
-  <div id="bookBody"><div class="loading">Ready when you are.</div></div>
+  <div id="bookBody"><div class="loading">준비되면 시작하십시오.</div></div>
   <div id="clockBody">
     <div class="led-case">
       <div class="led-bezel">
         <svg id="ledMatrix" viewBox="0 0 250 108" role="img" aria-label="LED dot matrix countdown to the next EU compliance gate"></svg>
       </div>
-      <div class="led-legend mono"><span><i class="sw sw-g"></i>Days</span><span><i class="sw sw-a"></i>Hours, minutes, seconds</span></div>
+      <div class="led-legend mono"><span><i class="sw sw-g"></i>일</span><span><i class="sw sw-a"></i>시 분 초</span></div>
     </div>
     <div class="ck-name" id="ckName">Next gate</div>
     <div class="ck-note" id="ckNote"></div>
     <div class="ck-pick" id="ckPick"></div>
-    <div class="ck-foot">Counting down to the moment the gate becomes a condition of sale, not a guideline.</div>
+    <div class="ck-foot">해당 시점이 권고가 아니라 판매 조건이 되는 순간까지의 카운트다운입니다.</div>
   </div>
 
 </aside>
 
 <section class="hero"><div class="wrap"><div class="hero-grid"><div>
   <p class="eyebrow mono keys">
-    <span class="k"><span class="tile"><svg class="ic"><use href="#i-solar"></use></svg></span>Solar</span>
-    <span class="k"><span class="tile"><svg class="ic ic-batt"><use href="#i-batt"></use></svg></span>Battery</span>
-    <span class="k"><span class="tile"><svg class="ic"><use href="#i-gate"></use></svg></span>Gateways</span>
-    <span class="k"><span class="tile"><svg class="ic"><use href="#i-eu"></use></svg></span>Pathway &gt; EU Compliance</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-solar"></use></svg></span>태양광</span>
+    <span class="k"><span class="tile"><svg class="ic ic-batt"><use href="#i-batt"></use></svg></span>배터리</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-gate"></use></svg></span>게이트웨이</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-eu"></use></svg></span>경로 > EU 규제 준수</span>
   </p>
-  <h1>Compliance is the <em>sales instrument</em>, not the cost line.</h1>
-  <p class="thesis">Four EU instruments land between this month and 2028, and together they change what a manufacturer is allowed to sell into Europe. None of them can be satisfied by a certificate at the border. Each one asks for <b>data that had to be originated at the device and cannot be reconstructed afterwards</b>. That is a problem for every manufacturer without silicon inside the product, and an advantage for the first ones that have it.</p>
+  <h1>규제 준수는 비용 항목이 아니라 영업 도구입니다.</h1>
+  <p class="thesis">이번 달부터 2028년 사이에 네 건의 EU 법규가 차례로 발효되며, 이들은 제조사가 유럽에 무엇을 판매할 수 있는지를 함께 바꿔 놓습니다. 어느 하나도 통관 시점의 증명서 한 장으로는 충족되지 않습니다. 각 법규는 데이터가 기기 자체에서 생성되어야 하며 사후에 재구성할 수 없을 것을 요구합니다. 제품 내부에 반도체가 없는 모든 제조사에게 이것은 문제이고, 먼저 탑재한 제조사에게는 우위입니다.</p>
   </div>
 
   </div></div></section>
 
 <section class="clock"><div class="wrap">
-  <p class="klabel mono">The clock, in order of arrival <span id="cdlive" class="cdlive mono"></span></p>
+  <p class="klabel mono">적용 시점 순 일정<span id="cdlive" class="cdlive mono"></span></p>
   <div class="kline"></div>
   <div class="stops">
     <div class="stop soon">
       <div class="d mono">11 SEP 2026</div>
-      <div class="t">CRA Article 14 reporting</div>
-      <div class="n">Manufacturers must report actively exploited vulnerabilities and severe incidents to ENISA. Live in days, not years.</div>
+      <div class="t">CRA 제14조 보고 의무</div>
+      <div class="n">제조사는 실제로 악용된 취약점과 심각한 사고를 ENISA에 보고해야 합니다. 남은 기간은 연 단위가 아니라 일 단위입니다.</div>
     </div>
     <div class="stop">
       <div class="d mono">18 FEB 2027</div>
-      <div class="t">EU Battery Passport</div>
-      <div class="n">Mandatory for EV, LMT and industrial batteries above 2 kWh. No passport, no placing on the market.</div>
+      <div class="t">EU 배터리 여권</div>
+      <div class="n">2kWh를 초과하는 전기차용, 경형 운송수단용, 산업용 배터리에 의무 적용됩니다. 여권이 없으면 시장 출시가 불가능합니다.</div>
     </div>
     <div class="stop">
       <div class="d mono">18 AUG 2027</div>
-      <div class="t">Battery due diligence</div>
-      <div class="n">Supply chain due diligence obligations, deferred from 2025 by Reg. (EU) 2025/1561.</div>
+      <div class="t">배터리 공급망 실사</div>
+      <div class="n">공급망 실사 의무이며, 규정 (EU) 2025/1561에 따라 2025년에서 연기되었습니다.</div>
     </div>
     <div class="stop">
       <div class="d mono">11 DEC 2027</div>
-      <div class="t">CRA full obligations</div>
-      <div class="n">Essential cybersecurity requirements and conformity assessment for all products with digital elements.</div>
+      <div class="t">CRA 전면 의무 적용</div>
+      <div class="n">디지털 요소를 포함한 모든 제품에 대한 필수 사이버보안 요구사항과 적합성 평가입니다.</div>
     </div>
     <div class="stop">
       <div class="d mono">1 JAN 2028</div>
-      <div class="t">CBAM downstream</div>
-      <div class="n">Proposed extension to about 180 steel and aluminium intensive goods. Mounting systems and frames, not modules.</div>
+      <div class="t">CBAM 하류 확대</div>
+      <div class="n">철강 및 알루미늄 집약 품목 약 180개로 확대가 제안되었습니다. 가대와 프레임이 대상이며 모듈 자체는 포함되지 않습니다.</div>
     </div>
   </div>
 </div></section>
@@ -392,195 +391,195 @@ body.mode-clock #bookBody{display:none}
 <div class="wrap"><div class="shell">
 
   <aside class="rail">
-    <p class="rlabel mono">Filter by lane</p>
+    <p class="rlabel mono">분야별 보기</p>
     <div class="filters" id="filters">
-      <button data-lane="all" aria-pressed="true">All</button>
-      <button data-lane="solar" aria-pressed="false"><svg class="ic"><use href="#i-solar"></use></svg>Solar</button>
-      <button data-lane="bess" aria-pressed="false"><svg class="ic ic-batt"><use href="#i-batt"></use></svg>BESS</button>
-      <button data-lane="gateway" aria-pressed="false"><svg class="ic"><use href="#i-gate"></use></svg>Gateway</button>
+      <button data-lane="all" aria-pressed="true">전체</button>
+      <button data-lane="solar" aria-pressed="false"><svg class="ic"><use href="#i-solar"></use></svg>태양광</button>
+      <button data-lane="bess" aria-pressed="false"><svg class="ic ic-batt"><use href="#i-batt"></use></svg>ESS</button>
+      <button data-lane="gateway" aria-pressed="false"><svg class="ic"><use href="#i-gate"></use></svg>게이트웨이</button>
     </div>
-    <p class="rlabel mono">Contents</p>
+    <p class="rlabel mono">목차</p>
     <ul class="toc" id="toc"></ul>
   </aside>
 
   <main>
 
     <section class="sec" id="sec-a">
-      <div class="sechead"><span class="ltr mono">A</span><h2>The regulatory argument</h2></div>
-      <p class="secnote">Eight sections, each self-contained. Read one, read all eight, none depends on another. Every claim carries its instrument so you can verify it without asking us.</p>
+      <div class="sechead"><span class="ltr mono">A</span><h2>규제 측면의 논거</h2></div>
+      <p class="secnote">여덟 개 절이며 각각 독립적으로 완결됩니다. 한 절만 읽어도, 여덟 절을 모두 읽어도 서로 의존하지 않습니다. 모든 주장에 해당 법규를 명시했으므로 저희에게 묻지 않고 직접 확인하실 수 있습니다.</p>
 
       <article class="block" id="EU-01" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-01</span><h3 class="btitle">NIS2, or why your customer's customer is asking</h3></div>
-        <p class="usewhen">Read this if a European integrator has suddenly sent you a security questionnaire.</p>
+        <div class="bhead"><span class="bid mono">EU-01</span><h3 class="btitle">NIS2, 고객사의 고객이 묻기 시작하는 이유</h3></div>
+        <p class="usewhen">유럽 시스템 통합업체가 갑자기 보안 설문지를 보내왔다면 이 절을 읽으십시오.</p>
         <div class="bbody">
-          <p>The NIS2 Directive treats electricity as an essential sector. Utilities, DSOs and large integrators inside the EU are legally obliged to manage cybersecurity risk <b>across their supply chain</b>, which they discharge by pushing requirements down their contracts to component suppliers. Most manufacturers outside Europe meet NIS2 not as a filing obligation of their own, but as a procurement wall: the questionnaire that arrives before the purchase order, and the clause that follows it.</p>
-          <p>Incident reporting runs on a tight clock, with an early warning due within 24 hours of a significant incident. A supplier who cannot support that timeline is a supplier the integrator has to explain to its regulator.</p>
-          <p class="cite">Directive (EU) 2022/2555 · <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></p>
+          <p>NIS2 지침은 전력을 필수 부문으로 규정합니다. EU 역내의 전력회사, 배전사업자(DSO), 대형 시스템 통합업체는 공급망 전반의 사이버보안 위험을 관리할 법적 의무를 지며, 이 의무를 계약을 통해 부품 공급사에게 아래로 전가하는 방식으로 이행합니다. 유럽 밖의 대다수 제조사에게 NIS2는 스스로 신고해야 할 의무가 아니라 조달 장벽으로 다가옵니다. 발주서보다 먼저 도착하는 설문지, 그리고 뒤따라오는 계약 조항입니다.</p>
+          <p>사고 보고 기한은 촉박합니다. 중대한 사고는 24시간 이내에 조기 경보를 발령해야 합니다. 이 기한을 맞출 수 없는 공급사는, 시스템 통합업체가 규제기관 앞에서 해명해야 하는 공급사가 됩니다.</p>
+          <p class="cite">지침 (EU) 2022/2555 · <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS · Gateway</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">Solar · BESS · Gateway</span></div>
       </article>
 
       <article class="block" id="EU-02" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-02</span><h3 class="btitle">Cyber Resilience Act, the one that binds the manufacturer directly</h3></div>
-        <p class="usewhen">Read this if you ship any connected product: inverter, gateway, BMS, monitoring board.</p>
+        <div class="bhead"><span class="bid mono">EU-02</span><h3 class="btitle">사이버복원력법(CRA), 제조사를 직접 구속하는 법</h3></div>
+        <p class="usewhen">인버터, 게이트웨이, BMS, 모니터링 보드 등 연결형 제품을 출하한다면 이 절을 읽으십시오.</p>
         <div class="bbody">
-          <p>NIS2 lands on the operator. The CRA lands on <b>you</b>. Any product with digital elements placed on the EU market carries obligations on the manufacturer: secure by default configuration, vulnerability handling for the support period, a software bill of materials, and CE marking backed by conformity assessment.</p>
-          <p>Two dates matter. <span class="flag">11 September 2026</span>, when Article 14 reporting begins: actively exploited vulnerabilities and severe incidents must be notified to ENISA and the relevant CSIRT, with an early warning inside 24 hours. <span class="flag">11 December 2027</span>, when the full essential requirements and conformity assessment apply.</p>
-          <p>Reporting runs through ENISA's <b>Single Reporting Platform</b>, live the same day. And read Article 69(3) before you assume this is a problem for future products only: the reporting obligation extends to <b>every in-scope product already on the EU market</b>. Hardware you shipped years ago is inside the 24 hour window the moment an exploitation is found.</p>
-          <p>The practical consequence for a hardware maker is that a coordinated vulnerability disclosure policy and a named security contact stop being good practice and become an entry condition.</p>
-          <p class="cite">Regulation (EU) 2024/2847 · <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></p>
+          <p>NIS2는 운영자에게 적용됩니다. CRA는 귀사에 직접 적용됩니다. EU 시장에 출시되는 디지털 요소 포함 제품은 제조사에게 의무를 부과합니다. 기본 보안 설정, 지원 기간 동안의 취약점 처리, 소프트웨어 자재명세서(SBOM), 그리고 적합성 평가에 근거한 CE 마킹입니다.</p>
+          <p>두 개의 날짜가 중요합니다. 2026년 9월 11일, 제14조 보고 의무가 시작됩니다. 실제로 악용된 취약점과 심각한 사고를 ENISA 및 관할 CSIRT에 통보해야 하며, 24시간 이내에 조기 경보를 발령해야 합니다. 2027년 12월 11일, 필수 요구사항 전체와 적합성 평가가 적용됩니다.</p>
+          <p>보고는 ENISA의 단일 보고 플랫폼(SRP)을 통해 이루어지며, 이 플랫폼은 같은 날 가동됩니다. 그리고 이것이 향후 제품에만 해당하는 문제라고 판단하기 전에 제69조 제3항을 먼저 읽으십시오. 보고 의무는 이미 EU 시장에 출시된 모든 적용 대상 제품까지 확장됩니다. 수년 전에 출하한 하드웨어도 악용 사례가 발견되는 즉시 24시간 기한 안에 들어갑니다.</p>
+          <p>하드웨어 제조사에게 실질적인 결과는 이렇습니다. 협력적 취약점 공개 정책과 지정된 보안 담당자는 더 이상 모범 사례가 아니라 진입 조건이 됩니다.</p>
+          <p class="cite">규정 (EU) 2024/2847 · <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">전 분야 공통</span></div>
       </article>
 
       <article class="block" id="EU-03" data-lane="all solar gateway">
-        <div class="bhead"><span class="bid mono">EU-03</span><h3 class="btitle">Network Code on Cybersecurity, where inverter fleets get caught</h3></div>
-        <p class="usewhen">Read this if your devices are aggregated: DER portfolios, VPPs, fleet managed inverters.</p>
+        <div class="bhead"><span class="bid mono">EU-03</span><h3 class="btitle">사이버보안 네트워크 규정, 인버터 군집이 걸리는 지점</h3></div>
+        <p class="usewhen">DER 포트폴리오, 가상발전소(VPP), 군집 관리형 인버터처럼 기기가 집합적으로 관리된다면 이 절을 읽으십시오.</p>
         <div class="bbody">
-          <p>Beyond the horizontal rules there is a sector specific network code for the cybersecurity of cross border electricity flows. It matters to hardware makers because it is the instrument that reaches <b>aggregated fleets</b>, thousands of small devices under one control channel, rather than only large plant. If your gateway or inverter can be commanded remotely at scale, it sits inside a risk perimeter someone is now formally required to assess.</p>
-          <p>Read the timing carefully. The 4 hour incident clock in Art. 38(3) is real, but it binds only high and critical impact entities, and binding identification of those entities is not due until <b>13 June 2028</b>. Anyone demanding a 4 hour supplier clock from you today is running ahead of the instrument.</p>
-          <p class="cite">Commission Delegated Regulation (EU) 2024/1366 · <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
+          <p>수평적 법규와 별개로, 국경 간 전력 흐름의 사이버보안을 다루는 부문별 네트워크 규정이 있습니다. 이것이 하드웨어 제조사에게 중요한 이유는, 대형 발전소만이 아니라 하나의 제어 채널 아래 놓인 수천 대의 소형 기기, 즉 집합된 군집까지 도달하는 수단이기 때문입니다. 귀사의 게이트웨이나 인버터를 대규모로 원격 제어할 수 있다면, 그것은 이제 누군가가 공식적으로 평가해야 하는 위험 경계 안에 있습니다.</p>
+          <p>시점을 정확히 보십시오. 제38조 제3항의 4시간 사고 기한은 실재하지만, 고영향 및 핵심영향 주체에게만 적용되며 해당 주체의 구속력 있는 지정은 2028년 6월 13일까지 이루어지지 않습니다. 오늘 귀사에 4시간 공급사 기한을 요구하는 쪽은 법규보다 앞서 나가고 있는 것입니다.</p>
+          <p class="cite">집행위원회 위임규정 (EU) 2024/1366 · <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · Gateway</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">Solar · Gateway</span></div>
       </article>
 
       <article class="block" id="EU-04" data-lane="all solar gateway">
-        <div class="bhead"><span class="bid mono">EU-04</span><h3 class="btitle">The industry's own position</h3></div>
-        <p class="usewhen">The best single document to read if this looks like a European bureaucrat's idea.</p>
+        <div class="bhead"><span class="bid mono">EU-04</span><h3 class="btitle">업계 자신의 입장</h3></div>
+        <p class="usewhen">이것이 유럽 관료의 발상처럼 보인다면, 읽어 볼 가치가 가장 큰 단일 문서입니다.</p>
         <div class="bbody">
-          <p>This is not regulators pushing against industry. In July 2024 SolarPower Europe published its own position calling for a harmonised cybersecurity baseline for solar PV: stronger governance under NIS2, product security through the CRA, <b>a dedicated standard for distributed energy resources</b>, operational PV data held within the EU or equivalent security jurisdictions, and an EU level monitoring layer for manufacturer coordinated devices such as inverters.</p>
-          <p>Read it as a forecast. Where the trade body asks for a baseline, a baseline arrives.</p>
-          <p class="cite"><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">Position paper</a> · <a href="https://api.solarpowereurope.org/uploads/Solar_Power_Europe_2024_A_harmonised_cybersecurity_baseline_for_solar_PV_cbfbbd0f1b.pdf">PDF, 11 July 2024</a></p>
+          <p>규제기관이 산업계를 밀어붙이는 구도가 아닙니다. 2024년 7월 SolarPower Europe는 태양광에 대한 통일된 사이버보안 기준선을 요구하는 자체 입장문을 발표했습니다. NIS2 아래에서의 거버넌스 강화, CRA를 통한 제품 보안, 분산에너지자원 전용 표준, EU 역내 또는 동등한 보안 관할권에 보관되는 태양광 운영 데이터, 그리고 인버터처럼 제조사가 통합 관리하는 기기에 대한 EU 차원의 모니터링 체계입니다.</p>
+          <p>이 문서는 예보로 읽으십시오. 업계 단체가 기준선을 요구하는 곳에는 기준선이 옵니다.</p>
+          <p class="cite">입장문 · PDF, 2024년 7월 11일 <a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">Position paper</a> <a href="https://api.solarpowereurope.org/uploads/Solar_Power_Europe_2024_A_harmonised_cybersecurity_baseline_for_solar_PV_cbfbbd0f1b.pdf">PDF, 11 July 2024</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · Gateway</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">Solar · Gateway</span></div>
       </article>
 
       <article class="block" id="EU-05" data-lane="all bess">
-        <div class="bhead"><span class="bid mono">EU-05</span><h3 class="btitle">Battery Passport, the hard gate at 18 February 2027</h3></div>
-        <p class="usewhen">Read this first if you assemble battery or BESS packs.</p>
+        <div class="bhead"><span class="bid mono">EU-05</span><h3 class="btitle">배터리 여권, 2027년 2월 18일의 확정된 관문</h3></div>
+        <p class="usewhen">배터리 팩이나 ESS를 조립한다면 이 절을 먼저 읽으십시오.</p>
         <div class="bbody">
-          <p>From <span class="flag">18 February 2027</span>, every EV, LMT and industrial battery above 2 kWh placed on the EU market must carry a digital battery passport, reachable by a QR code on the battery itself. The passport holds a unique identifier, model and technical characteristics, carbon footprint specific to the manufacturing site and batch, and performance and durability data, with tiered access for the public, regulators and end of life processors.</p>
-          <p>A carbon footprint declaration obligation already sits alongside it, and due diligence obligations follow on <span class="flag">18 August 2027</span>, deferred from 2025 by Regulation (EU) 2025/1561.</p>
-          <p>The commercial point is not the passport. It is that <b>batch level carbon and lifecycle data has to exist before the pack leaves the line</b>. Reconstructing it from ERP records afterwards is what auditors are built to find.</p>
-          <p class="cite">Regulation (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
+          <p>2027년 2월 18일부터 EU 시장에 출시되는 2kWh 초과 전기차용, 경형 운송수단용, 산업용 배터리는 모두 디지털 배터리 여권을 갖추어야 하며, 배터리 본체의 QR 코드로 접근할 수 있어야 합니다. 여권에는 고유 식별자, 모델 및 기술 특성, 생산 사업장과 배치별 탄소발자국, 성능 및 내구성 데이터가 담기며, 일반 공중, 규제기관, 폐기 처리업체별로 접근 권한이 차등 부여됩니다.</p>
+          <p>탄소발자국 신고 의무는 이미 병행 적용되고 있으며, 공급망 실사 의무는 2027년 8월 18일에 뒤따릅니다. 이 의무는 규정 (EU) 2025/1561에 따라 2025년에서 연기된 것입니다.</p>
+          <p>상업적 핵심은 여권 자체가 아닙니다. 배치 단위의 탄소 데이터와 수명주기 데이터가 팩이 라인을 떠나기 전에 이미 존재해야 한다는 점입니다. 사후에 ERP 기록으로 재구성한 것은, 감사인이 찾아내도록 훈련받은 바로 그것입니다.</p>
+          <p class="cite">규정 (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">BESS</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">ESS</span></div>
       </article>
 
       <article class="block" id="EU-06" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-06</span><h3 class="btitle">ESPR, the passport model spreading beyond batteries</h3></div>
-        <p class="usewhen">Read this if you make modules and think batteries are somebody else's problem.</p>
+        <div class="bhead"><span class="bid mono">EU-06</span><h3 class="btitle">ESPR, 배터리를 넘어 확산되는 여권 모델</h3></div>
+        <p class="usewhen">모듈을 생산하면서 배터리는 남의 문제라고 생각한다면 이 절을 읽으십시오.</p>
         <div class="bbody">
-          <p>The Ecodesign for Sustainable Products Regulation is the framework that generalises the battery passport into a Digital Product Passport for other product groups, set by delegated acts over the coming years. It is the instrument to watch for photovoltaics: it carries product level carbon, durability, repairability and recycled content requirements, and it amends the Battery Regulation directly.</p>
-          <p>Nothing binds solar modules under ESPR today. The exposure is that the mechanism now exists and has been proven on batteries first.</p>
-          <p class="cite">Regulation (EU) 2024/1781 · <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">eur-lex.europa.eu/eli/reg/2024/1781/oj</a></p>
+          <p>지속가능제품 에코디자인 규정(ESPR)은 배터리 여권을 다른 제품군의 디지털 제품 여권(DPP)으로 일반화하는 프레임워크이며, 구체적 범위는 향후 수년간 위임법을 통해 정해집니다. 태양광이 주시해야 할 수단이 바로 이것입니다. 제품 단위의 탄소, 내구성, 수리 가능성, 재생 원료 함량 요구사항을 담고 있으며, 배터리 규정을 직접 개정합니다.</p>
+          <p>현재 ESPR이 태양광 모듈을 구속하는 것은 없습니다. 위험은 그 메커니즘이 이미 존재하며 배터리에서 먼저 검증되었다는 점입니다.</p>
+          <p class="cite">규정 (EU) 2024/1781 · <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">eur-lex.europa.eu/eli/reg/2024/1781/oj</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">전 분야 공통</span></div>
       </article>
 
       <article class="block" id="EU-07" data-lane="all solar">
-        <div class="bhead"><span class="bid mono">EU-07</span><h3 class="btitle">Solar Stewardship Initiative, the audit regime buyers already use</h3></div>
-        <p class="usewhen">Read this if you sell modules into European utility scale tenders.</p>
+        <div class="bhead"><span class="bid mono">EU-07</span><h3 class="btitle">태양광 스튜어드십 이니셔티브(SSI), 구매자가 이미 사용하는 심사 체계</h3></div>
+        <p class="usewhen">유럽 유틸리티 규모 입찰에 모듈을 공급한다면 이 절을 읽으십시오.</p>
         <div class="bbody">
-          <p>Ahead of any binding regulation, European developers, buyers and financiers have converged on the Solar Stewardship Initiative's ESG and <b>Supply Chain Traceability</b> Standards as the evidence they will accept. Traceability here means documented chain of custody from polysilicon through wafer, cell and module, the thing most supply chains cannot demonstrate because the record was never bound to the physical unit.</p>
-          <p>This one is voluntary, and it is the one already appearing in tender conditions. It is where a manufacturer can differentiate this year rather than in 2028.</p>
-          <p class="cite"><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">solarstewardshipinitiative.org, Supply Chain Traceability Standard</a></p>
+          <p>구속력 있는 규제가 나오기 전에, 유럽의 개발사와 구매자, 금융기관은 태양광 스튜어드십 이니셔티브(SSI)의 ESG 기준과 공급망 추적성 기준을 자신들이 인정할 증거로 이미 수렴했습니다. 여기서 추적성이란 폴리실리콘에서 웨이퍼, 셀, 모듈에 이르는 문서화된 관리연속성을 뜻하며, 대부분의 공급망이 입증하지 못하는 바로 그것입니다. 기록이 실물 단위에 결코 결속된 적이 없기 때문입니다.</p>
+          <p>이 항목은 자발적이며, 그럼에도 이미 입찰 조건에 등장하고 있는 항목입니다. 제조사가 2028년이 아니라 올해 차별화할 수 있는 지점입니다.</p>
+          <p class="cite"><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">solarstewardshipinitiative.org, 공급망 추적성 기준</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">태양광</span></div>
       </article>
 
       <article class="block" id="EU-08" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">EU-08</span><h3 class="btitle">CBAM, stated precisely</h3></div>
-        <p class="usewhen">Read this before anyone tells you the carbon border tax applies to your panels.</p>
+        <div class="bhead"><span class="bid mono">EU-08</span><h3 class="btitle">CBAM, 정확히 말하면</h3></div>
+        <p class="usewhen">누군가 탄소국경세가 귀사의 패널에 적용된다고 말하기 전에 이 절을 읽으십시오.</p>
         <div class="bbody">
-          <p>CBAM entered its definitive phase on <span class="flag">1 January 2026</span>. Its scope is cement, iron and steel, aluminium, fertilisers, electricity and hydrogen. <b>Solar modules and batteries are not in scope.</b></p>
-          <p>Your live exposure today is the <b>aluminium frame</b> (CN 7604, 7606, 7610) and the <b>steel mounting structure</b> (CN 7308, 7318). Those are CBAM goods now. The module itself, CN 8541 43 00, is not.</p>
-          <p>From 1 January 2028 the scope is set to widen, and three lists have been tabled: the Commission's of December 2025 (about 180 CN codes), the Council's general approach of 12 June 2026, and the European Parliament environment committee's of 6 July 2026 (277 further codes). Between them they reach <b>photovoltaic generators</b> (CN 8501 71 00, 8501 72 00, 8501 80 00), <b>inverters above 7.5 kVA</b> (CN 8504 40 86) and heat pumps. <b>None of the three lists contains CN 8541.</b> None of them is law yet, and the final list will be settled in a Parliament and Council negotiation not expected to conclude before the end of 2026.</p>
-          <p>So the risk to watch is a <b>classification</b> risk rather than a policy one. A product built and declared as a photovoltaic generator lands inside the committee's list; the same silicon sold as a module does not. If you integrate, get a Binding Tariff Information ruling rather than assuming.</p>
+          <p>CBAM은 2026년 1월 1일 본격 시행 단계에 들어갔습니다. 적용 범위는 시멘트, 철강, 알루미늄, 비료, 전력, 수소입니다. 태양광 모듈과 배터리는 범위에 포함되지 않습니다.</p>
+          <p>오늘 귀사의 실제 노출은 알루미늄 프레임(CN 7604, 7606, 7610)과 강재 가대 구조물(CN 7308, 7318)입니다. 이들은 지금 CBAM 대상 품목입니다. 모듈 자체인 CN 8541 43 00은 아닙니다.</p>
+          <p>2028년 1월 1일부터 범위가 확대될 예정이며, 세 건의 목록이 제출되어 있습니다. 집행위원회의 2025년 12월 목록(CN 코드 약 180개), 이사회의 2026년 6월 12일 일반접근, 그리고 유럽의회 환경위원회의 2026년 7월 6일 목록(추가 277개)입니다. 이들을 합치면 태양광 발전기(CN 8501 71 00, 8501 72 00, 8501 80 00), 7.5kVA 초과 인버터(CN 8504 40 86), 히트펌프에 도달합니다. 세 목록 어디에도 CN 8541은 없습니다. 셋 다 아직 법이 아니며, 최종 목록은 의회와 이사회의 협상에서 정해지고 2026년 말 이전에 타결되지 않을 전망입니다.</p>
+          <p>따라서 주시해야 할 위험은 정책 위험이 아니라 품목분류 위험입니다. 태양광 발전기로 제조되고 신고된 제품은 위원회 목록 안에 들어가지만, 같은 실리콘이 모듈로 판매되면 들어가지 않습니다. 통합 제품을 만든다면 추정에 의존하지 말고 구속력 있는 관세정보(BTI) 결정을 받으십시오.</p>
           <p class="cite"><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">taxation-customs.ec.europa.eu, CBAM</a></p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">전 분야 공통</span></div>
       </article>
 
       <div class="srcbar">
-        <h3>The primary sources, in one place</h3>
+        <h3>1차 법령 원문, 한곳에</h3>
         <ul>
-          <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">NIS2, Directive (EU) 2022/2555</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">Cyber Resilience Act, Reg. (EU) 2024/2847</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">Network Code on Cybersecurity, Reg. (EU) 2024/1366</a></li>
-          <li><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">SolarPower Europe, cyber baseline for solar PV</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">Battery Regulation, Reg. (EU) 2023/1542</a></li>
-          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">ESPR, Reg. (EU) 2024/1781</a></li>
-          <li><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">Solar Stewardship Initiative, traceability</a></li>
-          <li><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">CBAM, European Commission</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">NIS2, 지침 (EU) 2022/2555</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">사이버복원력법, 규정 (EU) 2024/2847</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">사이버보안 네트워크 규정, 규정 (EU) 2024/1366</a></li>
+          <li><a href="https://www.solarpowereurope.org/advocacy/position-papers/setting-a-harmonised-cybersecurity-baseline-for-solar-pv">SolarPower Europe, 태양광 사이버보안 기준선</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">배터리 규정, 규정 (EU) 2023/1542</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">ESPR, 규정 (EU) 2024/1781</a></li>
+          <li><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">태양광 스튜어드십 이니셔티브, 추적성</a></li>
+          <li><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">CBAM, 유럽집행위원회</a></li>
         </ul>
       </div>
     </section>
 
     <section class="sec" id="sec-b">
-      <div class="sechead"><span class="ltr mono">B</span><h2>How we work with manufacturers</h2></div>
-      <p class="secnote">Two sections: what the commercial arrangement is, and a paragraph you can forward to a colleague without rewriting it.</p>
+      <div class="sechead"><span class="ltr mono">B</span><h2>제조사와 협력하는 방식</h2></div>
+      <p class="secnote">두 개 절입니다. 상업적 협력 구조가 무엇인지, 그리고 고쳐 쓰지 않고 그대로 동료에게 전달할 수 있는 한 단락입니다.</p>
 
       <article class="block" id="GTM-02" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">GTM-02</span><h3 class="btitle">The engagement model, in one paragraph</h3></div>
-        <p class="usewhen">What it costs, and where the money actually comes from.</p>
+        <div class="bhead"><span class="bid mono">GTM-02</span><h3 class="btitle">협력 모델, 한 단락으로</h3></div>
+        <p class="usewhen">비용이 얼마이고, 수익이 실제로 어디에서 나오는가.</p>
         <div class="bbody">
-          <p>Our model is deliberately simple. The UNITY chip goes into the manufacturer's bill of materials at cost recovery. We do not make margin on silicon. Revenue is shared on the data and API subscription that the verified stream generates over the asset's life, paid by the parties who need the data: insurers, financiers, asset owners and traders. Sunified brings the European demand side, the manufacturer brings manufacture. The manufacturer gains a compliance and financing position that cannot be bought as a service, because the data has to be originated in the factory.</p>
+          <p>저희 모델은 의도적으로 단순합니다. UNITY 칩은 원가 회수 가격으로 제조사의 자재명세서에 들어갑니다. 저희는 반도체에서 마진을 남기지 않습니다. 수익은 검증된 데이터 스트림이 자산의 수명 동안 만들어 내는 데이터 및 API 구독에서 나오며, 그 데이터를 필요로 하는 당사자들, 즉 보험사, 금융기관, 자산 소유자, 트레이더가 지불하고 양측이 나눕니다. Sunified는 유럽의 수요를 가져오고 제조사는 제조를 맡습니다. 제조사는 서비스로는 구매할 수 없는 규제 준수 및 금융 조달상의 위치를 얻습니다. 그 데이터는 공장에서 생성되어야만 하기 때문입니다.</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">전 분야 공통</span></div>
       </article>
 
       <article class="block" id="GTM-03" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">GTM-03</span><h3 class="btitle">Forward this to a colleague</h3></div>
-        <p class="usewhen">Written so that passing it on costs you nothing.</p>
+        <div class="bhead"><span class="bid mono">GTM-03</span><h3 class="btitle">이 단락을 동료에게 전달하십시오</h3></div>
+        <p class="usewhen">그대로 전달해도 되도록 써 두었습니다.</p>
         <div class="bbody">
-          <p>Sunified is an Amsterdam company that puts a secure chip inside solar panels and battery packs so that generation, identity and carbon data are captured cryptographically at the device rather than reconstructed from spreadsheets later. They are looking for manufacturers who want a position in Europe as the Battery Passport, the Cyber Resilience Act and product level carbon rules come into force between 2026 and 2028. The chip goes into the manufacturer's BOM at cost recovery; Sunified brings the European buyers, insurers and financiers who need the verified data. Founder is Leon Gerard Vandenberg, who lived and worked in Shenzhen and is on European time. Worth twenty minutes.</p>
+          <p>Sunified는 암스테르담 소재 기업으로, 태양광 모듈과 배터리 팩 내부에 보안 칩을 삽입해 발전량과 기기 식별정보, 탄소 데이터를 나중에 스프레드시트에서 재구성하는 대신 기기 단에서 암호학적으로 수집합니다. 배터리 여권과 사이버복원력법, 제품 단위 탄소 규제가 2026년부터 2028년 사이에 발효되는 가운데 유럽에서 위치를 확보하려는 제조사를 찾고 있습니다. 칩은 원가 회수 가격으로 제조사의 BOM에 들어가며, Sunified는 검증된 데이터를 필요로 하는 유럽의 구매자와 보험사, 금융기관을 데려옵니다. 창업자 Leon Gerard Vandenberg는 선전에서 거주하며 일한 경험이 있고 현재 유럽 시간대에 있습니다. 20분을 쓸 가치가 있습니다.</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">전 분야 공통</span></div>
       </article>
     </section>
 
     <section class="sec" id="sec-c">
-      <div class="sechead"><span class="ltr mono">C</span><h2>What UNITY actually is</h2></div>
-      <p class="secnote">From the sentence that describes it, to the detail a hardware engineer asks for third.</p>
+      <div class="sechead"><span class="ltr mono">C</span><h2>UNITY란 무엇인가</h2></div>
+      <p class="secnote">제품을 한 문장으로 설명하는 데서 시작해, 하드웨어 엔지니어가 세 번째로 묻는 세부 사항까지.</p>
 
       <article class="block" id="UNI-01" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">UNI-01</span><h3 class="btitle">The short description</h3></div>
-        <p class="usewhen">Start here.</p>
+        <div class="bhead"><span class="bid mono">UNI-01</span><h3 class="btitle">짧은 제품 설명</h3></div>
+        <p class="usewhen">여기서 시작하십시오.</p>
         <div class="bbody">
-          <p>Sunified's UNITY sensor sits inside the panel, the battery pack or the gateway and captures cryptographic proof of energy generation and device identity at source. Every electron creating a byte of data. It produces genesis data: hi-fidelity, panel level, secure, trusted and verified, from the factory floor through deployment to recycling. One verified data source, several compounding revenue streams built on top of it.</p>
+          <p>Sunified의 UNITY 센서는 패널, 배터리 팩, 게이트웨이 내부에 자리 잡고 발전과 기기 식별에 대한 암호학적 증명을 발생 지점에서 수집합니다. 전자 하나가 데이터 1바이트를 만듭니다. 이 센서가 만들어 내는 것은 원천 데이터입니다. 고정밀, 패널 단위, 안전하고 신뢰할 수 있으며 검증된 데이터가 공장 현장에서 설치 운영을 거쳐 재활용까지 이어집니다. 검증된 하나의 데이터 원천 위에 여러 수익원이 겹겹이 쌓입니다.</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">전 분야 공통</span></div>
       </article>
 
       <article class="block" id="UNI-02" data-lane="all bess gateway">
-        <div class="bhead"><span class="bid mono">UNI-02</span><h3 class="btitle">Silicon and security posture</h3></div>
-        <p class="usewhen">For the hardware or security engineer.</p>
+        <div class="bhead"><span class="bid mono">UNI-02</span><h3 class="btitle">반도체와 보안 구조</h3></div>
+        <p class="usewhen">하드웨어 또는 보안 엔지니어를 위한 내용입니다.</p>
         <div class="bbody">
-          <p>UNITY is built on a Silicon Labs EFR32MG24B with Secure Vault High, providing a hardware root of trust, secure key storage and secure boot. That is the foundation a CRA conformity claim rests on, and the assurance a NIS2 obligated integrator needs to see in a supplier. The secure element holds <b>SESIP Level 3</b>. IEC 62443 alignment runs through our integration partner.</p>
-          <p>Deployed as an option board today, with a path to main board integration. Sunified is the firmware author and, under the CRA, a manufacturer in its own right, which means the reporting and vulnerability handling obligations sit with us for our part of the stack rather than with the OEM.</p>
+          <p>UNITY는 Secure Vault High를 탑재한 Silicon Labs EFR32MG24B 위에 구축되어 하드웨어 신뢰 기점, 안전한 키 저장, 보안 부팅을 제공합니다. 이것이 CRA 적합성 주장이 딛고 서는 기반이며, NIS2 의무를 지는 시스템 통합업체가 공급사에게서 확인해야 하는 보증입니다. 보안 요소는 SESIP 레벨 3을 보유합니다. IEC 62443 정합은 저희 통합 파트너를 통해 진행됩니다.</p>
+          <p>현재는 옵션 보드 형태로 적용되며 메인 보드 통합 경로가 준비되어 있습니다. Sunified는 펌웨어 작성자이자 CRA상 그 자체로 제조사이며, 이는 저희가 담당하는 계층의 보고 및 취약점 처리 의무가 OEM이 아니라 저희에게 있다는 뜻입니다.</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">BESS · Gateway</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">BESS · Gateway</span></div>
       </article>
 
       <article class="block" id="UNI-03" data-lane="all solar">
-        <div class="bhead"><span class="bid mono">UNI-03</span><h3 class="btitle">Data path, panel to buyer</h3></div>
-        <p class="usewhen">How the data leaves the array.</p>
+        <div class="bhead"><span class="bid mono">UNI-03</span><h3 class="btitle">데이터 경로, 패널에서 구매자까지</h3></div>
+        <p class="usewhen">데이터가 어레이를 어떻게 빠져나가는가.</p>
         <div class="bbody">
-          <p>The chip measures temperature, voltage and current at the panel. A Bluetooth mesh propagates readings across the array to gateways, which publish a signed stream to the Sunified API. Because each reading is signed at the device, the record is tamper evident along its whole path. That is the difference between telemetry and evidence.</p>
-          <p>What sits on top: predictive maintenance and yield, insurance and financing at asset level, and the chain of custody record behind traceability and carbon claims. Panel level truth rather than inverter level aggregate is the point. Aggregate data cannot tell you which panel, and every downstream claim needs to know which panel.</p>
+          <p>칩은 패널 단에서 온도, 전압, 전류를 측정합니다. 블루투스 메시가 어레이 전체의 측정값을 게이트웨이로 전달하고, 게이트웨이는 서명된 스트림을 Sunified API로 발행합니다. 각 측정값이 기기 단에서 서명되므로 그 기록은 전체 경로에 걸쳐 변조 여부를 확인할 수 있습니다. 이것이 원격 계측 데이터와 증거의 차이입니다.</p>
+          <p>그 위에 올라가는 것은 예지 정비와 발전량 최적화, 자산 단위의 보험과 금융, 그리고 추적성과 탄소 주장을 뒷받침하는 관리연속성 기록입니다. 인버터 단의 합산값이 아니라 패널 단의 사실이 핵심입니다. 합산 데이터는 어느 패널인지 알려 주지 못하는데, 하류의 모든 주장은 어느 패널인지를 알아야 합니다.</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">태양광</span></div>
       </article>
 
       <article class="block" id="UNI-04" data-lane="all solar bess gateway">
-        <div class="bhead"><span class="bid mono">UNI-04</span><h3 class="btitle">The property rights argument</h3></div>
-        <p class="usewhen">For carbon credit, insurance and legal audiences. The differentiated argument, not the technical one.</p>
+        <div class="bhead"><span class="bid mono">UNI-04</span><h3 class="btitle">재산권 논거</h3></div>
+        <p class="usewhen">탄소배출권, 보험, 법률 실무자를 위한 내용입니다. 기술 논거가 아니라 차별화된 논거입니다.</p>
         <div class="bbody">
-          <p>A century of chain of custody discipline is why oil is financed, insured and traded with confidence. The solar electron has none of it. Sunified's purpose is to make solar a trusted asset class for OEMs, producers, owners, financiers and insurers of decentralised solar and battery assets.</p>
-          <p>The consequence is legal, not only technical. Where generation and custody are attested at the device, a stolen or double counted carbon credit becomes <b>property theft rather than breach of contract</b>: prosecutable, insurable, and recoverable. A carbon credit is only as defensible as the metering behind it.</p>
+          <p>석유가 확신을 갖고 금융, 보험, 거래의 대상이 되는 이유는 한 세기에 걸친 관리연속성 규율 때문입니다. 태양광 전자에는 그것이 전혀 없습니다. Sunified의 목적은 분산형 태양광 및 배터리 자산의 OEM, 발전사업자, 자산 소유자, 금융기관, 보험사에게 태양광을 신뢰할 수 있는 자산군으로 만드는 것입니다.</p>
+          <p>그 결과는 기술적인 데 그치지 않고 법적입니다. 발전과 관리가 기기 단에서 증명되면, 도난당하거나 이중 계상된 탄소배출권은 계약 위반이 아니라 재산 절도가 됩니다. 기소할 수 있고, 보험에 들 수 있으며, 회수할 수 있습니다. 탄소배출권의 방어 가능성은 그 뒤에 있는 계측만큼입니다.</p>
         </div>
-        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">All lanes</span></div>
+        <div class="bfoot"><button class="copy">본문 복사</button><span class="lanes">전 분야 공통</span></div>
       </article>
     </section>
 
@@ -588,29 +587,29 @@ body.mode-clock #bookBody{display:none}
 </div></div>
 
 <section class="cta"><div class="wrap">
-  <h2>Ten minutes to see if it fits. Thirty to go deep.</h2>
-  <p>We are looking for manufacturers in three lanes: solar module manufacture, battery and BESS pack assembly, and industrial or home energy gateways. If a board revision is opening in the next twelve months, that is the conversation worth having.</p>
-  <p>The short call is a fit check on mobile, WhatsApp or Hangout. The Zoom is the technical walk-through: silicon, data path, integration and where your BOM window sits.</p>
+  <h2>적합한지 보는 데 10분, 깊이 들어가는 데 30분.</h2>
+  <p>저희는 세 개 분야의 제조사를 찾고 있습니다. 태양광 모듈 제조, 배터리 및 ESS 팩 조립, 산업용 또는 가정용 에너지 게이트웨이입니다. 앞으로 12개월 안에 보드 개정 일정이 열린다면, 그때가 나눌 가치가 있는 대화입니다.</p>
+  <p>짧은 통화는 적합성 확인이며 휴대폰, WhatsApp, Hangout으로 진행합니다. Zoom은 기술 검토입니다. 반도체, 데이터 경로, 통합 방식, 그리고 귀사의 BOM 일정이 어디에 있는지를 다룹니다.</p>
   <button class="btn" data-cal="https://calendly.com/lgv/30-zoom-call?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
-    data-cal-title="Book a 30-minute Zoom"
-    data-cal-note="Video and screen sharing, in LG&rsquo;s private room. For the technical walk-through: silicon, data path, integration and the board revision window.">
-    <svg class="ic btn-ic"><use href="#i-video"></use></svg>30-minute Zoom call with LGV</button>
-  <p class="cta-alt">Prefer to write first? <a href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">LG@sunified.com</a> &middot; both calls book through Calendly.com/lgv</p>
+    data-cal-title="30분 Zoom 예약"
+    data-cal-note="LG의 전용 회의실에서 화상과 화면 공유로 진행합니다. 기술 검토용입니다. 반도체, 데이터 경로, 통합 방식, 보드 개정 일정.">
+    <svg class="ic btn-ic"><use href="#i-video"></use></svg>LGV와 30분 Zoom 통화</button>
+  <p class="cta-alt">먼저 메일로 소통하시겠습니까? <a href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">LG@sunified.com</a> · 두 통화 모두 Calendly.com/lgv에서 예약합니다</p>
 </div></section>
 
 <footer><div class="wrap">
-  Sunified Group B.V. · Joan Muyskenweg 22, 1096 CJ Amsterdam, Netherlands · KvK 82922713<br>
+  Sunified Group B.V. · Joan Muyskenweg 22, 1096 CJ Amsterdam, Netherlands · 네덜란드 상공회의소 등록번호 KvK 82922713<br>
   <a href="https://sunified.com">sunified.com</a> · <a href="mailto:LG@sunified.com">LG@sunified.com</a> · +31 6 2844 6906<br>
-  Regulatory positions verified 3 September 2026 against the cited primary sources. Re-check before reuse after a Commission delegated act or an omnibus amendment. Nothing here is legal advice.
+  규제 관련 내용은 2026년 9월 3일 기준으로 인용된 1차 법령과 대조해 확인했습니다. 집행위원회 위임법이나 옴니버스 개정 이후 재사용하기 전에는 다시 확인하십시오. 이 페이지의 내용은 법률 자문이 아닙니다.
 </div></footer>
 
 <script>
 (function(){
   var toc = document.getElementById('toc');
   var groups = [
-    {sel:'#sec-a', label:'A · Regulation'},
-    {sel:'#sec-b', label:'B · Engagement'},
-    {sel:'#sec-c', label:'C · Product'}
+    {sel:'#sec-a', label:'A · 규제'},
+    {sel:'#sec-b', label:'B · 협력'},
+    {sel:'#sec-c', label:'C · 제품'}
   ];
   groups.forEach(function(g){
     var head = document.createElement('li');
@@ -634,7 +633,7 @@ body.mode-clock #bookBody{display:none}
   });
 
   // lane tags on each block, rebuilt with icons from data-lane
-  var LANE_DEFS = [['solar','i-solar','Solar'],['bess','i-batt','BESS'],['gateway','i-gate','Gateway']];
+  var LANE_DEFS = [['solar','i-solar','태양광'],['bess','i-batt','ESS'],['gateway','i-gate','게이트웨이']];
   document.querySelectorAll('.block').forEach(function(b){
     var el = b.querySelector('.lanes');
     if (!el) return;
@@ -649,10 +648,10 @@ body.mode-clock #bookBody{display:none}
   // live countdown to the next gate, plus days-away under each stop
   var CD = [
     ['2026-09-11T00:00:00Z','CRA Art. 14 reporting'],
-    ['2027-02-18T00:00:00Z','EU Battery Passport'],
-    ['2027-08-18T00:00:00Z','Battery due diligence'],
-    ['2027-12-11T00:00:00Z','CRA full obligations'],
-    ['2028-01-01T00:00:00Z','CBAM downstream']
+    ['2027-02-18T00:00:00Z','EU 배터리 여권'],
+    ['2027-08-18T00:00:00Z','배터리 공급망 실사'],
+    ['2027-12-11T00:00:00Z','CRA 전면 의무 적용'],
+    ['2028-01-01T00:00:00Z','CBAM 하류 확대']
   ];
   var stops = document.querySelectorAll('.stop');
   var live = document.getElementById('cdlive');
@@ -665,16 +664,16 @@ body.mode-clock #bookBody{display:none}
       if (st) {
         var a = st.querySelector('.away');
         if (!a) { a = document.createElement('div'); a.className = 'away mono'; st.appendChild(a); }
-        a.textContent = ms <= 0 ? 'live now' : Math.floor(ms/86400000) + ' days away';
+        a.textContent = ms <= 0 ? '적용 중' : Math.floor(ms/86400000) + '일 남음';
       }
       if (ms > 0 && next === null) { next = {name:c[1], ms:ms}; }
     });
     if (!live) { return; }
-    if (!next) { live.textContent = 'all gates live'; return; }
+    if (!next) { live.textContent = '모든 시점 적용 중'; return; }
     var s = Math.floor(next.ms/1000);
-    live.innerHTML = '<span class="dot"></span>' + next.name + ' in <b>' +
-      Math.floor(s/86400) + 'd ' + pad(Math.floor(s/3600)%24,2) + 'h ' +
-      pad(Math.floor(s/60)%60,2) + 'm ' + pad(s%60,2) + 's</b>';
+    live.innerHTML = '<span class="dot"></span>' + next.name + ' 까지 <b>' +
+      Math.floor(s/86400) + '일 ' + pad(Math.floor(s/3600)%24,2) + '시 ' +
+      pad(Math.floor(s/60)%60,2) + '분 ' + pad(s%60,2) + '초</b>';
   }
   tickClock();
   setInterval(tickClock, 1000);
@@ -709,7 +708,7 @@ body.mode-clock #bookBody{display:none}
   function openPanel(trigger){
     document.body.classList.remove('mode-clock');
     var url = trigger.getAttribute('data-cal');
-    if (titleEl) { titleEl.textContent = trigger.getAttribute('data-cal-title') || 'Book a call'; }
+    if (titleEl) { titleEl.textContent = trigger.getAttribute('data-cal-title') || '통화 예약'; }
     if (noteEl) { noteEl.innerHTML = trigger.getAttribute('data-cal-note') || ''; }
     paint(url);
     document.body.classList.add('split');
@@ -739,11 +738,11 @@ body.mode-clock #bookBody{display:none}
 
   // analogue countdown clock, opened from the flywheel
   var CK = [
-    ['2026-09-11T00:00:00Z','CRA Article 14 reporting','Actively exploited vulnerabilities and severe incidents go to ENISA. Early warning inside 24 hours, detail at 72.'],
-    ['2027-02-18T00:00:00Z','EU Battery Passport','Mandatory for EV, LMT and industrial batteries above 2 kWh. No passport, no placing on the market.'],
-    ['2027-08-18T00:00:00Z','Battery due diligence','Supply chain due diligence, deferred from 2025 by Regulation (EU) 2025/1561.'],
-    ['2027-12-11T00:00:00Z','CRA full obligations','Essential requirements and conformity assessment for all products with digital elements.'],
-    ['2028-01-01T00:00:00Z','CBAM downstream','Scope widens. What lands in the final list is still being negotiated.']
+    ['2026-09-11T00:00:00Z','CRA 제14조 보고 의무','Actively exploited vulnerabilities and severe incidents go to ENISA. Early warning inside 24 hours, detail at 72.'],
+    ['2027-02-18T00:00:00Z','EU 배터리 여권','2kWh를 초과하는 전기차용, 경형 운송수단용, 산업용 배터리에 의무 적용됩니다. 여권이 없으면 시장 출시가 불가능합니다.'],
+    ['2027-08-18T00:00:00Z','배터리 공급망 실사','Supply chain due diligence, deferred from 2025 by Regulation (EU) 2025/1561.'],
+    ['2027-12-11T00:00:00Z','CRA 전면 의무 적용','Essential requirements and conformity assessment for all products with digital elements.'],
+    ['2028-01-01T00:00:00Z','CBAM 하류 확대','Scope widens. What lands in the final list is still being negotiated.']
   ];
   var CK_FROM = new Date('2026-01-01T00:00:00Z').getTime();
   var ckIdx = 0;
@@ -836,7 +835,7 @@ body.mode-clock #bookBody{display:none}
       svg.innerHTML =
         renderRow(dTxt, x1, 11, p1, r1, '#D7FD00') +
         '<text x="125" y="69" text-anchor="middle" font-family="JetBrains Mono, monospace" ' +
-        'font-size="6.5" fill="#6E8F94" letter-spacing="1.9">DAYS REMAINING</text>' +
+        'font-size="6.5" fill="#6E8F94" letter-spacing="1.9">남은 일수</text>' +
         renderRow(tTxt, x2, 78, p2, r2, '#FFAA00');
     }
 
@@ -855,8 +854,8 @@ body.mode-clock #bookBody{display:none}
                          document.body.classList.contains('mode-clock');
       if (alreadyClock) { closePanel(); return; }
       document.body.classList.add('mode-clock');
-      if (titleEl) { titleEl.textContent = 'Countdown to the next gate'; }
-      if (noteEl) { noteEl.textContent = 'Every one of these is a market access condition, not a guideline. Pick a date to run the clock against it.'; }
+      if (titleEl) { titleEl.textContent = '다음 적용 시점까지'; }
+      if (noteEl) { noteEl.textContent = '아래 항목은 모두 권고가 아니라 시장 진입 조건입니다. 날짜를 선택해 남은 기간을 확인하십시오.'; }
       document.body.classList.add('split');
       panel.setAttribute('aria-hidden','false');
       drawClock();
@@ -892,10 +891,10 @@ body.mode-clock #bookBody{display:none}
       });
       var text = title + '\n\n' + parts.join('\n\n') + '\n\nSource: https://oem.sunified.ai/#' + block.id;
       var done = function(){
-        btn.textContent = 'Copied';
+        btn.textContent = '복사됨';
         btn.classList.add('done');
         if (window.plausible) { window.plausible('Copy block', {props:{block:block.id}}); }
-        setTimeout(function(){ btn.textContent = 'Copy text'; btn.classList.remove('done'); }, 1600);
+        setTimeout(function(){ btn.textContent = '본문 복사'; btn.classList.remove('done'); }, 1600);
       };
       try {
         navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
