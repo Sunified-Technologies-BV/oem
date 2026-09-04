@@ -183,6 +183,11 @@ body.split{padding-right:min(468px,100%)}
 #bookBody .loading{padding:34px 22px;color:var(--mute);font-size:13.5px;
   font-family:"JetBrains Mono",monospace}
 .calendly-inline-widget{min-width:100%;height:100%;min-height:640px}
+.btn{display:inline-flex;align-items:center;gap:9px;cursor:pointer;font-family:"Inter",sans-serif}
+.btn .btn-ic{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+.cta-alt{margin-top:16px;font-size:13.5px;color:var(--mute)}
+.cta-alt a{color:var(--gold)}
 .hidden{display:none!important}
 </style>
 </head>
@@ -206,6 +211,10 @@ body.split{padding-right:min(468px,100%)}
     <path d="M12 13.4V9.1"/>
     <path d="M8.9 6.7a4.4 4.4 0 0 1 6.2 0M6.4 4.2a7.9 7.9 0 0 1 11.2 0"/>
   </symbol>
+  <symbol id="i-video" viewBox="0 0 24 24">
+    <rect x="2.4" y="6" width="13.4" height="12" rx="2.4"/>
+    <path d="M15.8 10.6 21.6 7.4v9.2l-5.8-3.2Z"/>
+  </symbol>
   <symbol id="i-call" viewBox="0 0 24 24">
     <path d="M15.6 21.2A15.4 15.4 0 0 1 2.8 8.4 3 3 0 0 1 5.8 5h2.1a1.5 1.5 0 0 1 1.5 1.3c.1.9.3 1.8.6 2.6a1.5 1.5 0 0 1-.34 1.58l-.9.9a12.4 12.4 0 0 0 5.86 5.86l.9-.9a1.5 1.5 0 0 1 1.58-.34c.84.3 1.72.5 2.6.6A1.5 1.5 0 0 1 21 18.1v2.1a3 3 0 0 1-3.4 3 15.5 15.5 0 0 1-2-.3Z"/>
   </symbol>
@@ -221,7 +230,10 @@ body.split{padding-right:min(468px,100%)}
   <a href="/" class="wm">SUNIFIED</a>
   <span class="hd-right">
     <span class="tag mono">OEM Briefing · September 2026</span>
-    <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel">
+    <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel"
+      data-cal="https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
+      data-cal-title="Book a 10-minute call"
+      data-cal-note="Mobile, WhatsApp, Google Hangout or Zoom. Enough to work out whether there is a fit.">
       <svg class="ic"><use href="#i-call"></use></svg>10-minute Call
     </button>
   </span>
@@ -481,8 +493,11 @@ body.split{padding-right:min(468px,100%)}
 <section class="cta"><div class="wrap">
   <h2>Twenty minutes, on your clock.</h2>
   <p>We are looking for manufacturers in three lanes: solar module manufacture, battery and BESS pack assembly, and industrial or home energy gateways. If a board revision is opening in the next twelve months, that is the conversation worth having.</p>
-  <a class="btn" href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">Email LG@sunified.com</a>
-  <button class="cta-call" data-book style="margin-left:12px;padding:13px 24px;font-size:15px"><svg class="ic" style="width:17px;height:17px"><use href="#i-call"></use></svg>Book a 10-minute call</button>
+  <button class="btn" data-cal="https://calendly.com/lgv/30-zoom-call?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
+    data-cal-title="Book a 30-minute Zoom"
+    data-cal-note="Video and screen sharing, in LG&rsquo;s private room. For the technical walk-through: silicon, data path, integration and the board revision window.">
+    <svg class="ic btn-ic"><use href="#i-video"></use></svg>30-minute Zoom call with LGV</button>
+  <p class="cta-alt">Prefer to write first? <a href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">LG@sunified.com</a> &middot; both calls book through Calendly.com/lgv</p>
 </div></section>
 
 <footer><div class="wrap">
@@ -566,30 +581,44 @@ body.split{padding-right:min(468px,100%)}
   tickClock();
   setInterval(tickClock, 1000);
 
-  // split booking panel, Calendly loaded lazily on first open
+  // split booking panel: header books 10 minutes, the bottom gold button books 30
   var panel = document.getElementById('bookPanel');
   var openBtn = document.getElementById('bookOpen');
   var closeBtn = document.getElementById('bookClose');
   var bodyEl = document.getElementById('bookBody');
-  var CAL = 'https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00';
-  var calLoaded = false;
+  var titleEl = panel ? panel.querySelector('.ph h2') : null;
+  var noteEl = panel ? panel.querySelector('.ph p') : null;
+  var scriptAdded = false, currentUrl = null;
 
-  function mountCalendly(){
-    if (calLoaded) { return; }
-    calLoaded = true;
-    bodyEl.innerHTML = '<div class="calendly-inline-widget" data-url="' + CAL + '"></div>';
-    var sc = document.createElement('script');
-    sc.src = 'https://assets.calendly.com/assets/external/widget.js';
-    sc.async = true;
-    document.body.appendChild(sc);
+  function paint(url){
+    if (currentUrl === url) { return; }
+    currentUrl = url;
+    bodyEl.innerHTML = '';
+    if (window.Calendly && window.Calendly.initInlineWidget) {
+      window.Calendly.initInlineWidget({url: url, parentElement: bodyEl});
+      return;
+    }
+    bodyEl.innerHTML = '<div class="calendly-inline-widget" data-url="' + url + '"></div>';
+    if (!scriptAdded) {
+      scriptAdded = true;
+      var sc = document.createElement('script');
+      sc.src = 'https://assets.calendly.com/assets/external/widget.js';
+      sc.async = true;
+      document.body.appendChild(sc);
+    }
   }
 
-  function openPanel(){
+  function openPanel(trigger){
+    var url = trigger.getAttribute('data-cal');
+    if (titleEl) { titleEl.textContent = trigger.getAttribute('data-cal-title') || 'Book a call'; }
+    if (noteEl) { noteEl.innerHTML = trigger.getAttribute('data-cal-note') || ''; }
+    paint(url);
     document.body.classList.add('split');
     panel.setAttribute('aria-hidden','false');
     if (openBtn) { openBtn.setAttribute('aria-expanded','true'); }
-    mountCalendly();
-    if (window.plausible) { window.plausible('Book call opened'); }
+    if (window.plausible) {
+      window.plausible('Book call opened', {props:{kind: url.indexOf('30-zoom') > -1 ? '30min' : '10min'}});
+    }
   }
   function closePanel(){
     document.body.classList.remove('split');
@@ -597,15 +626,13 @@ body.split{padding-right:min(468px,100%)}
     if (openBtn) { openBtn.setAttribute('aria-expanded','false'); }
   }
 
-  if (openBtn) {
-    openBtn.addEventListener('click', function(){
-      document.body.classList.contains('split') ? closePanel() : openPanel();
+  document.querySelectorAll('[data-cal]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var same = document.body.classList.contains('split') && currentUrl === b.getAttribute('data-cal');
+      if (same) { closePanel(); } else { openPanel(b); }
     });
-  }
-  if (closeBtn) { closeBtn.addEventListener('click', closePanel); }
-  document.querySelectorAll('[data-book]').forEach(function(b){
-    b.addEventListener('click', openPanel);
   });
+  if (closeBtn) { closeBtn.addEventListener('click', closePanel); }
   document.addEventListener('keydown', function(e){
     if (e.key === 'Escape' && document.body.classList.contains('split')) { closePanel(); }
   });
