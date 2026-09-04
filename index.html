@@ -208,13 +208,11 @@ body.split{padding-right:min(468px,100%)}
 @keyframes fwpulse{0%,100%{opacity:.45;r:6}50%{opacity:1;r:8.5}}
 @keyframes fwglow{0%,100%{opacity:.5}50%{opacity:1}}
 .fw-arc{transform-origin:210px 210px;animation:fwspin 26s linear infinite}
-.fw-ring{transform-origin:210px 210px;animation:fwspin 90s linear infinite}
-.fw-ring g{transform-box:fill-box}
-.fw-labels{transform-origin:210px 210px}
+/* the spoke ring stays put: each dot has to keep pointing at its own label */
 .fw-dot{animation:fwpulse 3.6s ease-in-out infinite}
 .fw-hub-glow{animation:fwglow 4s ease-in-out infinite}
 .fw-wrap:hover .fw-arc{animation-duration:9s}
-.fw-wrap:hover .fw-ring{animation-duration:34s}
+.fw-wrap:hover .fw-dot{animation-duration:1.6s}
 @media (prefers-reduced-motion:reduce){
   .fw-arc,.fw-ring,.fw-dot,.fw-hub-glow{animation:none}
 }
@@ -381,7 +379,7 @@ body.mode-clock #bookBody{display:none}
       <circle cx="210" cy="210" r="62" fill="#012230" stroke="#D7FD00" stroke-width="2"/>
       <path d="M210 174 L246 210 L210 246 L174 210 Z" fill="none" stroke="#FFAA00" stroke-width="2.4"/>
       <text x="210" y="206" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="800" fill="#FCF8EA" letter-spacing="1.5">UNITY</text>
-      <text x="210" y="223" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#94AEB6" letter-spacing="1.1">SIGNED AT SOURCE</text>
+      <text x="210" y="228" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94AEB6" letter-spacing="1">SIGNED AT SOURCE</text>
 
       <g class="fw-labels">
         <text x="210.0" y="45.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#94AEB6" letter-spacing="0.6">CRA Art. 14</text>
