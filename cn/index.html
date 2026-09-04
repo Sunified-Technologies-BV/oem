@@ -17,8 +17,9 @@
   plausible.init()
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
 <link rel="alternate" hreflang="zh-Hans" href="https://oem.sunified.ai/cn/">
+<link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
+<link rel="alternate" hreflang="en" href="https://oem.sunified.ai/">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -267,6 +268,12 @@ body.mode-clock #bookBody{display:none}
 .langsw a[aria-current="true"]{background:var(--gold);color:#00232E;font-weight:600}
 .langsw a:hover:not([aria-current="true"]){color:var(--cream);background:var(--raised)}
 @media (max-width:560px){.hd-right .tag{display:none}}
+.langsw{display:inline-flex;border:1px solid var(--teald);border-radius:3px;overflow:hidden;
+  font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.06em}
+.langsw a{padding:5px 10px;color:var(--mute);border:0;text-decoration:none}
+.langsw a[aria-current="true"]{background:var(--gold);color:#00232E;font-weight:600}
+.langsw a:hover:not([aria-current="true"]){color:var(--cream);background:var(--raised)}
+@media (max-width:560px){.hd-right .tag{display:none}}
 .hidden{display:none!important}
 </style>
 </head>
@@ -307,14 +314,13 @@ body.mode-clock #bookBody{display:none}
 
 <header><div class="wrap hd">
   <a href="/" class="wm">SUNIFIED</a>
-  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a></span>
+  <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a></span><span class="langsw"><a href="/" aria-current="true">EN</a><a href="/cn/">中文</a></span>
     <span class="tag mono">OEM 简报 · 2026 年 9 月</span>
     <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel"
       data-cal="https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00"
       data-cal-title="预约 10 分钟通话"
       data-cal-note="手机、WhatsApp、Google Hangout 或 Zoom。足够判断双方是否契合。">
-      <svg class="ic"><use href="#i-call"></use></svg>10-minute Call
-    </button>
+      <svg class="ic"><use href="#i-call"></use></svg>10 分钟通话</button>
   </span>
 </div></header>
 
@@ -357,7 +363,7 @@ body.mode-clock #bookBody{display:none}
   </div></div></section>
 
 <section class="clock"><div class="wrap">
-  <p class="klabel mono">时间表，按到期先后 <span id="cdlive" class="cdlive mono"></span></p>
+  <p class="klabel mono">时间表，按到期先后<span id="cdlive" class="cdlive mono"></span></p>
   <div class="kline"></div>
   <div class="stops">
     <div class="stop soon">
@@ -414,7 +420,7 @@ body.mode-clock #bookBody{display:none}
         <div class="bbody">
           <p>NIS2 指令将电力列为关键部门。欧盟境内的公用事业公司、配电系统运营商（DSO）和大型集成商负有法定义务，必须管理其供应链中的网络安全风险；他们履行这项义务的方式，就是通过合同把要求层层压给零部件供应商。对大多数欧洲以外的制造商而言，NIS2 并不是自己需要申报的义务，而是一道采购门槛：先于采购订单抵达的那份问卷，以及随之而来的合同条款。</p>
           <p>事件报告的时限很紧，重大事件须在 24 小时内发出早期预警。无法配合这一时限的供应商，会让集成商在监管机构面前难以交代。</p>
-          <p class="cite">指令 (EU) 2022/2555 · eur-lex.europa.eu/eli/dir/2022/2555/oj <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></p>
+          <p class="cite">指令 (EU) 2022/2555 · <a href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj">eur-lex.europa.eu/eli/dir/2022/2555/oj</a></p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">Solar · BESS · Gateway</span></div>
       </article>
@@ -427,7 +433,7 @@ body.mode-clock #bookBody{display:none}
           <p>两个日期至关重要。2026 年 9 月 11 日，第 14 条报告义务开始生效：已被实际利用的漏洞和严重事件须通报 ENISA 及相关 CSIRT，并在 24 小时内发出早期预警。2027 年 12 月 11 日，全面的基本要求与合格评定开始适用。</p>
           <p>报告通过 ENISA 的单一报告平台（SRP）提交，该平台同日上线。另外，在您认定这只是未来产品的问题之前，请先读第 69(3) 条：报告义务延伸至已经在欧盟市场上的每一件在范围内的产品。您多年前出货的硬件，一旦被发现遭到利用，就立即处于 24 小时时限之内。</p>
           <p>对硬件厂商的实际后果是：协同漏洞披露政策和一位具名的安全联系人，不再只是良好实践，而成为准入条件。</p>
-          <p class="cite">法规 (EU) 2024/2847 · eur-lex.europa.eu/eli/reg/2024/2847/oj <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></p>
+          <p class="cite">法规 (EU) 2024/2847 · <a href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj">eur-lex.europa.eu/eli/reg/2024/2847/oj</a></p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
@@ -438,7 +444,7 @@ body.mode-clock #bookBody{display:none}
         <div class="bbody">
           <p>在横向法规之外，还有一部针对跨境电力流网络安全的行业专属网络规则。它对硬件厂商之所以重要，是因为它是能够触及聚合机群的那件工具，也就是在同一控制通道下的数千台小型设备，而不只是大型电站。如果您的网关或逆变器可以被大规模远程下令，它就处在某个主体现在被正式要求评估的风险边界之内。</p>
           <p>请仔细看时间安排。第 38(3) 条中 4 小时的事件时限确实存在，但它只约束高影响和关键影响主体，而这些主体的具约束力认定要到 2028 年 6 月 13 日才到期。今天就要求您承担 4 小时供应商时限的任何一方，都跑在了法规前面。</p>
-          <p class="cite">委员会授权法规 (EU) 2024/1366 · eur-lex.europa.eu/eli/reg_del/2024/1366/oj <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
+          <p class="cite">委员会授权法规 (EU) 2024/1366 · <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">Solar · Gateway</span></div>
       </article>
@@ -461,7 +467,7 @@ body.mode-clock #bookBody{display:none}
           <p>自 2027 年 2 月 18 日起，每一块投放欧盟市场、容量超过 2 kWh 的电动汽车电池、轻型交通工具电池和工业电池，都必须携带数字电池护照，并可通过电池本体上的二维码访问。护照包含唯一标识符、型号与技术参数、对应具体生产基地和批次的碳足迹，以及性能与耐久性数据，并对公众、监管机构和报废处理方设置分级访问权限。</p>
           <p>与之并行的碳足迹申报义务已经生效，尽职调查义务则于 2027 年 8 月 18 日跟进，该义务依据法规 (EU) 2025/1561 从 2025 年推迟而来。</p>
           <p>商业上的关键点不在护照本身，而在于批次级的碳数据和全生命周期数据必须在电池包下线之前就已存在。事后从 ERP 记录里补造，正是审计师受训要查出来的东西。</p>
-          <p class="cite">法规 (EU) 2023/1542 · eur-lex.europa.eu/eli/reg/2023/1542/oj <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
+          <p class="cite">法规 (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">储能</span></div>
       </article>
@@ -472,7 +478,7 @@ body.mode-clock #bookBody{display:none}
         <div class="bbody">
           <p>《可持续产品生态设计法规》（ESPR）是把电池护照推广为其他产品类别数字产品护照（DPP）的框架，具体范围将在未来几年通过授权法案逐步确定。它是光伏行业最需要盯住的那件工具：它涵盖产品级碳足迹、耐久性、可维修性和再生材料含量要求，并直接修订了电池法规。</p>
           <p>目前 ESPR 尚未对光伏组件施加任何约束。风险在于，这套机制现在已经存在，并且已先在电池上跑通。</p>
-          <p class="cite">法规 (EU) 2024/1781 · eur-lex.europa.eu/eli/reg/2024/1781/oj <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">eur-lex.europa.eu/eli/reg/2024/1781/oj</a></p>
+          <p class="cite">法规 (EU) 2024/1781 · <a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">eur-lex.europa.eu/eli/reg/2024/1781/oj</a></p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">适用全部产品线</span></div>
       </article>
@@ -594,7 +600,7 @@ body.mode-clock #bookBody{display:none}
     data-cal-title="预约 30 分钟 Zoom"
     data-cal-note="视频与屏幕共享，在 LG 的专属会议室。用于技术走查：芯片、数据路径、集成方式，以及板卡改版窗口。">
     <svg class="ic btn-ic"><use href="#i-video"></use></svg>与 LGV 进行 30 分钟 Zoom 通话</button>
-  <p class="cta-alt">更习惯先用邮件沟通？LG@sunified.com · 两种通话均通过 Calendly.com/lgv 预约 <a href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">LG@sunified.com</a></p>
+  <p class="cta-alt">更习惯先用邮件沟通？<a href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">LG@sunified.com</a> · 两种通话均通过 Calendly.com/lgv 预约</p>
 </div></section>
 
 <footer><div class="wrap">
@@ -633,7 +639,7 @@ body.mode-clock #bookBody{display:none}
   });
 
   // lane tags on each block, rebuilt with icons from data-lane
-  var LANE_DEFS = [['solar','i-solar','Solar'],['bess','i-batt','BESS'],['gateway','i-gate','Gateway']];
+  var LANE_DEFS = [['solar','i-solar','光伏'],['bess','i-batt','储能'],['gateway','i-gate','网关']];
   document.querySelectorAll('.block').forEach(function(b){
     var el = b.querySelector('.lanes');
     if (!el) return;
@@ -651,7 +657,7 @@ body.mode-clock #bookBody{display:none}
     ['2027-02-18T00:00:00Z','欧盟电池护照'],
     ['2027-08-18T00:00:00Z','电池尽职调查'],
     ['2027-12-11T00:00:00Z','CRA 全面义务'],
-    ['2028-01-01T00:00:00Z','CBAM downstream']
+    ['2028-01-01T00:00:00Z','CBAM 下游扩围']
   ];
   var stops = document.querySelectorAll('.stop');
   var live = document.getElementById('cdlive');
@@ -664,16 +670,16 @@ body.mode-clock #bookBody{display:none}
       if (st) {
         var a = st.querySelector('.away');
         if (!a) { a = document.createElement('div'); a.className = 'away mono'; st.appendChild(a); }
-        a.textContent = ms <= 0 ? 'live now' : Math.floor(ms/86400000) + ' days away';
+        a.textContent = ms <= 0 ? '已生效' : Math.floor(ms/86400000) + ' 天后';
       }
       if (ms > 0 && next === null) { next = {name:c[1], ms:ms}; }
     });
     if (!live) { return; }
-    if (!next) { live.textContent = 'all gates live'; return; }
+    if (!next) { live.textContent = '全部节点已生效'; return; }
     var s = Math.floor(next.ms/1000);
-    live.innerHTML = '<span class="dot"></span>' + next.name + ' in <b>' +
-      Math.floor(s/86400) + 'd ' + pad(Math.floor(s/3600)%24,2) + 'h ' +
-      pad(Math.floor(s/60)%60,2) + 'm ' + pad(s%60,2) + 's</b>';
+    live.innerHTML = '<span class="dot"></span>' + next.name + ' 剩余 <b>' +
+      Math.floor(s/86400) + '天 ' + pad(Math.floor(s/3600)%24,2) + '时 ' +
+      pad(Math.floor(s/60)%60,2) + '分 ' + pad(s%60,2) + '秒</b>';
   }
   tickClock();
   setInterval(tickClock, 1000);
@@ -708,7 +714,7 @@ body.mode-clock #bookBody{display:none}
   function openPanel(trigger){
     document.body.classList.remove('mode-clock');
     var url = trigger.getAttribute('data-cal');
-    if (titleEl) { titleEl.textContent = trigger.getAttribute('data-cal-title') || 'Book a call'; }
+    if (titleEl) { titleEl.textContent = trigger.getAttribute('data-cal-title') || '预约通话'; }
     if (noteEl) { noteEl.innerHTML = trigger.getAttribute('data-cal-note') || ''; }
     paint(url);
     document.body.classList.add('split');
@@ -738,11 +744,11 @@ body.mode-clock #bookBody{display:none}
 
   // analogue countdown clock, opened from the flywheel
   var CK = [
-    ['2026-09-11T00:00:00Z','CRA 第 14 条报告义务','Actively exploited vulnerabilities and severe incidents go to ENISA. Early warning inside 24 hours, detail at 72.'],
+    ['2026-09-11T00:00:00Z','CRA 第 14 条报告义务','已被实际利用的漏洞和严重事件须通报 ENISA。24 小时内发出早期预警，72 小时内提交详情。'],
     ['2027-02-18T00:00:00Z','欧盟电池护照','适用于 2 kWh 以上的电动汽车、轻型交通工具及工业电池。没有护照，就不能投放市场。'],
-    ['2027-08-18T00:00:00Z','电池尽职调查','Supply chain due diligence, deferred from 2025 by Regulation (EU) 2025/1561.'],
-    ['2027-12-11T00:00:00Z','CRA 全面义务','Essential requirements and conformity assessment for all products with digital elements.'],
-    ['2028-01-01T00:00:00Z','CBAM downstream','Scope widens. What lands in the final list is still being negotiated.']
+    ['2027-08-18T00:00:00Z','电池尽职调查','供应链尽职调查，依据法规 (EU) 2025/1561 自 2025 年推迟至此。'],
+    ['2027-12-11T00:00:00Z','CRA 全面义务','所有含数字元素产品的基本要求与合格评定。'],
+    ['2028-01-01T00:00:00Z','CBAM 下游扩围','覆盖范围扩大。最终清单内容仍在谈判中。']
   ];
   var CK_FROM = new Date('2026-01-01T00:00:00Z').getTime();
   var ckIdx = 0;
@@ -891,10 +897,10 @@ body.mode-clock #bookBody{display:none}
       });
       var text = title + '\n\n' + parts.join('\n\n') + '\n\nSource: https://oem.sunified.ai/#' + block.id;
       var done = function(){
-        btn.textContent = 'Copied';
+        btn.textContent = '已复制';
         btn.classList.add('done');
         if (window.plausible) { window.plausible('Copy block', {props:{block:block.id}}); }
-        setTimeout(function(){ btn.textContent = 'Copy text'; btn.classList.remove('done'); }, 1600);
+        setTimeout(function(){ btn.textContent = '复制文本'; btn.classList.remove('done'); }, 1600);
       };
       try {
         navigator.clipboard.writeText(text).then(done, function(){ fallback(text, done); });
