@@ -149,6 +149,40 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
 .stop .away{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--grey);margin-top:8px;
   font-variant-numeric:tabular-nums}
 @media (max-width:640px){.cdlive{float:none;display:block;margin-top:6px}}
+/* sticky call to action and the split booking panel */
+.hd-right{display:flex;align-items:center;gap:18px}
+.cta-call{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:#00232E;
+  font-family:"Inter",sans-serif;font-weight:700;font-size:13.5px;letter-spacing:.01em;
+  padding:9px 17px;border-radius:3px;border:0;cursor:pointer;white-space:nowrap;
+  transition:background .18s ease}
+.cta-call:hover{background:#FFC24D}
+.cta-call .ic{width:15px;height:15px;color:currentColor;stroke-width:1.7}
+.cta-call[aria-expanded="true"]{background:var(--raised);color:var(--cream);
+  box-shadow:inset 0 0 0 1px var(--gold)}
+@media (max-width:700px){.hd-right .tag{display:none}}
+
+#bookPanel{position:fixed;top:0;right:0;height:100vh;width:min(468px,100%);
+  background:var(--card);border-left:1px solid var(--line);z-index:60;
+  transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);
+  display:flex;flex-direction:column;box-shadow:-18px 0 46px rgba(0,0,0,.34)}
+body.split #bookPanel{transform:none}
+body.split{padding-right:min(468px,100%)}
+@media (max-width:860px){body.split{padding-right:0}#bookPanel{width:100%}}
+
+#bookPanel .ph{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+  padding:20px 22px 16px;border-bottom:1px solid var(--line);flex:0 0 auto}
+#bookPanel .ph h2{font-family:"Inter",sans-serif;font-size:17px;font-weight:700;margin:0 0 5px;
+  letter-spacing:-.01em}
+#bookPanel .ph p{margin:0;font-size:13px;color:var(--mute);max-width:34ch;line-height:1.5}
+#bookPanel .ph .u{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--gold);
+  display:block;margin-top:8px}
+#bookClose{background:transparent;border:1px solid var(--teald);color:var(--mute);
+  border-radius:3px;width:30px;height:30px;cursor:pointer;flex:0 0 auto;font-size:16px;line-height:1}
+#bookClose:hover{border-color:var(--gold);color:var(--gold)}
+#bookBody{flex:1 1 auto;overflow:auto;-webkit-overflow-scrolling:touch}
+#bookBody .loading{padding:34px 22px;color:var(--mute);font-size:13.5px;
+  font-family:"JetBrains Mono",monospace}
+.calendly-inline-widget{min-width:100%;height:100%;min-height:640px}
 .hidden{display:none!important}
 </style>
 </head>
@@ -172,6 +206,9 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
     <path d="M12 13.4V9.1"/>
     <path d="M8.9 6.7a4.4 4.4 0 0 1 6.2 0M6.4 4.2a7.9 7.9 0 0 1 11.2 0"/>
   </symbol>
+  <symbol id="i-call" viewBox="0 0 24 24">
+    <path d="M15.6 21.2A15.4 15.4 0 0 1 2.8 8.4 3 3 0 0 1 5.8 5h2.1a1.5 1.5 0 0 1 1.5 1.3c.1.9.3 1.8.6 2.6a1.5 1.5 0 0 1-.34 1.58l-.9.9a12.4 12.4 0 0 0 5.86 5.86l.9-.9a1.5 1.5 0 0 1 1.58-.34c.84.3 1.72.5 2.6.6A1.5 1.5 0 0 1 21 18.1v2.1a3 3 0 0 1-3.4 3 15.5 15.5 0 0 1-2-.3Z"/>
+  </symbol>
   <symbol id="i-eu" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="9.1"/>
     <path d="M2.9 12h18.2"/>
@@ -182,8 +219,25 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
 
 <header><div class="wrap hd">
   <a href="/" class="wm">SUNIFIED</a>
-  <span class="tag mono">OEM Briefing · September 2026</span>
+  <span class="hd-right">
+    <span class="tag mono">OEM Briefing · September 2026</span>
+    <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel">
+      <svg class="ic"><use href="#i-call"></use></svg>10-minute Call
+    </button>
+  </span>
 </div></header>
+
+<aside id="bookPanel" aria-hidden="true" aria-label="Book a 10 minute call">
+  <div class="ph">
+    <div>
+      <h2>Book a 10-minute call</h2>
+      <p>Mobile, WhatsApp, Google Hangout or Zoom. Pick whichever suits your time zone.</p>
+      <span class="u mono">Calendly.com/lgv</span>
+    </div>
+    <button id="bookClose" aria-label="Close booking panel">&times;</button>
+  </div>
+  <div id="bookBody"><div class="loading">Ready when you are.</div></div>
+</aside>
 
 <section class="hero"><div class="wrap">
   <p class="eyebrow mono keys">
@@ -428,6 +482,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
   <h2>Twenty minutes, on your clock.</h2>
   <p>We are looking for manufacturers in three lanes: solar module manufacture, battery and BESS pack assembly, and industrial or home energy gateways. If a board revision is opening in the next twelve months, that is the conversation worth having.</p>
   <a class="btn" href="mailto:LG@sunified.com?subject=UNITY%20OEM%20enquiry">Email LG@sunified.com</a>
+  <button class="cta-call" data-book style="margin-left:12px;padding:13px 24px;font-size:15px"><svg class="ic" style="width:17px;height:17px"><use href="#i-call"></use></svg>Book a 10-minute call</button>
 </div></section>
 
 <footer><div class="wrap">
@@ -510,6 +565,50 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
   }
   tickClock();
   setInterval(tickClock, 1000);
+
+  // split booking panel, Calendly loaded lazily on first open
+  var panel = document.getElementById('bookPanel');
+  var openBtn = document.getElementById('bookOpen');
+  var closeBtn = document.getElementById('bookClose');
+  var bodyEl = document.getElementById('bookBody');
+  var CAL = 'https://calendly.com/lgv/phone-lgv-10-min?hide_gdpr_banner=1&background_color=003E52&text_color=FCF8EA&primary_color=FFAA00';
+  var calLoaded = false;
+
+  function mountCalendly(){
+    if (calLoaded) { return; }
+    calLoaded = true;
+    bodyEl.innerHTML = '<div class="calendly-inline-widget" data-url="' + CAL + '"></div>';
+    var sc = document.createElement('script');
+    sc.src = 'https://assets.calendly.com/assets/external/widget.js';
+    sc.async = true;
+    document.body.appendChild(sc);
+  }
+
+  function openPanel(){
+    document.body.classList.add('split');
+    panel.setAttribute('aria-hidden','false');
+    if (openBtn) { openBtn.setAttribute('aria-expanded','true'); }
+    mountCalendly();
+    if (window.plausible) { window.plausible('Book call opened'); }
+  }
+  function closePanel(){
+    document.body.classList.remove('split');
+    panel.setAttribute('aria-hidden','true');
+    if (openBtn) { openBtn.setAttribute('aria-expanded','false'); }
+  }
+
+  if (openBtn) {
+    openBtn.addEventListener('click', function(){
+      document.body.classList.contains('split') ? closePanel() : openPanel();
+    });
+  }
+  if (closeBtn) { closeBtn.addEventListener('click', closePanel); }
+  document.querySelectorAll('[data-book]').forEach(function(b){
+    b.addEventListener('click', openPanel);
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && document.body.classList.contains('split')) { closePanel(); }
+  });
 
   var buttons = document.querySelectorAll('#filters button');
   buttons.forEach(function(btn){
