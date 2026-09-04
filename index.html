@@ -20,9 +20,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#001E28;--bg2:#003E52;--card:#0A4254;--teal:#19D3C5;--teald:#0e3a4d;
-  --gold:#FFAA00;--cream:#FCF8EA;--mute:#8FA8B0;--line:rgba(252,248,234,.10);
-  --green:#D7FD00;--grey:#5C7A84;--flag:#FF7A59;
+  /* sampled from Sunified Pre-Series A, June 2026, and Product 2P, July 2026 */
+  --bg:#012230;--bg2:#003E52;--card:#003E52;--raised:#0E485A;
+  --teal:#FFAA00;--teald:#0E485A;
+  --gold:#FFAA00;--cream:#FCF8EA;--mute:#94AEB6;--line:rgba(252,248,234,.13);
+  --green:#7EC16F;--grey:#6E8F94;--flag:#FF7A59;--parchment:#E8E9DE;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -41,7 +43,7 @@ header{position:sticky;top:0;z-index:20;background:rgba(0,30,40,.86);backdrop-fi
 .hd .tag{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--mute)}
 
 /* hero */
-.hero{padding:66px 0 44px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--bg) 0%,#002532 100%)}
+.hero{padding:66px 0 44px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,var(--bg) 0%,#00303F 100%)}
 .eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
 h1{font-size:clamp(30px,5vw,52px);line-height:1.05;letter-spacing:-.025em;font-weight:800;max-width:18ch;text-wrap:balance;margin-bottom:22px}
 h1 em{font-style:normal;color:var(--teal)}
@@ -121,16 +123,32 @@ h1 em{font-style:normal;color:var(--teal)}
 .btn:hover{background:var(--green)}
 footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;color:var(--grey);line-height:1.7}
 /* lane iconography */
-.ic{width:16px;height:16px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.ic{width:17px;height:17px;flex:0 0 auto;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
 .ic-batt{color:var(--green)}
-.keys{display:flex;flex-wrap:wrap;gap:10px 26px;align-items:center;margin-bottom:20px}
-.k{display:inline-flex;align-items:center;gap:9px;white-space:nowrap}
-.keys .ic{width:21px;height:21px;stroke-width:1.35}
-.filters button{display:inline-flex;align-items:center;gap:7px}
-.filters button .ic{width:15px;height:15px}
+/* hero keys: gold line icons in cream tiles, the Pre-Series A deck treatment */
+.keys{display:flex;flex-wrap:wrap;gap:14px 30px;align-items:center;margin-bottom:26px;
+  font-size:12px;letter-spacing:.13em}
+.k{display:inline-flex;align-items:center;gap:12px;white-space:nowrap}
+.keys .tile{width:46px;height:46px;border-radius:11px;background:var(--cream);
+  display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;
+  box-shadow:0 1px 0 rgba(0,0,0,.18)}
+.keys .ic{width:27px;height:27px;stroke-width:1.5;color:var(--gold)}
+.keys .ic-batt{color:#4A8F3C}
+.filters button{display:inline-flex;align-items:center;gap:8px}
+.filters button .ic{width:17px;height:17px;color:var(--gold)}
 .filters button[aria-pressed="true"] .ic{color:inherit}
-.lanes{display:inline-flex;flex-wrap:wrap;gap:5px 15px;align-items:center}
-.lanes .ic{width:14px;height:14px}
+.lanes{display:inline-flex;flex-wrap:wrap;gap:5px 16px;align-items:center}
+.lanes .ic{width:16px;height:16px;color:var(--gold)}
+.lanes .ic-batt{color:var(--green)}
+/* live countdown */
+.cdlive{float:right;color:var(--flag);letter-spacing:.06em;font-variant-numeric:tabular-nums;text-transform:none}
+.cdlive b{color:var(--gold);font-weight:600}
+.cdlive .dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--flag);
+  margin-right:7px;vertical-align:1px;animation:blip 2s ease-in-out infinite}
+@keyframes blip{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
+.stop .away{font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--grey);margin-top:8px;
+  font-variant-numeric:tabular-nums}
+@media (max-width:640px){.cdlive{float:none;display:block;margin-top:6px}}
 .hidden{display:none!important}
 </style>
 </head>
@@ -169,17 +187,17 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
 
 <section class="hero"><div class="wrap">
   <p class="eyebrow mono keys">
-    <span class="k"><svg class="ic"><use href="#i-solar"></use></svg>Solar</span>
-    <span class="k"><svg class="ic ic-batt"><use href="#i-batt"></use></svg>Battery</span>
-    <span class="k"><svg class="ic"><use href="#i-gate"></use></svg>Gateways</span>
-    <span class="k"><svg class="ic"><use href="#i-eu"></use></svg>Access to the EU</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-solar"></use></svg></span>Solar</span>
+    <span class="k"><span class="tile"><svg class="ic ic-batt"><use href="#i-batt"></use></svg></span>Battery</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-gate"></use></svg></span>Gateways</span>
+    <span class="k"><span class="tile"><svg class="ic"><use href="#i-eu"></use></svg></span>Access to the EU</span>
   </p>
   <h1>Compliance is the <em>sales instrument</em>, not the cost line.</h1>
   <p class="thesis">Four EU instruments land between this month and 2028, and together they change what a manufacturer is allowed to sell into Europe. None of them can be satisfied by a certificate at the border. Each one asks for <b>data that had to be originated at the device and cannot be reconstructed afterwards</b>. That is a problem for every manufacturer without silicon inside the product, and an advantage for the first ones that have it.</p>
 </div></section>
 
 <section class="clock"><div class="wrap">
-  <p class="klabel mono">The clock, in order of arrival</p>
+  <p class="klabel mono">The clock, in order of arrival <span id="cdlive" class="cdlive mono"></span></p>
   <div class="kline"></div>
   <div class="stops">
     <div class="stop soon">
@@ -258,6 +276,7 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
         <p class="usewhen">Read this if your devices are aggregated: DER portfolios, VPPs, fleet managed inverters.</p>
         <div class="bbody">
           <p>Beyond the horizontal rules there is a sector specific network code for the cybersecurity of cross border electricity flows. It matters to hardware makers because it is the instrument that reaches <b>aggregated fleets</b>, thousands of small devices under one control channel, rather than only large plant. If your gateway or inverter can be commanded remotely at scale, it sits inside a risk perimeter someone is now formally required to assess.</p>
+          <p>Read the timing carefully. The 4 hour incident clock in Art. 38(3) is real, but it binds only high and critical impact entities, and binding identification of those entities is not due until <b>13 June 2028</b>. Anyone demanding a 4 hour supplier clock from you today is running ahead of the instrument.</p>
           <p class="cite">Commission Delegated Regulation (EU) 2024/1366 · <a href="https://eur-lex.europa.eu/eli/reg_del/2024/1366/oj">eur-lex.europa.eu/eli/reg_del/2024/1366/oj</a></p>
         </div>
         <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · Gateway</span></div>
@@ -458,6 +477,39 @@ footer{border-top:1px solid var(--line);padding:26px 0 60px;font-size:12.5px;col
     }).join('');
     if (html) { el.innerHTML = html; }
   });
+
+  // live countdown to the next gate, plus days-away under each stop
+  var CD = [
+    ['2026-09-11T00:00:00Z','CRA Art. 14 reporting'],
+    ['2027-02-18T00:00:00Z','EU Battery Passport'],
+    ['2027-08-18T00:00:00Z','Battery due diligence'],
+    ['2027-12-11T00:00:00Z','CRA full obligations'],
+    ['2028-01-01T00:00:00Z','CBAM downstream']
+  ];
+  var stops = document.querySelectorAll('.stop');
+  var live = document.getElementById('cdlive');
+  function pad(n,w){ var s=String(Math.max(0,n)); while(s.length<w){s='0'+s;} return s; }
+  function tickClock(){
+    var now = Date.now(), next = null;
+    CD.forEach(function(c, i){
+      var ms = new Date(c[0]).getTime() - now;
+      var st = stops[i];
+      if (st) {
+        var a = st.querySelector('.away');
+        if (!a) { a = document.createElement('div'); a.className = 'away mono'; st.appendChild(a); }
+        a.textContent = ms <= 0 ? 'live now' : Math.floor(ms/86400000) + ' days away';
+      }
+      if (ms > 0 && next === null) { next = {name:c[1], ms:ms}; }
+    });
+    if (!live) { return; }
+    if (!next) { live.textContent = 'all gates live'; return; }
+    var s = Math.floor(next.ms/1000);
+    live.innerHTML = '<span class="dot"></span>' + next.name + ' in <b>' +
+      Math.floor(s/86400) + 'd ' + pad(Math.floor(s/3600)%24,2) + 'h ' +
+      pad(Math.floor(s/60)%60,2) + 'm ' + pad(s%60,2) + 's</b>';
+  }
+  tickClock();
+  setInterval(tickClock, 1000);
 
   var buttons = document.querySelectorAll('#filters button');
   buttons.forEach(function(btn){
