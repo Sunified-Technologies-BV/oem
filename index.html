@@ -178,6 +178,7 @@ body.split{padding-right:min(468px,100%)}
 #bookPanel .ph p{margin:0;font-size:13px;color:var(--mute);max-width:34ch;line-height:1.5}
 #bookPanel .ph .u{font-family:"JetBrains Mono",monospace;font-size:11.5px;color:var(--gold);
   display:block;margin-top:8px}
+body.mode-clock #bookPanel .ph .u{display:none}
 #bookClose{background:transparent;border:1px solid var(--teald);color:var(--mute);
   border-radius:3px;width:30px;height:30px;cursor:pointer;flex:0 0 auto;font-size:16px;line-height:1}
 #bookClose:hover{border-color:var(--gold);color:var(--gold)}
@@ -313,12 +314,13 @@ body.mode-clock #bookBody{display:none}
       <path id="ckProg" class="prog" d=""/>
       <circle class="face" cx="130" cy="130" r="104"/>
       <g id="ckTicks"></g>
-      <text id="ckDays" class="dnum" x="130" y="96" text-anchor="middle" font-size="34">000</text>
-      <text class="dlab" x="130" y="112" text-anchor="middle" font-size="9">DAYS REMAINING</text>
       <line id="ckH" class="hand-h" x1="130" y1="130" x2="130" y2="76"/>
       <line id="ckM" class="hand-m" x1="130" y1="130" x2="130" y2="56"/>
       <line id="ckS" class="hand-s" x1="130" y1="142" x2="130" y2="44"/>
       <circle class="pin" cx="130" cy="130" r="5"/>
+      <rect x="82" y="166" width="96" height="40" rx="6" fill="#012230" stroke="#0E485A" stroke-width="1"/>
+      <text id="ckDays" class="dnum" x="130" y="190" text-anchor="middle" font-size="26">000</text>
+      <text class="dlab" x="130" y="201" text-anchor="middle" font-size="7.5">DAYS REMAINING</text>
     </svg>
     <div class="ck-read mono" id="ckRead">--:--:--</div>
     <div class="ck-name" id="ckName">Next gate</div>
@@ -382,12 +384,12 @@ body.mode-clock #bookBody{display:none}
       <text x="210" y="228" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="7.5" fill="#94AEB6" letter-spacing="1">SIGNED AT SOURCE</text>
 
       <g class="fw-labels">
-        <text x="210.0" y="45.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#94AEB6" letter-spacing="0.6">CRA Art. 14</text>
-        <text x="355.5" y="129.5" text-anchor="start" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#94AEB6" letter-spacing="0.6">Battery Passport</text>
-        <text x="355.5" y="297.5" text-anchor="start" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#94AEB6" letter-spacing="0.6">SSI traceability</text>
-        <text x="210.0" y="381.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#94AEB6" letter-spacing="0.6">Product carbon</text>
-        <text x="64.5" y="297.5" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#94AEB6" letter-spacing="0.6">NIS2 supply chain</text>
-        <text x="64.5" y="129.5" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="10.5" fill="#94AEB6" letter-spacing="0.6">Guarantee of origin</text>
+        <text x="210.0" y="45.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">CRA Art. 14</text>
+        <text x="355.5" y="129.5" text-anchor="start" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">Battery Passport</text>
+        <text x="355.5" y="297.5" text-anchor="start" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">SSI traceability</text>
+        <text x="210.0" y="381.5" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">Product carbon</text>
+        <text x="64.5" y="297.5" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">NIS2 supply chain</text>
+        <text x="64.5" y="129.5" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="9.5" fill="#94AEB6" letter-spacing="0.4">Guarantee of origin</text>
       </g>
     </svg>
     <div class="fw-hint mono">Click the flywheel for the countdown</div>
