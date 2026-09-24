@@ -461,6 +461,7 @@ body.mode-clock #bookBody{display:none}
           <p>自 2027 年 2 月 18 日起，每一块投放欧盟市场、容量超过 2 kWh 的电动汽车电池、轻型交通工具电池和工业电池，都必须携带数字电池护照，并可通过电池本体上的二维码访问。护照包含唯一标识符、型号与技术参数、对应具体生产基地和批次的碳足迹，以及性能与耐久性数据，并对公众、监管机构和报废处理方设置分级访问权限。</p>
           <p>与之并行的碳足迹申报义务已经生效，尽职调查义务则于 2027 年 8 月 18 日跟进，该义务依据法规 (EU) 2025/1561 从 2025 年推迟而来。</p>
           <p>商业上的关键点不在护照本身，而在于批次级的碳数据和全生命周期数据必须在电池包下线之前就已存在。事后从 ERP 记录里补造，正是审计师受训要查出来的东西。</p>
+          <p>这套机制的影响范围已经不止于电池。全球电池联盟与光伏管理倡议（SSI）于 2026 年 9 月 22 日签署谅解备忘录，协调两个行业在可追溯性、保证与可持续性报告上的做法，这让护照式思路远早于 ESPR 就摆到了组件厂商面前。参见 <a href="#EU-07">EU-07</a>。</p>
           <p class="cite">法规 (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">储能</span></div>
@@ -483,7 +484,9 @@ body.mode-clock #bookBody{display:none}
         <div class="bbody">
           <p>在任何强制性法规落地之前，欧洲的开发商、买家和融资方已经不约而同地把光伏管理倡议（SSI）的 ESG 标准与供应链可追溯性标准，作为他们愿意接受的证据。这里的可追溯性，指的是从多晶硅经硅片、电池片到组件的完整书面监管链，而这恰恰是大多数供应链无法证明的，因为那份记录从来没有与实物单元绑定过。</p>
           <p>这一项是自愿性的，也正是已经出现在招标条件里的那一项。制造商可以在今年就借它做出差异化，而不必等到 2028 年。</p>
-          <p class="cite"><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">solarstewardshipinitiative.org，供应链可追溯性标准</a></p>
+          <p>2026 年 9 月 22 日，SSI 与全球电池联盟（Global Battery Alliance）在布鲁塞尔签署谅解备忘录，涵盖供应链可追溯性、可持续性保证、利益相关方沟通与能力建设。备忘录中列明的工作包括联合指南、网络研讨会与工作坊、工作组交流，以及围绕负责任采购、可追溯性和可持续性报告的试点项目。全球电池联盟把它在电池护照上积累的实操经验带到了光伏这一侧。第一项公开成果是 2026 年 10 月 21 日与全球光伏理事会（Global Solar Council）联合举办的网络研讨会，主题是光伏与储能的电池护照。</p>
+          <p>把这件事当作方向来读。光伏与电池两套可追溯性体系正在向同一套证据模型收敛。制造商若为两者各建一条独立的审计链路，等于把错的事情做了两遍。随着时间推移越来越划算的那个位置，是每一个物理单元一份、两套体系都能读取的经认证记录。</p>
+          <p class="cite"><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">solarstewardshipinitiative.org，供应链可追溯性标准</a> · <a href="https://www.solarstewardshipinitiative.org/news/the-solar-stewardship-initiative-and-global-battery-alliance-sign-partnership-to-advance-responsible-energy-supply-chains/">SSI 与 GBA 合作，2026 年 9 月 22 日</a></p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏</span></div>
       </article>
@@ -511,6 +514,7 @@ body.mode-clock #bookBody{display:none}
           <li><a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">电池法规，法规 (EU) 2023/1542</a></li>
           <li><a href="https://eur-lex.europa.eu/eli/reg/2024/1781/oj">ESPR，法规 (EU) 2024/1781</a></li>
           <li><a href="https://www.solarstewardshipinitiative.org/ssi-standards/supply-chain-traceability-standard/">光伏管理倡议，可追溯性</a></li>
+          <li><a href="https://www.solarstewardshipinitiative.org/news/the-solar-stewardship-initiative-and-global-battery-alliance-sign-partnership-to-advance-responsible-energy-supply-chains/">SSI 与全球电池联盟，2026 年 9 月 22 日谅解备忘录</a></li>
           <li><a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism_en">CBAM，欧盟委员会</a></li>
         </ul>
       </div>
@@ -556,7 +560,7 @@ body.mode-clock #bookBody{display:none}
         <div class="bhead"><span class="bid mono">UNI-02</span><h3 class="btitle">芯片与安全架构</h3></div>
         <p class="usewhen">面向硬件工程师或安全工程师。</p>
         <div class="bbody">
-          <p>UNITY 基于 Silicon Labs EFR32MG24B 构建，搭载 Secure Vault High，提供硬件信任根、安全密钥存储和安全启动。这是 CRA 合格声明所依托的基础，也是负有 NIS2 义务的集成商需要在供应商身上看到的保证。Silicon Labs Secure Vault 在 Series 2 系列上持有 <b>PSA Certified Level 3</b> 认证，是全球首个达到该等级的物联网安全方案，并经 Riscure 独立渗透测试验证。IEC 62443 的对齐工作通过我们的集成合作伙伴推进。</p>
+          <p>UNITY is built on a Silicon Labs EFR32MG24B with Secure Vault High, providing a hardware root of trust, secure key storage and secure boot. That is the foundation a CRA conformity claim rests on, and the assurance a NIS2 obligated integrator needs to see in a supplier. Silicon Labs Secure Vault on the Series 2 family holds <b>PSA Certified Level 3</b>, the first IoT security solution to reach it, with independent penetration testing by Riscure. IEC 62443 alignment runs through our integration partner.</p>
           <p>目前以选配板卡形式部署，并已规划向主板集成的路径。Sunified 是固件的作者，在 CRA 之下本身即为制造商，这意味着我们这一层的报告与漏洞处理义务由我们承担，而不落在 OEM 身上。</p>
         </div>
         <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">BESS · Gateway</span></div>
