@@ -111,6 +111,11 @@ h1 em{font-style:normal;color:var(--teal)}
 .copy.done{background:var(--green);border-color:var(--green);color:#00232E;font-weight:600}
 .lanes{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--grey);letter-spacing:.09em;text-transform:uppercase}
 
+/* figure */
+.fig{margin:0 0 14px;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.fig img{display:block;width:100%;max-width:100%;height:auto;border-radius:3px 3px 0 0}
+.fig figcaption{font-size:12.5px;color:var(--mute);padding:10px 14px 11px;line-height:1.5}
+
 /* link block */
 .srcbar{border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--teald);padding:19px 22px;border-radius:3px;margin-bottom:14px}
 .srcbar h3{font-size:14.5px;font-weight:700;margin-bottom:11px}
@@ -535,6 +540,8 @@ body.mode-clock #bookBody{display:none}
           <li><a href="https://www.globalbattery.org/media/publications/gba-batterybenchmarks-final-web-resolution-duplicate.pdf">Global Battery Alliance, Battery Benchmarks, Beta Release</a></li>
           <li><a href="https://www.globalbattery.org/2026-battery-passport-pilots/">GBA, 2026 Battery Passport Operational Trials</a></li>
           <li><a href="https://www.solarstewardshipinitiative.org/certified-sites/">Solar Stewardship Initiative, certified sites</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/dec_impl/2026/1736/oj/eng">Implementing Decision (EU) 2026/1736, harmonised DPP standards incl. EN 18220</a></li>
+          <li><a href="https://solaralliance.eu/wp-content/uploads/2024/11/ESIA-PV-Passport-II.pdf">European Solar PV Industry Alliance, PV passport recommendation</a></li>
         </ul>
       </div>
     </section>
@@ -565,6 +572,11 @@ body.mode-clock #bookBody{display:none}
     <section class="sec" id="sec-c">
       <div class="sechead"><span class="ltr mono">C</span><h2>What UNITY actually is</h2></div>
       <p class="secnote">From the sentence that describes it, to the detail a hardware engineer asks for third, and the five questions it answers.</p>
+
+      <figure class="fig">
+        <img src="unity-five-questions.jpg" width="1600" height="900" loading="lazy" alt="UNITY five questions: trusted hardware, measurement and monitoring, records and open stacks, inspection, legal wrapper">
+        <figcaption>The five questions from UNI-05 in one picture: five groups of companies, one signed reading at the point of production.</figcaption>
+      </figure>
 
       <article class="block" id="UNI-01" data-lane="all solar bess gateway">
         <div class="bhead"><span class="bid mono">UNI-01</span><h3 class="btitle">The short description</h3></div>
@@ -623,6 +635,123 @@ body.mode-clock #bookBody{display:none}
       </article>
     </section>
 
+    <section class="sec" id="sec-d">
+      <div class="sechead"><span class="ltr mono">D</span><h2>Physical AI, part 1: the dark factory and shipping logistics</h2></div>
+      <p class="secnote">Four sections on the factory and the road out of it: how unit identity is bound today, what UNITY adds at each station, what reads the unit in transit, and why a printed code is not enough. Each section stands alone.</p>
+
+      <article class="block" id="PAI-01" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-01</span><h3 class="btitle">Lights-out lines still bind their data through a database row</h3></div>
+        <p class="usewhen">Read this if your plant is automated and you assume traceability is solved.</p>
+        <div class="bbody">
+          <p>The public marker for factory automation in this sector is the World Economic Forum lighthouse list. The first lighthouse in each segment: CATL Ningde for batteries (2021), LONGi Jiaxing for modules (December 2023), Tongwei Meishan for cells (2025) and HiTHIUM Chongqing for energy storage batteries (January 2026). LONGi Jiaxing alone runs 784 cameras across 20 processes.</p>
+          <p>The identity model underneath has not changed. On a module line, EL runs before lamination, and the flash test (IV curve, Pmax) runs after framing and junction box. On a cell line, a laser marks a Data Matrix or QR code on the can at grading, after formation. In both cases the MES links each measurement to the printed code. The binding lives in a row in the maker’s database, and the unit carries only a symbol anyone can copy.</p>
+          <p><b>No lighthouse disclosure or MES vendor material we reviewed signs unit measurements with a key held in the unit.</b> The secure elements sold for batteries answer one question, whether a battery is original. On the sources we read, none of them signs a measurement.</p>
+          <p class="cite">CATL · <a href="https://en.prnasia.com/releases/apac/catl-s-sichuan-plant-selected-as-lighthouse-factory-by-world-economic-forum-378646.shtml">prnasia.com</a> · LONGi · <a href="https://solarquarter.com/2023/12/19/recognized-by-wef-as-global-lighthouse-factory-longi-leads-smart-and-sustainable-manufacturing-in-the-pv-industry/">solarquarter.com</a> · Tongwei · <a href="https://www.gramwzielone.pl/energia-sloneczna/20333977/zaklad-tongwei-solar-z-z-tytulem-lighthouse-factory-wef-przelom-dla-tnc-2-0">gramwzielone.pl</a> · HiTHIUM · <a href="https://technode.global/prnasia/hithium-recognized-as-the-worlds-first-lighthouse-factory-for-energy-storage-batteries/">technode.global</a> · module line · <a href="https://www.bisol.com/post/do-you-know-the-steps-of-quality-production">bisol.com</a> · cell marking · <a href="https://www.pryormarking.com/?p=23690">pryormarking.com</a> · MES genealogy · <a href="https://kontron-ais.com/ressourcen/referenzen/fabeagle-mes-solarzellen-solarmodul-produktion-meyer-burger">kontron-ais.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS</span></div>
+      </article>
+
+      <article class="block" id="PAI-02" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-02</span><h3 class="btitle">What UNITY adds inside the factory</h3></div>
+        <p class="usewhen">For the plant manager and the quality engineer.</p>
+        <div class="bbody">
+          <ul>
+            <li><b>Materials in.</b> Incoming lots are read and registered against the order before they reach the line.</li>
+            <li><b>Unit identity bound at the station.</b> The chip’s key is registered against the MES serial at layup or junction box on a module line, and at pack end-of-line test for BESS, before the first measurement is taken.</li>
+            <li><b>Flash test and QA verification signed to the unit.</b> The station result (Pmax bin, EL pass, end-of-line test) is signed and bound to the unit’s own key, so the result travels with the unit and not only in the maker’s database.</li>
+            <li><b>Finished goods and production lot tracking.</b> The signed record carries plant and lot. The battery passport declares carbon footprint per battery model and per manufacturing plant, so the unit record and the plant record meet in one signature.</li>
+            <li><b>Read by phone, gate and forklift.</b> Bluetooth plus RFID, so the record is read through the box without opening it.</li>
+          </ul>
+          <p>Cells keep their laser-marked Data Matrix as the cell layer. A chip per cell is not realistic at cell cost; the UNITY chip signs the cell manifest at pack level.</p>
+          <p>One limit, stated plainly: UNITY fixes the record a flasher produced. The chip does not prove the flasher was calibrated, so we pair it with a signed calibration reference per flasher.</p>
+          <p class="cite">Cell marking after formation · <a href="https://www.pryormarking.com/?p=23690">pryormarking.com</a> · Battery passport and carbon footprint, Reg. (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS</span></div>
+      </article>
+
+      <article class="block" id="PAI-03" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-03</span><h3 class="btitle">Shipping and warehouse: what reads the unit, and what the passport asks for</h3></div>
+        <p class="usewhen">For logistics, goods-in and anyone building the passport.</p>
+        <div class="bbody">
+          <p>Inside a warehouse, fixed portals and forklift-mounted readers read pallets in bulk, with forklift readers reaching up to 12 m. Outside, drone readers are commercial for outdoor yards, typically reading 2 to 8 m below the aircraft on flights of 20 to 40 minutes. One reader vendor advises drones for yards and forklift readers for indoor continuous inventory.</p>
+          <p>The EU battery passport applies from 18 February 2027 to industrial batteries above 2 kWh, EV and LMT batteries, and the passport is reached through a QR code linked to a unique identifier (Art. 77(3)). EN 18220:2026 on data carriers, published as a harmonised standard by Implementing Decision (EU) 2026/1736 (in force 15 July 2026), accepts QR Code, Data Matrix, NFC, HF RFID and RAIN UHF RFID as data carriers.</p>
+          <p><b>No published passport text requires the carrier to be signed.</b> The companion standard on data authentication and integrity, EN 18246, was still under approval in mid 2026. A carrier tells a reader where the record is. A carrier does not prove that the pack in hand is the pack the record describes.</p>
+          <p>UNITY puts Bluetooth plus RFID on the unit, so one signed identity is read at the portal, by the forklift, by the drone over the yard and by a phone at goods-in. The QR code stays. UNITY adds the proof behind it.</p>
+          <p class="cite">Implementing Decision (EU) 2026/1736 · <a href="https://eur-lex.europa.eu/eli/dec_impl/2026/1736/oj/eng">eur-lex.europa.eu/eli/dec_impl/2026/1736/oj</a> · EN 18220 and EN 18246 status · <a href="https://www.cencenelec.eu/media/CEN-CENELEC/Events/Webinars/2026/20260625_cen-cenelec-webinar-on-dpp-final_rev20260625.pdf">cencenelec.eu</a> · Art. 77, Reg. (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu</a> · forklift reads · <a href="https://www.dronescan.co/rfid">dronescan.co</a> · drone reads · <a href="https://rfid.me/readers/drone-reader/">rfid.me</a> · yards versus indoor · <a href="https://www.simplyrfid.com/faq/drone-rfid-inventory-system-id-001/">simplyrfid.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS</span></div>
+      </article>
+
+      <article class="block" id="PAI-04" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-04</span><h3 class="btitle">A QR code is not good enough</h3></div>
+        <p class="usewhen">Read this when someone says the label already does the job.</p>
+        <div class="bbody">
+          <p>A QR code points to a record. Copy the label, and the copy points to the same record.</p>
+          <p>An RFID tag laminated in the glass is a QR code you cannot see. India has required one inside the module laminate for MNRE scheme modules since 1 April 2013, and the current PM Surya Ghar guidelines still ask for “a RF identification tag laminated inside the glass”. The tag holds the factory record: maker, dates, origin, I-V data and serial. The tag is written once, no text we found requires a signature, and it has no sensor. Anyone with a writer can write plausible values.</p>
+          <p>The cost of a label that is not bound to the measurement is visible in the data. Fraunhofer ISE CalLab found that in 2023 crystalline modules measured on average 2.2% below their nameplate, against under 1% in 2012 to 2016. Modules are sorted into 5 W classes, and about 2% is enough to move a module up a class. In a 2016 case, a distributor ordered 250 W modules and received 240 W modules carrying replacement 250 W nameplates.</p>
+          <p><b>UNITY signs the flash result to the unit’s own key at the flasher.</b> A relabel or a bin shift then shows up at goods-in, read through the box.</p>
+          <p class="cite">PM Surya Ghar guidelines, Annexure 3, 1.11 · <a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/07/202507081690964295.pdf">MNRE PDF</a> · MNRE 2013 rule · <a href="https://iitk.ac.in/new/hindi/data/tender/file/EESSKI2015-2016001.pdf">iitk.ac.in</a> · Fraunhofer ISE CalLab, 5 November 2024 · <a href="http://www.pv-magazine.com/2024/11/05/module-power-output-distortion-on-rise/">pv-magazine.com</a> · relabelling case · <a href="http://www.pv-magazine.com/2016/06/10/relabeled-modules-cause-headache-for-distributor_100024902/">pv-magazine.com</a> · tag write risk · <a href="https://sinovoltaics.com/monitoring/rfid-chip-in-solar-modules-efficient-tagging-and-performance-tracking/">sinovoltaics.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS</span></div>
+      </article>
+    </section>
+
+    <section class="sec" id="sec-e">
+      <div class="sechead"><span class="ltr mono">E</span><h2>Physical AI, part 2: field assembly, maintenance and retirement</h2></div>
+      <p class="secnote">Three sections on the life of a unit after the factory: who places it, who finds it again, and who takes it apart. Each section stands alone.</p>
+
+      <article class="block" id="PAI-05" data-lane="all solar">
+        <div class="bhead"><span class="bid mono">PAI-05</span><h3 class="btitle">Robots place the panel. Nobody records which panel.</h3></div>
+        <p class="usewhen">For EPCs, robotics firms and asset owners.</p>
+        <div class="bbody">
+          <p>Module placement robots now work at gigawatt scale:</p>
+          <ul>
+            <li><b>Gritt Robotics</b>, with Burns &amp; McDonnell on the 346 MW Gibson City project in Illinois. A crew of eight places 3,000 to 4,000 panels a day, against about 800 by hand. Gritt lists verification logs and an audit trail as a product capability.</li>
+            <li><b>Terabase Terafab</b>, a field factory on the site. V2 adds in-line module QC. One line installs more than 20 MW per week running continuously, and the company page claims 100+ MW installed.</li>
+            <li><b>AES Maximo</b>, 100+ MW installed at Bellefield, at more than one module per minute.</li>
+            <li><b>Goldbeck Solar HeliomatiX</b>, an assembly hub that inspects each module and scans its serial number.</li>
+            <li><b>TrinaTracker Buildex</b>, up to 90 modules per hour.</li>
+            <li><b>Cosmic Robotics</b>, one panel every 30 to 40 seconds, and <b>Planted</b>, which pairs digital twins with robot-built racking.</li>
+          </ul>
+          <p>None of them publishes a placement record that binds a proven panel identity to a position. The serial-to-position link is still made afterwards, by people: on one 300+ MW project, Rosendin crews scanned nearly 1 million module serials by barcode, row by row.</p>
+          <p><b>With UNITY, the robot reads the chip at pick time, and the placement record carries a signed panel identity and its position.</b> Hyperlocation comes from Bluetooth Channel Sounding anchors in the junction boxes, the anchor grid already described on <a href="https://agri.sunified.ai/#positioning">agri.sunified.ai</a> for sites where satellite positioning degrades under the panels.</p>
+          <p class="cite">Gibson City · <a href="https://www.renewableenergyworld.com/solar/utility-scale/are-ai-powered-robots-the-future-of-solar-construction/">renewableenergyworld.com</a> · crew output · <a href="https://thenextweb.com/news/gritt-32m-physical-ai-construction-solar">thenextweb.com</a> · verification logs · <a href="https://www.gritt.ai">gritt.ai</a> · Terafab · <a href="https://www.terabase.energy/products-services/construction/terafab">terabase.energy</a> · <a href="https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment">20 MW per week</a> · Maximo · <a href="https://www.solarpowerworldonline.com/2026/03/robots-install-100-mw-of-solar-panels-on-1-gw-aes-project/">solarpowerworldonline.com</a> · HeliomatiX · <a href="https://www.pv-magazine.com/2026/06/30/goldbeck-solar-offers-3-step-solution-for-automated-construction-of-utility-scale-pv-plants/">pv-magazine.com</a> · Buildex · <a href="https://www.pv-magazine.com/2026/09/30/trinatracker-launches-solar-panel-installation-and-cleaning-robots/">pv-magazine.com</a> · Cosmic · <a href="https://techcrunch.com/2025/04/16/cosmic-robotics-is-building-robots-to-speed-solar-power-deployments-for-data-centers">techcrunch.com</a> · Planted · <a href="https://pv-magazine-usa.com/2026/09/22/planted-raises-31-8-million-for-robot-built-solar-deployment/">pv-magazine-usa.com</a> · Rosendin · <a href="https://www.nacleanenergy.com/rosendin-electric-uses-raptor-maps-software-to-capture-nearly-1-million-module-serial-numbers">nacleanenergy.com</a> · <a href="https://raptormaps.com/solar-tech-docs/how-to-scan-solar-pv-module-serial-numbers">raptormaps.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar</span></div>
+      </article>
+
+      <article class="block" id="PAI-06" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-06</span><h3 class="btitle">Field maintenance: faults found by position, not by proven serial</h3></div>
+        <p class="usewhen">For O&amp;M providers, warranty teams and insurers.</p>
+        <div class="bbody">
+          <p>Cleaning robots and inspection drones are commercial. TrinaTracker launched Aurora, an unattended cleaning robot, alongside Buildex in September 2026. Drone thermography locates a fault “down to the module level”, which means by position in the array. Turning that position into a serial number is a separate lookup against the as-built map or the barcode scan made at install. No maintenance robot or drone source we found reads the module’s identity in the field.</p>
+          <p>Warranty evidence rests on imagery standards: capture at 3 cm per pixel, and repeated inspections to show when a defect began and whether the cause is manufacture or installation. None of that proves the imaged module is the serial named on the claim.</p>
+          <p><b>With UNITY, the module answers a Bluetooth query with its signed identity and its own signed measurements.</b> The drone or the robot binds the observation to the unit at the moment of capture, and the warranty claim carries the panel’s own record. A BESS rack answers the same way.</p>
+          <p class="cite">Aurora and Buildex · <a href="https://www.pv-magazine.com/2026/09/30/trinatracker-launches-solar-panel-installation-and-cleaning-robots/">pv-magazine.com</a> · thermography and warranty evidence · <a href="https://raptormaps.com/blog-posts/how-drones-can-be-used-to-support-solar-inspections-for-warranties">raptormaps.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">Solar · BESS</span></div>
+      </article>
+
+      <article class="block" id="PAI-07" data-lane="all bess solar">
+        <div class="bhead"><span class="bid mono">PAI-07</span><h3 class="btitle">Retirement and disassembly: the passport asks for data per unit</h3></div>
+        <p class="usewhen">For recyclers, second-life operators and pack designers.</p>
+        <div class="bbody">
+          <p>The Battery Regulation already sets the data a recycler and a second-life buyer receive:</p>
+          <ul>
+            <li><b>Annex XIII, dismantling information</b> per battery model: exploded diagrams, disassembly sequences, the type and number of fastening techniques to unlock, and the tools required.</li>
+            <li><b>Annex XIII, per individual battery:</b> state of health, and status as original, repurposed, re-used, remanufactured or waste.</li>
+            <li><b>Art. 14:</b> since 18 August 2024, read-only access to state of health in the BMS for the purchaser and independent operators.</li>
+            <li><b>Art. 77(7):</b> a repurposed battery gets a new passport linked to the passport of the original.</li>
+          </ul>
+          <p>Machine-readable dismantling data per unit matters because robots still struggle to know what they face. The RAPID platform (University of Colorado, March 2026) removed top-cover fasteners from full-scale EV packs with 97% success using taught poses, and 57% using one-shot vision.</p>
+          <p>Photovoltaic end-of-life is still keyed to a printed serial label, where the label is legible. The voluntary PV passport recommendation from the European Solar PV Industry Alliance names a QR code as the carrier.</p>
+          <p><b>A pack or panel that announces its own signed identity tells the disassembly cell which dismantling record to fetch before the first cut.</b> The same key carries the signed use history to the second-life buyer and links the new passport to the original.</p>
+          <p class="cite">Annex XIII, Art. 14, Art. 77(7), Reg. (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542">eur-lex.europa.eu</a> · RAPID · <a href="https://arxiv.org/abs/2603.18520">arxiv.org/abs/2603.18520</a> · ESIA PV passport · <a href="https://solaralliance.eu/wp-content/uploads/2024/11/ESIA-PV-Passport-II.pdf">solaralliance.eu</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">Copy text</button><span class="lanes">BESS · Solar</span></div>
+      </article>
+    </section>
+
   </main>
 </div></div>
 
@@ -649,7 +778,9 @@ body.mode-clock #bookBody{display:none}
   var groups = [
     {sel:'#sec-a', label:'A · Regulation'},
     {sel:'#sec-b', label:'B · Engagement'},
-    {sel:'#sec-c', label:'C · Product'}
+    {sel:'#sec-c', label:'C · Product'},
+    {sel:'#sec-d', label:'D · Factory'},
+    {sel:'#sec-e', label:'E · Field'}
   ];
   groups.forEach(function(g){
     var head = document.createElement('li');
