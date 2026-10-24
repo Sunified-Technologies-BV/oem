@@ -212,6 +212,8 @@ body.mode-clock #bookPanel .ph .u{display:none}
   letter-spacing:.14em;text-transform:uppercase;color:var(--grey)}
 .fw-wrap:hover .fw-hint{color:var(--green)}
 
+/* pause flywheel animations when off screen (Safari memory) */
+.fw-off .fw-arc,.fw-off .fw-ring,.fw-off .fw-dot,.fw-off .fw-hub-glow,.cd-off .dot{animation-play-state:paused}
 @keyframes fwspin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 @keyframes fwspin-r{from{transform:rotate(0deg)}to{transform:rotate(-360deg)}}
 @keyframes fwpulse{0%,100%{opacity:.45;r:6}50%{opacity:1;r:8.5}}
@@ -825,6 +827,7 @@ body.mode-clock #bookBody{display:none}
   ];
   var stops = document.querySelectorAll('.stop');
   var live = document.getElementById('cdlive');
+  var liveN = null, liveB = null;
   function pad(n,w){ var s=String(Math.max(0,n)); while(s.length<w){s='0'+s;} return s; }
   function tickClock(){
     var now = Date.now(), next = null;
@@ -834,19 +837,25 @@ body.mode-clock #bookBody{display:none}
       if (st) {
         var a = st.querySelector('.away');
         if (!a) { a = document.createElement('div'); a.className = 'away mono'; st.appendChild(a); }
-        a.textContent = ms <= 0 ? '已生效' : Math.floor(ms/86400000) + ' 天后';
+        var at = ms <= 0 ? '已生效' : Math.floor(ms/86400000) + ' 天后';
+        if (a.textContent !== at) { a.textContent = at; }
       }
       if (ms > 0 && next === null) { next = {name:c[1], ms:ms}; }
     });
     if (!live) { return; }
-    if (!next) { live.textContent = '全部节点已生效'; return; }
+    if (!next) { liveN = liveB = null; live.textContent = '全部节点已生效'; return; }
     var s = Math.floor(next.ms/1000);
-    live.innerHTML = '<span class="dot"></span>' + next.name + ' 剩余 <b>' +
-      Math.floor(s/86400) + '天 ' + pad(Math.floor(s/3600)%24,2) + '时 ' +
-      pad(Math.floor(s/60)%60,2) + '分 ' + pad(s%60,2) + '秒</b>';
+    if (!liveB) {
+      live.innerHTML = '<span class="dot"></span><span></span><b></b>';
+      liveN = live.children[1]; liveB = live.children[2];
+    }
+    var nt = next.name + ' 剩余 ';
+    if (liveN.textContent !== nt) { liveN.textContent = nt; }
+    liveB.textContent = Math.floor(s/86400) + '天 ' + pad(Math.floor(s/3600)%24,2) + '时 ' +
+      pad(Math.floor(s/60)%60,2) + '分 ' + pad(s%60,2) + '秒';
   }
   tickClock();
-  setInterval(tickClock, 1000);
+  setInterval(function(){ if (!document.hidden) { tickClock(); } }, 1000);
 
   // split booking panel: header books 10 minutes, the bottom gold button books 30
   var panel = document.getElementById('bookPanel');
@@ -961,10 +970,8 @@ body.mode-clock #bookBody{display:none}
         for (var col = 0; col < w; col++) {
           var on = g[row][col] === '1';
           var px = cx + col * pitch, py = y0 + row * pitch;
-          if (on) {
-            out += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="' +
-                   (r * 2.1).toFixed(2) + '" fill="' + litColor + '" opacity="0.16"/>';
-          }
+          out += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="' +
+                 (r * 2.1).toFixed(2) + '" fill="' + litColor + '" opacity="' + (on ? '0.16' : '0') + '"/>';
           out += '<circle cx="' + px.toFixed(1) + '" cy="' + py.toFixed(1) + '" r="' + r.toFixed(2) +
                  '" fill="' + (on ? litColor : '#0E485A') + '" opacity="' + (on ? '1' : '0.30') + '"/>';
         }
@@ -972,6 +979,18 @@ body.mode-clock #bookBody{display:none}
       cx += (w + 1) * pitch;
     }
     return out;
+  }
+
+  function rowCells(text, litColor, out){
+    for (var i = 0; i < text.length; i++) {
+      var g = GLYPH[text[i]] || GLYPH[' '];
+      for (var row = 0; row < 7; row++) {
+        for (var col = 0; col < g[0].length; col++) {
+          var on = g[row][col] === '1';
+          out.push(on ? '0.16' : '0', on ? litColor : '#0E485A', on ? '1' : '0.30');
+        }
+      }
+    }
   }
 
   function rowWidth(text, pitch){
@@ -1002,11 +1021,25 @@ body.mode-clock #bookBody{display:none}
       var p2 = 4.6, r2 = 1.75;  // time row
       var x1 = (250 - rowWidth(dTxt, p1)) / 2;
       var x2 = (250 - rowWidth(tTxt, p2)) / 2;
-      svg.innerHTML =
+      var key = dTxt.replace(/\d/g, '9') + '|' + tTxt.replace(/\d/g, '9');
+      if (svg.getAttribute('data-k') !== key) {
+        svg.setAttribute('data-k', key);
+        svg.innerHTML =
         renderRow(dTxt, x1, 11, p1, r1, '#D7FD00') +
         '<text x="125" y="69" text-anchor="middle" font-family="JetBrains Mono, monospace" ' +
         'font-size="6.5" fill="#6E8F94" letter-spacing="1.9">剩余天数</text>' +
         renderRow(tTxt, x2, 78, p2, r2, '#FFAA00');
+      } else {
+        var st = [];
+        rowCells(dTxt, '#D7FD00', st);
+        rowCells(tTxt, '#FFAA00', st);
+        var cs = svg.querySelectorAll('circle');
+        for (var ci = 0; ci < cs.length; ci++) {
+          var k = (ci >> 1) * 3;
+          if (ci % 2 === 0) { cs[ci].setAttribute('opacity', st[k]); }
+          else { cs[ci].setAttribute('fill', st[k + 1]); cs[ci].setAttribute('opacity', st[k + 2]); }
+        }
+      }
     }
 
     var dEl = document.getElementById('ckDays');
@@ -1018,6 +1051,16 @@ body.mode-clock #bookBody{display:none}
   }
 
   var fw = document.getElementById('flywheel');
+  if (window.IntersectionObserver) {
+    var watchOff = function(el, cls){
+      if (!el) { return; }
+      new IntersectionObserver(function(es){
+        es.forEach(function(e){ el.classList.toggle(cls, !e.isIntersecting); });
+      }).observe(el);
+    };
+    watchOff(fw, 'fw-off');
+    watchOff(live, 'cd-off');
+  }
   if (fw) {
     fw.addEventListener('click', function(){
       var alreadyClock = document.body.classList.contains('split') &&
@@ -1033,7 +1076,7 @@ body.mode-clock #bookBody{display:none}
     });
   }
   setInterval(function(){
-    if (document.body.classList.contains('mode-clock')) { drawClock(); }
+    if (!document.hidden && document.body.classList.contains('mode-clock')) { drawClock(); }
   }, 1000);
   drawClock();
 
