@@ -111,6 +111,11 @@ h1 em{font-style:normal;color:var(--teal)}
 .copy.done{background:var(--green);border-color:var(--green);color:#00232E;font-weight:600}
 .lanes{font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--grey);letter-spacing:.09em;text-transform:uppercase}
 
+/* figure */
+.fig{margin:0 0 14px;background:var(--card);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.fig img{display:block;width:100%;max-width:100%;height:auto;border-radius:3px 3px 0 0}
+.fig figcaption{font-size:12.5px;color:var(--mute);padding:10px 14px 11px;line-height:1.5}
+
 /* link block */
 .srcbar{border:1px solid var(--line);border-left:3px solid var(--gold);background:var(--teald);padding:19px 22px;border-radius:3px;margin-bottom:14px}
 .srcbar h3{font-size:14.5px;font-weight:700;margin-bottom:11px}
@@ -534,6 +539,8 @@ body.mode-clock #bookBody{display:none}
           <li><a href="https://www.globalbattery.org/media/publications/gba-batterybenchmarks-final-web-resolution-duplicate.pdf">全球电池联盟，电池基准测试版</a></li>
           <li><a href="https://www.globalbattery.org/2026-battery-passport-pilots/">GBA，2026 年电池护照运营试点</a></li>
           <li><a href="https://www.solarstewardshipinitiative.org/certified-sites/">光伏管理倡议，获证工厂</a></li>
+          <li><a href="https://eur-lex.europa.eu/eli/dec_impl/2026/1736/oj/eng">实施决定 (EU) 2026/1736，数字产品护照协调标准（含 EN 18220）</a></li>
+          <li><a href="https://solaralliance.eu/wp-content/uploads/2024/11/ESIA-PV-Passport-II.pdf">欧洲光伏产业联盟，光伏护照建议</a></li>
         </ul>
       </div>
     </section>
@@ -564,6 +571,11 @@ body.mode-clock #bookBody{display:none}
     <section class="sec" id="sec-c">
       <div class="sechead"><span class="ltr mono">C</span><h2>UNITY 究竟是什么</h2></div>
       <p class="secnote">从一句话的产品描述，到硬件工程师第三个会问的技术细节，以及它回答的五个问题。</p>
+
+      <figure class="fig">
+        <img src="../unity-five-questions.jpg" width="1600" height="900" loading="lazy" alt="UNITY 五个问题：可信硬件、测量与监控、记录与开放技术栈、检验、法律外壳">
+        <figcaption>UNI-05 中的五个问题，汇成一张图：五类公司，一个在生产源头签名的读数。</figcaption>
+      </figure>
 
       <article class="block" id="UNI-01" data-lane="all solar bess gateway">
         <div class="bhead"><span class="bid mono">UNI-01</span><h3 class="btitle">一句话产品描述</h3></div>
@@ -622,6 +634,123 @@ body.mode-clock #bookBody{display:none}
       </article>
     </section>
 
+    <section class="sec" id="sec-d">
+      <div class="sechead"><span class="ltr mono">D</span><h2>物理 AI（上）：黑灯工厂与运输物流</h2></div>
+      <p class="secnote">四个章节，讲工厂以及产品出厂之后的路：今天单件身份如何绑定，UNITY 在每个工位增加什么，运输途中由什么读取单件，以及为什么印刷的码还不够。每节各自独立成篇。</p>
+
+      <article class="block" id="PAI-01" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-01</span><h3 class="btitle">黑灯产线，数据仍靠数据库里的一行来绑定</h3></div>
+        <p class="usewhen">如果您的工厂已经高度自动化，并且认为可追溯性已经解决，请读这一节。</p>
+        <div class="bbody">
+          <p>本行业工厂自动化的公开标志是世界经济论坛的灯塔工厂名单。各细分领域的第一座灯塔工厂：电池为宁德时代宁德基地（2021 年），组件为隆基嘉兴基地（2023 年 12 月），电池片为通威眉山基地（2025 年），储能电池为海辰储能重庆基地（2026 年 1 月）。仅隆基嘉兴一地就在 20 道工序上部署了 784 台相机。</p>
+          <p>底层的身份模型并没有改变。在组件产线上，EL 测试在层压前后各做一次，IV 功率测试（IV 曲线、Pmax）在装框和接线盒之后进行。在电芯产线上，激光在化成之后的分容分档工位于壳体上打印 Data Matrix 或二维码。两种情况下，都是 MES 把每一项测量结果关联到印刷的码上。这种绑定存在于制造商数据库中的一行记录里，单件本身只带着一个任何人都能复制的符号。</p>
+          <p><b>在我们查阅的灯塔工厂公开资料和 MES 厂商资料中，没有任何一家用保存在单件内部的密钥为单件测量结果签名。</b>面向电池销售的安全元件只回答一个问题：这块电池是不是原装的。在我们读到的资料中，它们都不对测量结果签名。</p>
+          <p class="cite">宁德时代 · <a href="https://en.prnasia.com/releases/apac/catl-s-sichuan-plant-selected-as-lighthouse-factory-by-world-economic-forum-378646.shtml">prnasia.com</a> · 隆基 · <a href="https://solarquarter.com/2023/12/19/recognized-by-wef-as-global-lighthouse-factory-longi-leads-smart-and-sustainable-manufacturing-in-the-pv-industry/">solarquarter.com</a> · 通威 · <a href="https://www.gramwzielone.pl/energia-sloneczna/20333977/zaklad-tongwei-solar-z-z-tytulem-lighthouse-factory-wef-przelom-dla-tnc-2-0">gramwzielone.pl</a> · 海辰储能 · <a href="https://technode.global/prnasia/hithium-recognized-as-the-worlds-first-lighthouse-factory-for-energy-storage-batteries/">technode.global</a> · 组件产线 · <a href="https://www.bisol.com/post/do-you-know-the-steps-of-quality-production">bisol.com</a> · 电芯打码 · <a href="https://www.pryormarking.com/?p=23690">pryormarking.com</a> · MES 谱系 · <a href="https://kontron-ais.com/ressourcen/referenzen/fabeagle-mes-solarzellen-solarmodul-produktion-meyer-burger">kontron-ais.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏 · 储能</span></div>
+      </article>
+
+      <article class="block" id="PAI-02" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-02</span><h3 class="btitle">UNITY 在工厂内部增加什么</h3></div>
+        <p class="usewhen">面向厂长和质量工程师。</p>
+        <div class="bbody">
+          <ul>
+            <li><b>物料入厂。</b>来料批次在进入产线之前被读取，并对照订单登记。</li>
+            <li><b>在工位上绑定单件身份。</b>在组件产线上，芯片密钥在叠层或接线盒工位与 MES 序列号登记绑定；在储能产线上，于电池包下线测试时绑定，均在第一次测量之前完成。</li>
+            <li><b>IV 功率测试与质检结果签名到单件。</b>工位结果（Pmax 分档、EL 合格、下线测试）经过签名，并绑定到单件自身的密钥上，因此结果随单件流转，而不只是留在制造商的数据库里。</li>
+            <li><b>成品与生产批次追踪。</b>签名记录带有工厂和批次信息。电池护照按电池型号和生产工厂申报碳足迹，因此单件记录与工厂记录在同一个签名中汇合。</li>
+            <li><b>手机、闸口和叉车均可读取。</b>蓝牙加 RFID，隔着包装箱即可读取记录，无需开箱。</li>
+          </ul>
+          <p>电芯仍以激光打印的 Data Matrix 作为电芯层标识。按电芯成本，每颗电芯配一颗芯片并不现实；UNITY 芯片在电池包层面为电芯清单签名。</p>
+          <p>有一个限制，我们直接说明：UNITY 固定的是测试机产生的那份记录。芯片不能证明测试机经过校准，因此我们为每台测试机配一份经过签名的校准参考记录。</p>
+          <p class="cite">化成后电芯打码 · <a href="https://www.pryormarking.com/?p=23690">pryormarking.com</a> · 电池护照与碳足迹，法规 (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu/eli/reg/2023/1542/oj</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏 · 储能</span></div>
+      </article>
+
+      <article class="block" id="PAI-03" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-03</span><h3 class="btitle">运输与仓储：由什么读取单件，电池护照又要求什么</h3></div>
+        <p class="usewhen">面向物流、来料检验，以及所有搭建电池护照的人。</p>
+        <div class="bbody">
+          <p>在仓库内，固定通道门和叉车读写器批量读取托盘，叉车读写器的读取距离可达 12 米。在室外，无人机读写器已用于露天堆场的商业作业，通常在机身下方 2 至 10 米处读取，单次飞行 20 至 40 分钟。一家读写器厂商建议：堆场用无人机，室内连续盘点用叉车读写器。</p>
+          <p>欧盟电池护照自 2027 年 2 月 18 日起适用于容量大于 2 kWh 的工业电池、电动汽车电池和轻型交通工具电池，护照通过链接到唯一标识符的二维码访问（第 77(3) 条）。关于数据载体的 EN 18220:2026 已由实施决定 (EU) 2026/1736 作为协调标准发布（2026 年 7 月 15 日生效），接受二维码、Data Matrix、NFC、HF RFID 和 RAIN UHF RFID 作为数据载体。</p>
+          <p><b>已公布的电池护照文本中，没有任何一处要求数据载体经过签名。</b>关于数据认证与完整性的配套标准 EN 18246，到 2026 年年中仍在审批中。载体告诉读取方记录在哪里，却不能证明手中这个电池包就是记录所描述的那个电池包。</p>
+          <p>UNITY 在单件上配置蓝牙加 RFID，因此同一个签名身份可以在通道门、由叉车、由堆场上空的无人机，以及在来料检验时由手机读取。二维码保留，UNITY 为它补上背后的证明。</p>
+          <p class="cite">实施决定 (EU) 2026/1736 · <a href="https://eur-lex.europa.eu/eli/dec_impl/2026/1736/oj/eng">eur-lex.europa.eu/eli/dec_impl/2026/1736/oj</a> · EN 18220 与 EN 18246 进展 · <a href="https://www.cencenelec.eu/media/CEN-CENELEC/Events/Webinars/2026/20260625_cen-cenelec-webinar-on-dpp-final_rev20260625.pdf">cencenelec.eu</a> · 第 77 条，法规 (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/eli/reg/2023/1542/oj">eur-lex.europa.eu</a> · 叉车读取 · <a href="https://www.dronescan.co/rfid">dronescan.co</a> · 无人机读取 · <a href="https://rfid.me/readers/drone-reader/">rfid.me</a> · 堆场与室内 · <a href="https://www.simplyrfid.com/faq/drone-rfid-inventory-system-id-001/">simplyrfid.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏 · 储能</span></div>
+      </article>
+
+      <article class="block" id="PAI-04" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-04</span><h3 class="btitle">二维码还不够</h3></div>
+        <p class="usewhen">当有人说标签已经能解决问题时，请读这一节。</p>
+        <div class="bbody">
+          <p>二维码指向一条记录。复制这张标签，复制品指向的仍是同一条记录。</p>
+          <p>层压在玻璃内的 RFID 标签，就是一个看不见的二维码。自 2013 年 4 月 1 日起，印度要求 MNRE 计划内的组件在层压件内部放置 RFID 标签，现行的 PM Surya Ghar 指南仍要求“a RF identification tag laminated inside the glass”（层压在玻璃内的射频识别标签）。标签保存的是出厂记录：制造商、日期、原产地、I-V 数据和序列号。标签只写入一次，在我们找到的任何文本中都没有签名要求，也没有传感器。任何持有写入器的人都能写入看似合理的数值。</p>
+          <p>标签与测量结果不绑定的代价，在数据中清晰可见。Fraunhofer ISE CalLab 发现，2023 年晶硅组件的实测功率平均比铭牌低 2.2%，而 2012 至 2016 年间这一偏差不到 1%。组件按 5 W 分档，约 2% 的偏差就足以让一块组件上升一档。在 2016 年的一个案例中，一家分销商订购了 250 W 组件，收到的却是贴着替换后 250 W 铭牌的 240 W 组件。</p>
+          <p><b>UNITY 在测试机上把 IV 功率测试结果签名到单件自身的密钥。</b>这样一来，重贴标签或改动分档会在来料检验时暴露出来，隔着包装箱即可读取。</p>
+          <p class="cite">PM Surya Ghar 指南，附件 3 第 1.11 节 · <a href="https://cdnbbsr.s3waas.gov.in/s3716e1b8c6cd17b771da77391355749f3/uploads/2025/07/202507081690964295.pdf">MNRE PDF</a> · MNRE 2013 年规定 · <a href="https://iitk.ac.in/new/hindi/data/tender/file/EESSKI2015-2016001.pdf">iitk.ac.in</a> · Fraunhofer ISE CalLab，2024 年 11 月 5 日 · <a href="http://www.pv-magazine.com/2024/11/05/module-power-output-distortion-on-rise/">pv-magazine.com</a> · 重贴标签案例 · <a href="http://www.pv-magazine.com/2016/06/10/relabeled-modules-cause-headache-for-distributor_100024902/">pv-magazine.com</a> · 标签写入风险 · <a href="https://sinovoltaics.com/monitoring/rfid-chip-in-solar-modules-efficient-tagging-and-performance-tracking/">sinovoltaics.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏 · 储能</span></div>
+      </article>
+    </section>
+
+    <section class="sec" id="sec-e">
+      <div class="sechead"><span class="ltr mono">E</span><h2>物理 AI（下）：现场安装、运维与退役</h2></div>
+      <p class="secnote">三个章节，讲单件离开工厂之后的生命周期：谁来安装，谁再次找到它，谁来拆解它。每节各自独立成篇。</p>
+
+      <article class="block" id="PAI-05" data-lane="all solar">
+        <div class="bhead"><span class="bid mono">PAI-05</span><h3 class="btitle">机器人安装了组件，却没人记录是哪一块</h3></div>
+        <p class="usewhen">面向 EPC、机器人企业和资产所有者。</p>
+        <div class="bbody">
+          <p>组件安装机器人如今已达到吉瓦级规模：</p>
+          <ul>
+            <li><b>Gritt Robotics</b>，与 Burns &amp; McDonnell 合作伊利诺伊州 346 MW 的 Gibson City 项目。一个八人班组每天安装 3,000 至 4,000 块组件，人工安装约为 800 块。Gritt 把验证日志和审计记录作为产品的一部分出售。</li>
+            <li><b>Terabase Terafab</b>，建在项目现场的“现场工厂”。V2 增加了在线组件质检。一条产线连续运行时每周安装约 20 MW，公司网页称已安装 100 MW 以上。</li>
+            <li><b>AES Maximo</b>，在 Bellefield 项目已安装 100 MW 以上，速度超过每分钟一块组件。</li>
+            <li><b>Goldbeck Solar HeliomatiX</b>，一个装配中心，逐块检查组件并扫描其序列号。</li>
+            <li><b>天合跟踪 Buildex</b>，每小时最多安装 90 块组件。</li>
+            <li><b>Cosmic Robotics</b>，每 30 至 40 秒安装一块组件；<b>Planted</b>，把数字孪生与机器人搭建的支架结合起来。</li>
+          </ul>
+          <p>它们都没有公开一种把经过证明的组件身份与安装位置绑定在一起的安装记录。序列号与位置的对应关系仍由人工事后建立：在一个 300 MW 以上的项目中，Rosendin 的班组逐排扫描条码，采集了近 100 万个组件序列号。</p>
+          <p><b>有了 UNITY，机器人在抓取时读取芯片，安装记录带有经过签名的组件身份及其位置。</b>超精定位来自接线盒中的蓝牙信道探测（Channel Sounding）锚点，这一锚点网格已在 <a href="https://agri.sunified.ai/#positioning">agri.sunified.ai</a> 上说明，适用于卫星定位在组件下方变差的场地。</p>
+          <p class="cite">Gibson City · <a href="https://www.renewableenergyworld.com/solar/utility-scale/are-ai-powered-robots-the-future-of-solar-construction/">renewableenergyworld.com</a> · 班组产量 · <a href="https://thenextweb.com/news/gritt-32m-physical-ai-construction-solar">thenextweb.com</a> · 验证日志 · <a href="https://www.gritt.ai">gritt.ai</a> · Terafab · <a href="https://www.terabase.energy/products-services/construction/terafab">terabase.energy</a> · <a href="https://www.terabase.energy/resources/terabase-energys-next-generation-terafab-completes-field-testing-ready-for-deployment">每周 20 MW</a> · Maximo · <a href="https://www.solarpowerworldonline.com/2026/03/robots-install-100-mw-of-solar-panels-on-1-gw-aes-project/">solarpowerworldonline.com</a> · HeliomatiX · <a href="https://www.pv-magazine.com/2026/06/30/goldbeck-solar-offers-3-step-solution-for-automated-construction-of-utility-scale-pv-plants/">pv-magazine.com</a> · Buildex · <a href="https://www.pv-magazine.com/2026/09/30/trinatracker-launches-solar-panel-installation-and-cleaning-robots/">pv-magazine.com</a> · Cosmic · <a href="https://techcrunch.com/2025/04/16/cosmic-robotics-is-building-robots-to-speed-solar-power-deployments-for-data-centers">techcrunch.com</a> · Planted · <a href="https://pv-magazine-usa.com/2026/09/22/planted-raises-31-8-million-for-robot-built-solar-deployment/">pv-magazine-usa.com</a> · Rosendin · <a href="https://www.nacleanenergy.com/rosendin-electric-uses-raptor-maps-software-to-capture-nearly-1-million-module-serial-numbers">nacleanenergy.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏</span></div>
+      </article>
+
+      <article class="block" id="PAI-06" data-lane="all solar bess">
+        <div class="bhead"><span class="bid mono">PAI-06</span><h3 class="btitle">现场运维：故障按位置定位，而不是按经过证明的序列号</h3></div>
+        <p class="usewhen">面向运维服务商、质保团队和保险公司。</p>
+        <div class="bbody">
+          <p>清洗机器人和巡检无人机已经商业化。天合跟踪在 2026 年 9 月与 Buildex 一同发布了无人值守清洗机器人 Aurora。无人机热成像可将故障定位到“down to the module level”（组件级），也就是按阵列中的位置定位。把这个位置换算成序列号，是另一项对照竣工图或安装时条码扫描记录的查询。在我们找到的运维机器人和无人机资料中，没有一家在现场读取组件身份。</p>
+          <p>质保证据依赖成像标准：以每像素 3 厘米采集，并通过重复巡检判断缺陷何时出现、原因在于制造还是安装。这些都无法证明被拍摄的组件就是索赔中写明的那个序列号。</p>
+          <p><b>有了 UNITY，组件以经过签名的身份和自身签名的测量结果回应蓝牙查询。</b>无人机或机器人在采集的那一刻就把观测结果绑定到单件，质保索赔附带的是这块组件自己的记录。储能电池簇也以同样方式回应。</p>
+          <p class="cite">Aurora 与 Buildex · <a href="https://www.pv-magazine.com/2026/09/30/trinatracker-launches-solar-panel-installation-and-cleaning-robots/">pv-magazine.com</a> · 热成像与质保证据 · <a href="https://raptormaps.com/blog-posts/how-drones-can-be-used-to-support-solar-inspections-for-warranties">raptormaps.com</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">光伏 · 储能</span></div>
+      </article>
+
+      <article class="block" id="PAI-07" data-lane="all bess solar">
+        <div class="bhead"><span class="bid mono">PAI-07</span><h3 class="btitle">退役与拆解：电池护照要求逐件的数据</h3></div>
+        <p class="usewhen">面向回收企业、梯次利用运营方和电池包设计人员。</p>
+        <div class="bbody">
+          <p>电池法规已经规定了回收企业和梯次利用买方所能获得的数据：</p>
+          <ul>
+            <li><b>附件 XIII，拆解信息</b>，按电池型号提供：分解图、拆解顺序、需解锁的紧固方式的类型和数量，以及所需工具。</li>
+            <li><b>附件 XIII，针对每一块电池：</b>健康状态，以及原装、梯次利用、再使用、再制造或废弃的状态。</li>
+            <li><b>第 14 条：</b>自 2024 年 8 月 18 日起，购买方和独立运营方可只读访问 BMS 中的健康状态数据。</li>
+            <li><b>第 77(7) 条：</b>经梯次利用的电池获得一份新的电池护照，并链接到原电池的护照。</li>
+          </ul>
+          <p>逐件的机器可读拆解数据之所以重要，是因为机器人仍难以判断面前是什么。RAPID 平台（科罗拉多大学，2026 年 3 月）在全尺寸电动汽车电池包上拆除顶盖紧固件，使用示教位姿时成功率为 97%，使用单次视觉识别时为 57%。</p>
+          <p>光伏组件的退役处理仍以印刷的序列号标签为依据，前提是标签仍可辨认。欧洲光伏产业联盟发布的自愿性光伏护照建议，指定的载体是二维码。</p>
+          <p><b>一个能报出自身签名身份的电池包或组件，会在第一刀之前告诉拆解单元应调取哪一份拆解记录。</b>同一把密钥把经过签名的使用历史交给梯次利用买方，并把新护照链接到原护照。</p>
+          <p class="cite">附件 XIII、第 14 条、第 77(7) 条，法规 (EU) 2023/1542 · <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1542">eur-lex.europa.eu</a> · RAPID · <a href="https://arxiv.org/abs/2603.18520">arxiv.org/abs/2603.18520</a> · ESIA 光伏护照 · <a href="https://solaralliance.eu/wp-content/uploads/2024/11/ESIA-PV-Passport-II.pdf">solaralliance.eu</a></p>
+        </div>
+        <div class="bfoot"><button class="copy">复制文本</button><span class="lanes">储能 · 光伏</span></div>
+      </article>
+    </section>
+
   </main>
 </div></div>
 
@@ -648,7 +777,9 @@ body.mode-clock #bookBody{display:none}
   var groups = [
     {sel:'#sec-a', label:'A · 法规'},
     {sel:'#sec-b', label:'B · 合作'},
-    {sel:'#sec-c', label:'C · 产品'}
+    {sel:'#sec-c', label:'C · 产品'},
+    {sel:'#sec-d', label:'D · 工厂'},
+    {sel:'#sec-e', label:'E · 现场'}
   ];
   groups.forEach(function(g){
     var head = document.createElement('li');
