@@ -94,9 +94,9 @@ header a,.hero a{color:var(--fg-inverse)}
 /* header: solid deep blue */
 header{position:sticky;top:0;z-index:20;background:var(--bg-inverse);border-bottom:1px solid var(--border-inverse)}
 .hd{display:flex;align-items:center;justify-content:space-between;height:60px;gap:var(--s-4)}
-.wm{font-weight:var(--fw-bold);letter-spacing:var(--tracking-xwide);font-size:var(--fs-body-lg);
-  line-height:var(--lh-snug)}
-header a.wm{color:var(--sun-orange)}
+.wm{display:inline-flex;align-items:center;border:0;line-height:0}
+.wm img{display:block;height:18px;width:auto}
+header a.wm:hover{text-decoration:none}
 .hd .tag{font-size:var(--fs-eyebrow);letter-spacing:var(--tracking-wide);text-transform:uppercase;
   color:rgba(252,248,234,.64)}
 
@@ -164,7 +164,8 @@ h1 em{font-style:normal;color:var(--sun-orange)}
 .shell{display:grid;grid-template-columns:222px 1fr;gap:var(--s-12);align-items:start;padding:var(--s-8) 0 var(--s-24)}
 @media (max-width:920px){.shell{grid-template-columns:1fr;gap:var(--s-6)}}
 .shell>main{min-width:0}
-.rail{position:sticky;top:84px}
+.conf{position:sticky;top:60px;z-index:19;background:var(--bg-accent);color:var(--sun-blue);font-size:var(--fs-eyebrow);font-weight:var(--fw-semi);letter-spacing:var(--tracking-wide);text-transform:uppercase;text-align:center;padding:7px var(--s-4);line-height:var(--lh-normal)}
+.rail{position:sticky;top:124px}
 @media (max-width:920px){.rail{position:static}}
 .rlabel{margin:0 0 var(--s-3)}
 
@@ -292,7 +293,7 @@ header .langsw a:hover:not([aria-current="true"]){color:var(--fg-inverse)}
 header .langsw a[aria-current="true"]{background:var(--sun-orange);color:var(--sun-blue);font-weight:500}
 /* phone header: these come after the base header rules so they win */
 @media (max-width:640px){.hd,.hd-right{gap:var(--s-3)}.hd .cta-call{padding:var(--s-2) var(--s-3)}}
-@media (max-width:420px){.hd,.hd-right{gap:var(--s-2)}.wm{letter-spacing:var(--tracking-wide);font-size:var(--fs-body)}
+@media (max-width:420px){.hd,.hd-right{gap:var(--s-2)}.wm img{height:14px}.hd-right{flex-shrink:1;min-width:0}.cta-call{padding-left:var(--s-3);padding-right:var(--s-3)}
   header .langsw a{padding:var(--s-1)}.hd .cta-call{font-size:var(--fs-caption);gap:var(--s-1)}}
 .hidden{display:none!important}
 </style>
@@ -333,7 +334,7 @@ header .langsw a[aria-current="true"]{background:var(--sun-orange);color:var(--s
 </defs></svg>
 
 <header><div class="wrap hd">
-  <a href="/" class="wm">SUNIFIED</a>
+  <a href="/" class="wm" aria-label="Sunified"><img src="/sunified-wordmark.png" alt="Sunified" width="1290" height="155"></a>
   <span class="hd-right"><span class="langsw"><a href="/">EN</a><a href="/cn/" aria-current="true">中文</a><a href="/kr/">한국어</a></span>
     <span class="tag mono">OEM 简报 · 2026 年 10 月</span>
     <button class="cta-call" id="bookOpen" aria-expanded="false" aria-controls="bookPanel"
@@ -343,6 +344,7 @@ header .langsw a[aria-current="true"]{background:var(--sun-orange);color:var(--s
       <svg class="ic"><use href="#i-call"></use></svg>30 分钟通话</button>
   </span>
 </div></header>
+<div class="conf" role="note"><b>保密</b> · Sunified Group BV · 仅供与指定合作伙伴讨论 · 不得转发</div>
 
 <aside id="bookPanel" aria-hidden="true" aria-label="预约 30 分钟通话">
   <div class="ph">
